@@ -1,0 +1,16 @@
+{
+  "devDependencies": {
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
+    "browser-sync": "^2.29.3",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.69.4"
+  },
+  "dependencies": {
+    "gulp-cli": "^2.3.0",
+    "minimatch": "^3.0.2",
+    "vinyl-fs": "^3.0.3"
+  }
+}

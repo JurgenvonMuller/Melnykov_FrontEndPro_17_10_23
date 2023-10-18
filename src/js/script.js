@@ -3,4 +3,7 @@ let b = 3;
 let c = a ** b;
 console.log(c);
 
-alert('how old are you');
+a = c;
+console.log(c);
+
+

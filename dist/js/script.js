@@ -1,14 +1,9 @@
 "use strict";
 
-console.log("lorem");
-console.log('Hello world!');
-alert("How are you?");
-console.log("lorem");
-console.log('Hello world!');
-alert("How are you?");
-console.log("lorem");
-console.log('Hello world!');
-alert("How are you?");
-console.log("lorem");
-console.log('Hello world!');
-alert("How are you?");
+var a = 2;
+var b = 3;
+var c = Math.pow(a, b);
+console.log(c);
+a = c;
+console.log(c);
+console.log('123456');

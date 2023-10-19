@@ -6,4 +6,6 @@ console.log(c);
 a = c;
 console.log(c);
 
+console.log('123456');
+
 

@@ -1,9 +1,10 @@
 "use strict";
 
-var a = 2;
-var b = 3;
-var c = Math.pow(a, b);
-console.log(c);
-a = c;
-console.log(c);
-console.log('123456');
+var num = 123456;
+var firstNum = Number(num.toString(10)[4]);
+console.log(firstNum);
+if (firstNum == 1 || firstNum == 2 || firstNum == 3) {
+  console.log('yes');
+} else {
+  console.log('no');
+}

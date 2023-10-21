@@ -8,12 +8,12 @@ Tреба реалізувати просту програму з наступн
 де John це те, що ввів користувач */
 
 // 1 вариант
-// const userName = prompt('Put your name, please', 'John');
-// alert(`Hello, ${userName}! How are you?`)
+const userName = prompt('Put your name, please', 'John');
+alert(`Hello, ${userName}! How are you?`)
 
 // 2 вариант
-// const UserName1 = prompt('Put your name, please', '');
-// alert("Hello, " + UserName1 + "! " + "How are you?" )
+const UserName1 = prompt('Put your name, please', '');
+alert("Hello, " + UserName1 + "! " + "How are you?" )
 
 
 /*  HOME TASK 3
@@ -24,9 +24,9 @@ Tреба реалізувати просту програму з наступн
 
 */
 
-// let str1 = prompt('Put please your first string part', 'xxx');
-// let str2 = prompt('Put please your second string part', 'yyy');
-// let str3 = prompt('Put please your third  string part', 'zzz');
+let str1 = prompt('Put please your first string part', 'xxx');
+let str2 = prompt('Put please your second string part', 'yyy');
+let str3 = prompt('Put please your third  string part', 'zzz');
 
 // checking type of date for compilling:
 
@@ -34,8 +34,8 @@ Tреба реалізувати просту програму з наступн
 // console.log(typeof str2);  //return STRING
 // console.log(typeof str3);  //return STRING
 
-// console.log( str1 + str2 + str3);
-// console.log(`In order 213: ${str2}${str1}${str3}`);
+console.log( str1 + str2 + str3);
+console.log(`In order 213: ${str2}${str1}${str3}`);
 
 /*Розбити за цифрами п'ятизначне число і вивести у вихідному 
 порядку через пробіл.*/
@@ -49,7 +49,7 @@ let c = num[2];
 let d = num[3];
 let e = num[4];
 console.log(a + ' ' + b + ' ' + c + ' ' + d + ' ' + e);
-// 2 вариант
+// // 2 вариант
 let num1 = num.split('').join(' ');
 console.log(num1);
 
@@ -89,3 +89,38 @@ alert( `Addition equal: ${ab} + ${cd} = ${addNum}`);
 let subtrNum = ab - cd;
 console.log(subtrNum);
 alert( `Subtraction equal: ${ab} - ${cd} = ${subtrNum}`);
+
+
+/* HOMETASK 5
+
+Створити скрипт який повинен виконувати наступне:
+
+питаємо у користувача, що він хоче зробити (add, sub, mult, div);
+питаємо у користувача перше число;
+запитуємо у користувача друге число;
+виводимо результат дії (add, sub, mult, div) з усіма операндами 
+(Наприклад "2 + 3 = 5").*/
+
+// let userChoice = prompt('What do you whant to do? Make you choice please.', `"add', "sub", "mult", "div"`);
+// console.log(userChoice);
+
+// console.log(ac);
+
+// let UserAdd = 'add';
+
+
+/* HOME TASK 6
+Напишіть скрипт, який переводить години в секунди і має робити насутпне:
+
+запитати у користувача кількість годин;
+порахувати, скільки секунд у цій кількості годин;
+записати обчислене значення у змінну;
+вивести цю змінну користувачеві через alert.*/
+
+let userHourChoise = prompt('How manu hour do you want calculate to sec?', '');
+let userHours = Number(userHourChoise);
+// console.log(typeof userHours);
+
+const secInHour = 360;
+let secInUserHours = userHours * secInHour;
+alert(`Your hour chioce include ${secInUserHours} seconds`)

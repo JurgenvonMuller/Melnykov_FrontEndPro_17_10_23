@@ -49,6 +49,7 @@ let c = num[2];
 let d = num[3];
 let e = num[4];
 console.log(a + ' ' + b + ' ' + c + ' ' + d + ' ' + e);
+
 // // 2 вариант
 let num1 = num.split('').join(' ');
 console.log(num1);
@@ -129,9 +130,6 @@ if (userMathChoice === '/' || userMathChoice === 'div') {
 console.log( result );
 alert(`Congratulate! Your result is ${result}`);
 
-// console.log(ac);
-
-// let UserAdd = 'add';
 
 
 /* HOME TASK 6

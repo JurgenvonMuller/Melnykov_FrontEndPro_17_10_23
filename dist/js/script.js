@@ -51,6 +51,7 @@ var c = num[2];
 var d = num[3];
 var e = num[4];
 console.log(a + ' ' + b + ' ' + c + ' ' + d + ' ' + e);
+
 // // 2 вариант
 var num1 = num.split('').join(' ');
 console.log(num1);
@@ -121,10 +122,6 @@ if (userMathChoice === '/' || userMathChoice === 'div') {
 }
 console.log(result);
 alert("Congratulate! Your result is ".concat(result));
-
-// console.log(ac);
-
-// let UserAdd = 'add';
 
 /* HOME TASK 6
 Напишіть скрипт, який переводить години в секунди і має робити насутпне:

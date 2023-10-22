@@ -101,8 +101,33 @@ alert( `Subtraction equal: ${ab} - ${cd} = ${subtrNum}`);
 виводимо результат дії (add, sub, mult, div) з усіма операндами 
 (Наприклад "2 + 3 = 5").*/
 
-// let userChoice = prompt('What do you whant to do? Make you choice please.', `"add', "sub", "mult", "div"`);
-// console.log(userChoice);
+let userMathChoice = prompt('What do you whant to do? Make you choice please.', 
+`For 'add' put '+', for "sub" put '-', for "mult" put '*', for "div" put '/'`);
+
+// console.log(userMathChoice);
+
+let aNum = prompt(`Put fitst number, ''`);
+let bNum = prompt(`Put your second number, ''`);
+console.log(aNum, bNum);
+// alert(`Your choice include: 
+// first number ${aNum} 
+// second number ${bNum} 
+// and Math fuction ${userMathChoice}`);
+let result;
+
+if (userMathChoice === '/' || userMathChoice === 'div') {
+  result = aNum / bNum;
+} else if (userMathChoice === '*' || userMathChoice === 'mult') {
+  result = aNum * bNum;
+} else if (userMathChoice === '+' || userMathChoice === 'add') {
+  result = aNum + bNum;
+} else if (userMathChoice === '-' || userMathChoice === 'sub') {
+  result = aNum - bNum;
+} else {
+  alert("Make right choice math function, please")
+}
+console.log( result );
+alert(`Congratulate! Your result is ${result}`);
 
 // console.log(ac);
 
@@ -117,10 +142,10 @@ alert( `Subtraction equal: ${ab} - ${cd} = ${subtrNum}`);
 записати обчислене значення у змінну;
 вивести цю змінну користувачеві через alert.*/
 
-let userHourChoise = prompt('How manu hour do you want calculate to sec?', '');
+let userHourChoise = prompt('How manu hour do you want calculate to seconds?', '');
 let userHours = Number(userHourChoise);
 // console.log(typeof userHours);
 
-const secInHour = 360;
-let secInUserHours = userHours * secInHour;
+const SEC_IN_HOUR = 360;
+let secInUserHours = userHours * SEC_IN_HOUR;
 alert(`Your hour chioce include ${secInUserHours} seconds`)

@@ -112,12 +112,23 @@ let result;
 
 if (userMathChoice === '/' || userMathChoice === 'div') {
   result = aNum / bNum;
+  console.log(`${aNum} / ${bNum} = ${result}`);
+  alert(`${aNum} / ${bNum} = ${result}`);
+
 } else if (userMathChoice === '*' || userMathChoice === 'mult') {
   result = aNum * bNum;
+  console.log(`${aNum} * ${bNum} = ${result}`);
+  alert(`${aNum} *  ${bNum} = ${result}`);
+
 } else if (userMathChoice === '+' || userMathChoice === 'add') {
   result = aNum + bNum;
+  console.log(`${aNum} + ${bNum} = ${result}`);
+  alert(`${aNum} + ${bNum} = ${result}`);
+
 } else if (userMathChoice === '-' || userMathChoice === 'sub') {
   result = aNum - bNum;
+  console.log(`${aNum} - ${bNum} = ${result}`);
+  alert(`${aNum} - ${bNum} = ${result}`);
 } else {
   alert("Make right choice math function, please")
 }

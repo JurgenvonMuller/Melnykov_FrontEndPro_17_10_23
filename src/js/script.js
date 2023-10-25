@@ -18,7 +18,7 @@
 // alert(`Your arithmeticMean is equal ${arithmeticMean1}`);
 
 // // Variant 2 advanced; (Это так, для себя для тренировки)
-// const firstNum2 = +prompt('put your forst number, please', '20.9');
+// const firstNum2 = +prompt('Enter your forst number, please', '20.9');
 
 // if(isNaN(firstNum2)) {
 //   alert('Please put a NUMBER', 'for exaple 12.5');
@@ -120,18 +120,19 @@ console.log(userAgree);
 
   const userFavSport = prompt('What is your favorite sport?','sprint / tennis / swimming');
   if(userFavSport === 'sprint') {
-    userSport = userAwesome + 'Usain Bolt?';
+    userSport = `${userAwesome} Usain Bolt?`;
   } else if (userFavSport === 'tennis') {
-    userSport = userAwesome + 'Serena Williams?';
+    userSport = `${userAwesome} Serena Williams?`;
   } else if(userFavSport === 'swimming') {
-    userSport = userAwesome + 'Michael Phelps?';
-  } else {
+    userSport = `${userAwesome} Michael Phelps?`;
+  } 
+  else {
     userSport = `Your favorite sport is ${userFavSport}`
   }
 
   alert(`You have ${userYearOld} years old,
   and ${userTown}
-  ${userSport}`);
+  ${userSport} `);
 
 } else if(userAgree === false) {
   alert(`I'm sorry that you don't want to tell us about 
@@ -139,3 +140,20 @@ console.log(userAgree);
   ${userResidenceText} 
   and ${userFavSportText}`);
 }
+
+
+/*  HOMEWORK 9 
+Переписати код нижче з використанням конструкції switch…case*/
+
+/*let numOrStr = prompt('input number or string');
+console.log(numOrStr)
+
+if(numOrStr === null) {
+console.log('ви скасували')
+} else if( numOrStr.trim() === '' ) {
+console.log('Empty String');
+} else if ( isNaN( +numOrStr ) ) {
+console.log(' number is Ba_NaN')
+} else {
+console.log('OK!')
+}*/

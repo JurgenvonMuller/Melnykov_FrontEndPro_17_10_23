@@ -89,63 +89,63 @@
 //  Частина №1 i 2
 
 
-let userYearOld;
-let userTown;
-let userSport;
-const currentYear = 2023;
-const userBithText = 'year of your Birthday';
-const userResidenceText = 'your town where do you live';
-const userFavSportText = 'you favorite sport';
-const townIndicate = 'you live in';
-const capitIndicate = `${townIndicate} the capital of`;
-const userAwesome = 'AWESOME! Do you want to become like ';
+// let userYearOld;
+// let userTown;
+// let userSport;
+// const currentYear = 2023;
+// const userBithText = 'year of your Birthday';
+// const userResidenceText = 'your town where do you live';
+// const userFavSportText = 'you favorite sport';
+// const townIndicate = 'you live in';
+// const capitIndicate = `${townIndicate} the capital of`;
+// const userAwesome = 'AWESOME! Do you want to become like ';
 
-const userAgree = confirm('Would you like to answer our questions about your age, place of residence, and favorite sport?','');
-if (userAgree === true) {
-console.log(userAgree);
+// const userAgree = confirm('Would you like to answer our questions about your age, place of residence, and favorite sport?','');
+// if (userAgree === true) {
+// console.log(userAgree);
 
-  const userBirthYear = +prompt(`Enter, please, year of your birthday`, 'yyyy / 1995');
-  userYearOld = currentYear - userBirthYear;
+//   const userBirthYear = +prompt(`Enter, please, year of your birthday`, 'yyyy / 1995');
+//   userYearOld = currentYear - userBirthYear;
   
-  const userTownAnswer = prompt('Enter the name of the town where do you live', ' Lion');
-  if(userTownAnswer === 'London') {
-    userTown = capitIndicate + ' England';
-  } else if(userTownAnswer === 'Kiev') {
-    userTown = capitIndicate + ' Ukraine';
-  } else if(userTownAnswer === 'Washington') {
-    userTown = capitIndicate + ' USA';
-  } else {
-    userTown = townIndicate + userTownAnswer;
-  }
+//   const userTownAnswer = prompt('Enter the name of the town where do you live', ' Lion');
+//   if(userTownAnswer === 'London') {
+//     userTown = capitIndicate + ' England';
+//   } else if(userTownAnswer === 'Kiev') {
+//     userTown = capitIndicate + ' Ukraine';
+//   } else if(userTownAnswer === 'Washington') {
+//     userTown = capitIndicate + ' USA';
+//   } else {
+//     userTown = townIndicate + userTownAnswer;
+//   }
 
-  const userFavSport = prompt('What is your favorite sport?','sprint / tennis / swimming');
-  if(userFavSport === 'sprint') {
-    userSport = `${userAwesome} Usain Bolt?`;
-  } else if (userFavSport === 'tennis') {
-    userSport = `${userAwesome} Serena Williams?`;
-  } else if(userFavSport === 'swimming') {
-    userSport = `${userAwesome} Michael Phelps?`;
-  } 
-  else {
-    userSport = `Your favorite sport is ${userFavSport}`
-  }
+//   const userFavSport = prompt('What is your favorite sport?','sprint / tennis / swimming');
+//   if(userFavSport === 'sprint') {
+//     userSport = `${userAwesome} Usain Bolt?`;
+//   } else if (userFavSport === 'tennis') {
+//     userSport = `${userAwesome} Serena Williams?`;
+//   } else if(userFavSport === 'swimming') {
+//     userSport = `${userAwesome} Michael Phelps?`;
+//   } 
+//   else {
+//     userSport = `Your favorite sport is ${userFavSport}`
+//   }
 
-  alert(`You have ${userYearOld} years old,
-  and ${userTown}
-  ${userSport} `);
+//   alert(`You have ${userYearOld} years old,
+//   and ${userTown}
+//   ${userSport} `);
 
-} else if(userAgree === false) {
-  alert(`I'm sorry that you don't want to tell us about 
-  ${userBithText} 
-  ${userResidenceText} 
-  and ${userFavSportText}`);
-}
+// } else if(userAgree === false) {
+//   alert(`I'm sorry that you don't want to tell us about 
+//   ${userBithText} 
+//   ${userResidenceText} 
+//   and ${userFavSportText}`);
+// }
 
 
 /*  HOMEWORK 9 
 Переписати код нижче з використанням конструкції switch…case*/
-
-/*let numOrStr = prompt('input number or string');
+/*
+let numOrStr = prompt('input number or string');
 console.log(numOrStr)
 
 if(numOrStr === null) {
@@ -157,3 +157,38 @@ console.log(' number is Ba_NaN')
 } else {
 console.log('OK!')
 }*/
+
+
+
+// Hometask "Check - list"
+         //FALSE
+/*
+console.log(Boolean(0));         // false
+console.log(Boolean(+0));        // false
+console.log(Boolean(-0));        // false
+console.log(Boolean(null));      // false
+console.log(Boolean(''));        // false
+console.log(Boolean(NaN));       // false
+console.log(Boolean(undefined)); // false
+          // TRUE
+
+console.log(Boolean('string'));   // true
+console.log(Boolean(+Infinity));  // true  
+console.log(Boolean(-Infinity));  // true
+console.log(Boolean('number'));   // true
+
+//  ACHTUNG!!!
+
+console.log(Boolean('0'));         // true
+console.log(Boolean('false'));     // true
+console.log(Boolean('NaN'));       // true
+console.log(Boolean('null'));      // true
+console.log(Boolean('undefined')); // true
+*/
+let test = true;
+
+if (!test) {
+  console.log('+++++');
+} else {
+  console.log('----');
+}

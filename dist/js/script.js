@@ -126,5 +126,5 @@ if (userAgree === true) {
   }
   alert("You have ".concat(userYearOld, " years old,\n  and ").concat(userTown, "\n  ").concat(userSport));
 } else if (userAgree === false) {
-  alert("I'm sorry that you don't want to tell us about ".concat(userBithText, " ").concat(userResidenceText, " and ").concat(userFavSportText));
+  alert("I'm sorry that you don't want to tell us about \n  ".concat(userBithText, " \n  ").concat(userResidenceText, " \n  and ").concat(userFavSportText));
 }

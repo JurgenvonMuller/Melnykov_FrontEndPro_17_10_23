@@ -117,8 +117,8 @@ console.log(userAgree);
   } else {
     userTown = townIndicate + userTownAnswer;
   }
+
   const userFavSport = prompt('What is your favorite sport?','sprint / tennis / swimming');
-  
   if(userFavSport === 'sprint') {
     userSport = userAwesome + 'Usain Bolt?';
   } else if (userFavSport === 'tennis') {
@@ -128,9 +128,14 @@ console.log(userAgree);
   } else {
     userSport = `Your favorite sport is ${userFavSport}`
   }
+
   alert(`You have ${userYearOld} years old,
   and ${userTown}
   ${userSport}`);
+
 } else if(userAgree === false) {
- alert(`I'm sorry that you don't want to tell us about ${userBithText} ${userResidenceText} and ${userFavSportText}`);
+  alert(`I'm sorry that you don't want to tell us about 
+  ${userBithText} 
+  ${userResidenceText} 
+  and ${userFavSportText}`);
 }

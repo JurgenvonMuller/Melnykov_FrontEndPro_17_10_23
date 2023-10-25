@@ -59,12 +59,14 @@
 //   alert('Please put correct level of precision', '0 -3');
 // }
 
-/*  HOMEWORK 8 
+/*  HOMEWORK 8 (two parts!!!)
 
+Частина №1
 Створити скрипт яки повинен виконувати наступне:
 запитати у користувача рік народження;
 запитати в нього, в якому місті він живе;
 запитати його улюблений вид спорту.
+
 При натисканні на ОК показуємо вікно, 
 де має бути відображена наступна інформація:
 його вік;
@@ -83,14 +85,52 @@
  натисне Скасувати, показати йому повідомлення – “Шкода, що Ви не захотіли ввести свій(ю) …” 
  і вказуємо, що він не захотів вводити – дату народження, місто чи вид спорту .*/
 
-const userBirthday;
-const userTown;
-const userSport;
-const currentDate = new Date();
 
-userBirthday = prompt('Put your date of birthday', 'dd.mm.yy - 01.01.2000');
-//  userTown = prompt('Put the name of the town where do you live', '');
-//  userSport = prompt('Enter your favorite sport', '');
+//  Частина №1 i 2
 
 
+let userYearOld;
+let userTown;
+let userSport;
+const currentYear = 2023;
+const userBithText = 'year of your Birthday';
+const userResidenceText = 'your town where do you live';
+const userFavSportText = 'you favorite sport';
+const townIndicate = 'you live in';
+const capitIndicate = `${townIndicate} the capital of`;
+const userAwesome = 'AWESOME! Do you want to become like ';
 
+const userAgree = confirm('Would you like to answer our questions about your age, place of residence, and favorite sport?','');
+if (userAgree === true) {
+console.log(userAgree);
+
+  const userBirthYear = +prompt(`Enter, please, year of your birthday`, 'yyyy / 1995');
+  userYearOld = currentYear - userBirthYear;
+  
+  const userTownAnswer = prompt('Enter the name of the town where do you live', ' Lion');
+  if(userTownAnswer === 'London') {
+    userTown = capitIndicate + ' England';
+  } else if(userTownAnswer === 'Kiev') {
+    userTown = capitIndicate + ' Ukraine';
+  } else if(userTownAnswer === 'Washington') {
+    userTown = capitIndicate + ' USA';
+  } else {
+    userTown = townIndicate + userTownAnswer;
+  }
+  const userFavSport = prompt('What is your favorite sport?','sprint / tennis / swimming');
+  
+  if(userFavSport === 'sprint') {
+    userSport = userAwesome + 'Usain Bolt?';
+  } else if (userFavSport === 'tennis') {
+    userSport = userAwesome + 'Serena Williams?';
+  } else if(userFavSport === 'swimming') {
+    userSport = userAwesome + 'Michael Phelps?';
+  } else {
+    userSport = `Your favorite sport is ${userFavSport}`
+  }
+  alert(`You have ${userYearOld} years old,
+  and ${userTown}
+  ${userSport}`);
+} else if(userAgree === false) {
+ alert(`I'm sorry that you don't want to tell us about ${userBithText} ${userResidenceText} and ${userFavSportText}`);
+}

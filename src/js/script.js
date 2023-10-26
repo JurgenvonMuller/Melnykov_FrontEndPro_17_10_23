@@ -183,9 +183,9 @@ switch(numOrStr) {
 
 
 
-// Hometask "Check - list"
-         //FALSE
-/*
+/*      Hometask "Check - list"
+        
+       FALSE
 console.log(Boolean(0));         // false
 console.log(Boolean(+0));        // false
 console.log(Boolean(-0));        // false
@@ -193,14 +193,15 @@ console.log(Boolean(null));      // false
 console.log(Boolean(''));        // false
 console.log(Boolean(NaN));       // false
 console.log(Boolean(undefined)); // false
-          // TRUE
+          
+          TRUE
 
 console.log(Boolean('string'));   // true
 console.log(Boolean(+Infinity));  // true  
 console.log(Boolean(-Infinity));  // true
 console.log(Boolean('number'));   // true
 
-//  ACHTUNG!!!
+        ACHTUNG,  STRING!!!
 
 console.log(Boolean('0'));         // true
 console.log(Boolean('false'));     // true

@@ -1,6 +1,5 @@
 "use strict";
 
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 /*  HOMEWOKR 7
 
 Створити скрипт який має визначити середнє арифметичне 
@@ -9,48 +8,56 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
 показати через alert середнє арифметичне цих чисел
 
                 Variant 1  - simple;               */
-
-var firstNum1 = +prompt('put your forst number, please', '10');
-var secondNum1 = +prompt('Put your second number, please', '20');
-var thirdNum1 = +prompt('Put you third number, please', '40');
-var quantityNumbers1 = 3;
-var arithmeticMean1 = (firstNum1 + secondNum1 + thirdNum1) / quantityNumbers1;
-alert("Your arithmeticMean is equal ".concat(arithmeticMean1));
-
+/*
+const firstNum1 = +prompt('put your forst number, please', '10');
+const secondNum1 = +prompt('Put your second number, please', '20');
+const thirdNum1 = +prompt('Put you third number, please', '40');
+const quantityNumbers1 = 3;
+const arithmeticMean1 = (firstNum1 + secondNum1 + thirdNum1) / quantityNumbers1;
+alert(`Your arithmeticMean is equal ${arithmeticMean1}`);
+*/
 // // Variant 2 advanced; (Это так, для себя для тренировки)
+/*
+const firstNum2 = +prompt('Enter your forst number, please', '20.9');
 
-var firstNum2 = +prompt('Enter your forst number, please', '20.9');
-if (isNaN(firstNum2)) {
+if(isNaN(firstNum2)) {
   alert('Please put a NUMBER', 'for exaple 12.5');
 }
-var secondNum2 = +prompt('Put your second number, please', '20.4');
-if (isNaN(secondNum2)) {
+
+const secondNum2 = +prompt('Put your second number, please', '20.4');
+if(isNaN(secondNum2)) {
   alert('Please put a NUMBER', 'for exaple 12.5');
 }
-var thirdNum2 = +prompt('Put you third number, please', '45');
-if (isNaN(thirdNum2)) {
+const thirdNum2 = +prompt('Put you third number, please', '45');
+
+if(isNaN(thirdNum2)) {
   alert('Please put a NUMBER', 'for exaple 12.5');
 }
-var arithmeticMean2 = (firstNum2 + secondNum2 + thirdNum2) / quantityNumbers1;
-var decimalQuantity = +prompt('What level of precision do you require for rounding?', '0 - 3');
-var arithmeticMean;
+const arithmeticMean2 = (firstNum2 + secondNum2 + thirdNum2) / quantityNumbers1;
+const decimalQuantity = +prompt('What level of precision do you require for rounding?', '0 - 3');
+let arithmeticMean;
+
 if (decimalQuantity === 0) {
   // toFixed возвращает СТРОКУ!!!
   arithmeticMean = +arithmeticMean2.toFixed(0); // не явное преобразование строки в number.
-  console.log(_typeof(arithmeticMean), arithmeticMean);
-  alert("Your arithmeticMean is equal ".concat(arithmeticMean));
-} else if (decimalQuantity === 1) {
+  console.log(typeof arithmeticMean, arithmeticMean);
+  alert(`Your arithmeticMean is equal ${arithmeticMean}`);
+
+} else if(decimalQuantity === 1 ) {
   arithmeticMean = +arithmeticMean2.toFixed(1);
-  alert("Your arithmeticMean is equal ".concat(arithmeticMean));
-} else if (decimalQuantity === 2) {
+  alert(`Your arithmeticMean is equal ${arithmeticMean}`);
+
+} else if(decimalQuantity === 2 ) {
   arithmeticMean = +arithmeticMean2.toFixed(2);
-  alert("Your arithmeticMean is equal ".concat(arithmeticMean));
-} else if (decimalQuantity === 3) {
+  alert(`Your arithmeticMean is equal ${arithmeticMean}`);
+
+} else if(decimalQuantity === 3 ) {
   arithmeticMean = +arithmeticMean2.toFixed(3);
-  alert("Your arithmeticMean is equal ".concat(arithmeticMean));
+  alert(`Your arithmeticMean is equal ${arithmeticMean}`);
+
 } else {
   alert('Please put correct level of precision', '0 -3');
-}
+}*/
 
 /*  HOMEWORK 8 (two parts!!!)
 
@@ -80,45 +87,58 @@ if (decimalQuantity === 0) {
 
 //  Частина №1 i 2
 
-var userYearOld;
-var userTown;
-var userSport;
-var currentYear = 2023;
-var userBithText = 'year of your Birthday';
-var userResidenceText = 'your town where do you live';
-var userFavSportText = 'you favorite sport';
-var townIndicate = 'you live in';
-var capitIndicate = "".concat(townIndicate, " the capital of");
-var userAwesome = 'AWESOME! Do you want to become like ';
-var userAgree = confirm('Would you like to answer our questions about your age, place of residence, and favorite sport?', '');
+/*
+let userYearOld;
+let userTown;
+let userSport;
+const currentYear = 2023;
+const userBithText = 'year of your Birthday';
+const userResidenceText = 'your town where do you live';
+const userFavSportText = 'you favorite sport';
+const townIndicate = 'you live in';
+const capitIndicate = `${townIndicate} the capital of`;
+const userAwesome = 'AWESOME! Do you want to become like ';
+
+const userAgree = confirm('Would you like to answer our questions about your age, place of residence, and favorite sport?','');
 if (userAgree === true) {
-  console.log(userAgree);
-  var userBirthYear = +prompt("Enter, please, year of your birthday", 'yyyy / 1995');
+console.log(userAgree);
+
+  const userBirthYear = +prompt(`Enter, please, year of your birthday`, 'yyyy / 1995');
   userYearOld = currentYear - userBirthYear;
-  var userTownAnswer = prompt('Enter the name of the town where do you live', ' Lion');
-  if (userTownAnswer === 'London') {
+  
+  const userTownAnswer = prompt('Enter the name of the town where do you live', ' Lion');
+  if(userTownAnswer === 'London') {
     userTown = capitIndicate + ' England';
-  } else if (userTownAnswer === 'Kiev') {
+  } else if(userTownAnswer === 'Kiev') {
     userTown = capitIndicate + ' Ukraine';
-  } else if (userTownAnswer === 'Washington') {
+  } else if(userTownAnswer === 'Washington') {
     userTown = capitIndicate + ' USA';
   } else {
     userTown = townIndicate + userTownAnswer;
   }
-  var userFavSport = prompt('What is your favorite sport?', 'sprint / tennis / swimming');
-  if (userFavSport === 'sprint') {
-    userSport = "".concat(userAwesome, " Usain Bolt?");
+
+  const userFavSport = prompt('What is your favorite sport?','sprint / tennis / swimming');
+  if(userFavSport === 'sprint') {
+    userSport = `${userAwesome} Usain Bolt?`;
   } else if (userFavSport === 'tennis') {
-    userSport = "".concat(userAwesome, " Serena Williams?");
-  } else if (userFavSport === 'swimming') {
-    userSport = "".concat(userAwesome, " Michael Phelps?");
-  } else {
-    userSport = "Your favorite sport is ".concat(userFavSport);
+    userSport = `${userAwesome} Serena Williams?`;
+  } else if(userFavSport === 'swimming') {
+    userSport = `${userAwesome} Michael Phelps?`;
+  } 
+  else {
+    userSport = `Your favorite sport is ${userFavSport}`
   }
-  alert("You have ".concat(userYearOld, " years old,\n  and ").concat(userTown, "\n  ").concat(userSport, " "));
-} else if (userAgree === false) {
-  alert("I'm sorry that you don't want to tell us about \n  ".concat(userBithText, " \n  ").concat(userResidenceText, " \n  and ").concat(userFavSportText));
-}
+
+  alert(`You have ${userYearOld} years old,
+  and ${userTown}
+  ${userSport} `);
+
+} else if(userAgree === false) {
+  alert(`I'm sorry that you don't want to tell us about 
+  ${userBithText} 
+  ${userResidenceText} 
+  and ${userFavSportText}`);
+}*/
 
 /*  HOMEWORK 9 
 Переписати код нижче з використанням конструкції switch…case*/
@@ -142,19 +162,19 @@ console.log('OK!')
 
 var numOrStr = prompt('input number or string');
 console.log(numOrStr);
-switch (numOrStr) {
-  case null:
+switch (true) {
+  case numOrStr === null:
     console.log('ви скасували');
-    brake;
-  case '':
+    break;
+  case numOrStr === '':
     console.log('Empty String');
-    brake;
-  case NaN:
+    break;
+  case isNaN(+numOrStr):
     console.log(' number is Ba_NaN');
-    brake;
+    break;
   default:
     console.log('OK!');
-    brake;
+    break;
 }
 
 /*      Hometask additional "Check - list"
@@ -266,8 +286,9 @@ boolean -> number -> 1 / 0
 // const b = '10';
 // const c = true;
 
-var check1 = '1' == boolean;
-var check2 = check1 == Boolean(check1); // true
+// let check1 = '1' == boolean;
+
+// const check2 = check1 == Boolean(check1); // true
 
 // const checkToNumber1 = a === Number(b);  // false
 // const checkToString1 = String(a) === b;  // true

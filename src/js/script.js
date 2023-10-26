@@ -6,16 +6,16 @@
 показати через alert середнє арифметичне цих чисел
 
                 Variant 1  - simple;               */
-
+/*
 const firstNum1 = +prompt('put your forst number, please', '10');
 const secondNum1 = +prompt('Put your second number, please', '20');
 const thirdNum1 = +prompt('Put you third number, please', '40');
 const quantityNumbers1 = 3;
 const arithmeticMean1 = (firstNum1 + secondNum1 + thirdNum1) / quantityNumbers1;
 alert(`Your arithmeticMean is equal ${arithmeticMean1}`);
-
+*/
 // // Variant 2 advanced; (Это так, для себя для тренировки)
-
+/*
 const firstNum2 = +prompt('Enter your forst number, please', '20.9');
 
 if(isNaN(firstNum2)) {
@@ -55,7 +55,7 @@ if (decimalQuantity === 0) {
 
 } else {
   alert('Please put correct level of precision', '0 -3');
-}
+}*/
 
 /*  HOMEWORK 8 (two parts!!!)
 
@@ -86,7 +86,7 @@ if (decimalQuantity === 0) {
 
 //  Частина №1 i 2
 
-
+/*
 let userYearOld;
 let userTown;
 let userSport;
@@ -137,7 +137,7 @@ console.log(userAgree);
   ${userBithText} 
   ${userResidenceText} 
   and ${userFavSportText}`);
-}
+}*/
 
 
 /*  HOMEWORK 9 
@@ -163,19 +163,19 @@ console.log('OK!')
 let numOrStr = prompt('input number or string');
 console.log(numOrStr)
 
-switch(numOrStr) {
-  case null:
+switch(true) {
+  case numOrStr === null:
     console.log('ви скасували');
-  brake;
-  case '':
+  break;
+  case  numOrStr === '':
     console.log('Empty String');
-  brake;
-  case NaN:
+  break;
+  case isNaN( +numOrStr ):
     console.log(' number is Ba_NaN');
-  brake;
+  break;
   default:
     console.log('OK!');
-  brake;
+  break;
 }
 
 
@@ -290,9 +290,9 @@ boolean -> number -> 1 / 0
 // const b = '10';
 // const c = true;
 
- let check1 = '1' == boolean;
+// let check1 = '1' == boolean;
 
-const check2 = check1 == Boolean(check1); // true
+// const check2 = check1 == Boolean(check1); // true
 
 // const checkToNumber1 = a === Number(b);  // false
 // const checkToString1 = String(a) === b;  // true

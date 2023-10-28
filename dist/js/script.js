@@ -4,10 +4,10 @@
                   HOMEWORK 10 
 Вивести на сторінку в один рядок через кому числа від 10 до 20.
 */
-// for( let num = 10; num <=20; num++) {
+for (var num = 10; num <= 20; num++) {
+  document.write(" ".concat(num)); // вывод на страницу сайта как в задании НЕ В КОНСОЛЬ!
+}
 
-//   document.write(` ${num}`); // вывод на страницу сайта как в задании НЕ В КОНСОЛЬ!
-// }
 /*
 Вивести квадрати чисел від 10 до 20.
 */
@@ -19,9 +19,9 @@ for (var num1 = 10; num1 <= 20; num1++) {
   document.write('  ' + res1 + '  ');
 }
 document.write("<br>");
+
 /*
 Вивести таблицю множення на 7.
-
 */
 
 var num2 = 7;
@@ -65,10 +65,8 @@ for (var num5 = 1; num5 <= 500; num5++) {
 }
 
 console.log(summ / count);
-document.write("<br>");
 
 /* 
-
 Вивести суму лише парних чисел в діапазоні від 30 до 80.
 */
 
@@ -79,7 +77,6 @@ for (var num6 = 30; num6 <= 80; num6++) {
 }
 
 /*
-
 Вивести всі числа в діапазоні від 100 до 200 кратні 3.
 */
 
@@ -90,23 +87,42 @@ for (var num7 = 100; num7 <= 200; num7++) {
 }
 
 /*
-
 Дано натуральне число. Знайти та вивести на сторінку всі його дільники.
-
+Визначити кількість його парних дільників.
+Знайти суму його парних дільників.
 */
+
 var naturNumber = +prompt("Slava, enter here any natural number, please", '');
-for (var mult = 1; mult <= naturNumber; mult++) {
-  if (naturNumber % mult === 0) {
-    console.log(mult);
+var count1 = 0;
+var sumOfDivis = 0;
+for (var divis = 1; divis <= naturNumber; divis++) {
+  if (naturNumber % divis === 0) {
+    console.log(divis);
+    sumOfDivis += divis;
+    count1++;
   }
 }
+console.log("Summ of divisors is ".concat(sumOfDivis));
+console.log("NUMBER OF DIVISORS OF THIS NATURAL NUMBER IS ".concat(count1));
 
 /*
-Визначити кількість його парних дільників.
-
-
-Знайти суму його парних дільників.
-
-
 Надрукувати повну таблицю множення від 1 до 10.
+
+ ПЕРВАЯ ЖАЛКАЯ ПОПЫТКА ))))) 
+              let firstNumber = 1;
+
+              for(let secondNumber = 1; secondNumber <= 10 && firstNumber <= secondNumber ; secondNumber++) {
+                
+              let multResult = firstNumber * secondNumber;
+              console.log(` ${firstNumber} * ${secondNumber} = ${multResult} `);
+              
+              }
+              firstNumber++ ??????? 
 */
+
+for (var firstNumber = 1; firstNumber <= 10; firstNumber++) {
+  for (var secondNumber = 1; secondNumber <= 10; secondNumber++) {
+    var multResult = firstNumber * secondNumber;
+    console.log(" ".concat(firstNumber, " * ").concat(secondNumber, " = ").concat(multResult, " "));
+  }
+}

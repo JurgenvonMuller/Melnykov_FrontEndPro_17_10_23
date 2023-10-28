@@ -118,8 +118,9 @@ console.log(`NUMBER OF DIVISORS OF THIS NATURAL NUMBER IS ${count1}`);
               
               }
               firstNumber++ ??????? 
-*/
 
+              ВЛОЖЕННЫЙ ЦИКЛ........ МДЯ....
+*/
 
 for(let firstNumber = 1; firstNumber <=10; firstNumber++ ) {
   for(let secondNumber = 1; secondNumber <=10; secondNumber++ ) {

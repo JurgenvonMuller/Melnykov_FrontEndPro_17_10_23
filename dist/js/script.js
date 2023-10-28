@@ -65,20 +65,43 @@ for (var num5 = 1; num5 <= 500; num5++) {
 }
 
 console.log(summ / count);
+document.write("<br>");
 
 /* 
 
 Вивести суму лише парних чисел в діапазоні від 30 до 80.
 */
 
+for (var num6 = 30; num6 <= 80; num6++) {
+  if (num6 % 2 === 0) {
+    console.log(num6);
+  }
+}
+
 /*
 
 Вивести всі числа в діапазоні від 100 до 200 кратні 3.
+*/
 
+for (var num7 = 100; num7 <= 200; num7++) {
+  if (num7 % 3 === 0) {
+    console.log(num7);
+  }
+}
+
+/*
 
 Дано натуральне число. Знайти та вивести на сторінку всі його дільники.
 
+*/
+var naturNumber = +prompt("Slava, enter here any natural number, please", '');
+for (var mult = 1; mult <= naturNumber; mult++) {
+  if (naturNumber % mult === 0) {
+    console.log(mult);
+  }
+}
 
+/*
 Визначити кількість його парних дільників.
 
 

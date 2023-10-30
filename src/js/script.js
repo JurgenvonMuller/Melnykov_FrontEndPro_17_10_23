@@ -3,9 +3,9 @@
 Вивести на сторінку в один рядок через кому числа від 10 до 20.
 */
 for( let num = 10; num <=20; num++) {
-  document.write(` ${num}`); // вывод на страницу сайта как в задании НЕ В КОНСОЛЬ!
+  document.write(` ${num},  `); // вывод на страницу сайта как в задании НЕ В КОНСОЛЬ!
 }
-
+document.write(`<br> <br>`);
 /*
 Вивести квадрати чисел від 10 до 20.
 */
@@ -16,7 +16,7 @@ for(let num1 = 10; num1 <= 20; num1++) {
   //let res1 = num1 **2;  ----- , без доп переменной exp.
   document.write('  ' + res1 + '  ');
 }
-document.write(`<br>`);
+document.write(`<br> <br>`);
 
 /*
 Вивести таблицю множення на 7.
@@ -28,7 +28,7 @@ for( let multip = 0; multip <= 10; multip++) {
   document.write(`
   ${num2} * ${multip} = ${result2} <br>`);
 }
-document.write(`<br>`);
+document.write(`<br> <br>`);
 
 /*
 Знайти суму всіх цілих чисел від 1 до 15.
@@ -39,7 +39,7 @@ for(let num3 = 1; num3 <=15; num3++) {
   result3 += num3;
 }
 document.write(result3);
-document.write(`<br>`);
+document.write(`<br><br>`);
 
 /*
 Знайти добуток усіх цілих чисел від 15 до 35.
@@ -50,7 +50,7 @@ for(let num4 = 15; num4 <= 35; num4++) {
   result4 *= num4;
 }
 document.write(result4);
-document.write(`<br>`);
+document.write(`<br> <br>`);
 
 /*
 Знайти середнє арифметичне всіх цілих чисел від 1 до 500.
@@ -138,10 +138,7 @@ for(let firstNumber = 1; firstNumber <=10; firstNumber++ ) {
 for( let numberOne = 20; numberOne <= 30; numberOne += 0.5) {
   let resultNumber = numberOne;
   console.log(resultNumber);
-  document.write(`  ${resultNumber}, `)
 }
-
-
 
 /*
 Один долар коштує 27 гривень. Вивести дані з розрахунком вартості 10, 20, 30... 100 доларів.
@@ -212,9 +209,6 @@ if(numberM <= 1) {
 зведення числа 3 у деякий ступінь. 
 (Наприклад, числа 9, 81 можна отримати, а 13 - не можна).
 */
-
-
-
               // ТУТ Я ЧЕСТНО ПРОБОВАЛ ЧЕРЕЗ ЛАГОРИФМЫ )))) 
 // let userNumberAny = +prompt(`Put your number`, '');
 // let checkSqrt = Math.log(userNumberAny) / Math.log(3);
@@ -239,3 +233,5 @@ if (x === userNumberAny) {
 } else {
     console.log(`${userNumberAny} Не может быть получено путем возведения числа 3 в степень.`);
 }
+
+// KONIEC)

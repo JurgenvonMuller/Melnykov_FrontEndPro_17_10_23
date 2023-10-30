@@ -5,9 +5,10 @@
 Вивести на сторінку в один рядок через кому числа від 10 до 20.
 */
 for (var num = 10; num <= 20; num++) {
-  document.write(" ".concat(num)); // вывод на страницу сайта как в задании НЕ В КОНСОЛЬ!
+  document.write(" ".concat(num, ",  ")); // вывод на страницу сайта как в задании НЕ В КОНСОЛЬ!
 }
 
+document.write("<br> <br>");
 /*
 Вивести квадрати чисел від 10 до 20.
 */
@@ -18,7 +19,7 @@ for (var num1 = 10; num1 <= 20; num1++) {
   //let res1 = num1 **2;  ----- , без доп переменной exp.
   document.write('  ' + res1 + '  ');
 }
-document.write("<br>");
+document.write("<br> <br>");
 
 /*
 Вивести таблицю множення на 7.
@@ -29,7 +30,7 @@ for (var multip = 0; multip <= 10; multip++) {
   var result2 = num2 * multip;
   document.write("\n  ".concat(num2, " * ").concat(multip, " = ").concat(result2, " <br>"));
 }
-document.write("<br>");
+document.write("<br> <br>");
 
 /*
 Знайти суму всіх цілих чисел від 1 до 15.
@@ -40,7 +41,7 @@ for (var num3 = 1; num3 <= 15; num3++) {
   result3 += num3;
 }
 document.write(result3);
-document.write("<br>");
+document.write("<br><br>");
 
 /*
 Знайти добуток усіх цілих чисел від 15 до 35.
@@ -51,7 +52,7 @@ for (var num4 = 15; num4 <= 35; num4++) {
   result4 *= num4;
 }
 document.write(result4);
-document.write("<br>");
+document.write("<br> <br>");
 
 /*
 Знайти середнє арифметичне всіх цілих чисел від 1 до 500.
@@ -138,7 +139,6 @@ for (var firstNumber = 1; firstNumber <= 10; firstNumber++) {
 for (var numberOne = 20; numberOne <= 30; numberOne += 0.5) {
   var resultNumber = numberOne;
   console.log(resultNumber);
-  document.write("  ".concat(resultNumber, ", "));
 }
 
 /*
@@ -210,7 +210,6 @@ if (numberM <= 1) {
 зведення числа 3 у деякий ступінь. 
 (Наприклад, числа 9, 81 можна отримати, а 13 - не можна).
 */
-
 // ТУТ Я ЧЕСТНО ПРОБОВАЛ ЧЕРЕЗ ЛАГОРИФМЫ )))) 
 // let userNumberAny = +prompt(`Put your number`, '');
 // let checkSqrt = Math.log(userNumberAny) / Math.log(3);
@@ -234,3 +233,5 @@ if (x === userNumberAny) {
 } else {
   console.log("".concat(userNumberAny, " \u041D\u0435 \u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u043E \u043F\u0443\u0442\u0435\u043C \u0432\u043E\u0437\u0432\u0435\u0434\u0435\u043D\u0438\u044F \u0447\u0438\u0441\u043B\u0430 3 \u0432 \u0441\u0442\u0435\u043F\u0435\u043D\u044C."));
 }
+
+// KONIEC)

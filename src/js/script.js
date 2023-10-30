@@ -212,3 +212,25 @@ if(numberM <= 1) {
 зведення числа 3 у деякий ступінь. 
 (Наприклад, числа 9, 81 можна отримати, а 13 - не можна).
 */
+
+
+// let userNumberAny = +prompt(`Put your number`, ''); 
+// let logarifmPoOsnowaniu3 = Math.log(userNumberAny) / Math.log(3); //обратная функция от возведения 3 в степень.
+// let isNum3 = Number.isInteger(logarifmPoOsnowaniu3); 
+// // Проверяем, является ли результат целым числом функция возвращает булево ТРУ или ФАЛЬШ
+
+// if (isNum3) {
+//     console.log(` ${userNumberAny}  может быть получено путем возведения числа 3 в степень.`);
+// } else {
+//     console.log(` ${userNumberAny}  Не может быть получено путем возведения числа 3 в степень.`);
+// }
+
+
+let userNumberAny = +prompt(`Put your number`, '');
+let isPowerOf3 = Math.log(userNumberAny) / Math.log(3);
+
+if (userNumberAny > 0 && isPowerOf3 % 1 === 0) {
+    console.log(`${userNumberAny} может быть получено путем возведения числа 3 в степень.`);
+} else {
+    console.log(`${userNumberAny} Не может быть получено путем возведения числа 3 в степень.`);
+}

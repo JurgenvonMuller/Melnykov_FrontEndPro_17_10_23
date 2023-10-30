@@ -211,3 +211,22 @@ if (numberM <= 1) {
 зведення числа 3 у деякий ступінь. 
 (Наприклад, числа 9, 81 можна отримати, а 13 - не можна).
 */
+
+// let userNumberAny = +prompt(`Put your number`, ''); 
+// let logarifmPoOsnowaniu3 = Math.log(userNumberAny) / Math.log(3); //обратная функция от возведения 3 в степень.
+// let isNum3 = Number.isInteger(logarifmPoOsnowaniu3); 
+// // Проверяем, является ли результат целым числом функция возвращает булево ТРУ или ФАЛЬШ
+
+// if (isNum3) {
+//     console.log(` ${userNumberAny}  может быть получено путем возведения числа 3 в степень.`);
+// } else {
+//     console.log(` ${userNumberAny}  Не может быть получено путем возведения числа 3 в степень.`);
+// }
+
+var userNumberAny = +prompt("Put your number", '');
+var isPowerOf3 = Math.log(userNumberAny) / Math.log(3);
+if (userNumberAny > 0 && isPowerOf3 % 1 === 0) {
+  console.log("".concat(userNumberAny, " \u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u043E \u043F\u0443\u0442\u0435\u043C \u0432\u043E\u0437\u0432\u0435\u0434\u0435\u043D\u0438\u044F \u0447\u0438\u0441\u043B\u0430 3 \u0432 \u0441\u0442\u0435\u043F\u0435\u043D\u044C."));
+} else {
+  console.log("".concat(userNumberAny, " \u041D\u0435 \u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u043E \u043F\u0443\u0442\u0435\u043C \u0432\u043E\u0437\u0432\u0435\u0434\u0435\u043D\u0438\u044F \u0447\u0438\u0441\u043B\u0430 3 \u0432 \u0441\u0442\u0435\u043F\u0435\u043D\u044C."));
+}

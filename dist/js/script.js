@@ -99,7 +99,8 @@ var sumOfDivis = 0;
 var divisString = "Делители введенного числа: ";
 var pairDiv = '';
 var sumPairDiv = 0;
-// делитель изменен на  '2'
+// делитель не изменен на  '2' так как число "1" тоже является делителем 
+// но это больше математический спор о количестве делителей натурального числа.
 for (var divis = 1; divis <= naturNumber; divis++) {
   if (naturNumber % divis === 0) {
     divisString += divis + ', ';

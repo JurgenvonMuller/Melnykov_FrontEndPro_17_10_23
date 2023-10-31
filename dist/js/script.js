@@ -630,10 +630,59 @@ console.log(res);
 
 11 12 13 21 22 23 31 32 33
 */
-for (var i = 1; i <= 3; i++) {
-  for (var j = 1; j <= 3; j++) {
-    document.write("".concat(i).concat(j, "   "));
+//  for( let i = 1; i <=3; i++) {
+//   for(let j = 1; j <= 3; j++) {
+//     document.write(`${i}${j}   `);
+//   }
+//  }
+
+// заполнение массива 159 задание 
+
+/*
+Дано натуральне число. Знайти та вивести на сторінку всі його дільники.
+Визначити кількість його парних дільників.
+Знайти суму його парних дільників.
+*/
+
+// let naturNumber = +prompt("Slava, enter here any natural number, please", '');
+// let count1 = 0;
+// let sumOfDivis = 0;
+// let divisString = "Делители введенного числа: ";
+// let pairDiv;
+
+// for (let divis = 1; divis <= naturNumber; divis++) {
+//   if(naturNumber % divis === 0) {
+//     sumOfDivis += divis;
+//     divisString += divis +',  ';
+//     count1++;
+//       if(divis % 2 === 0) {
+//         divis = PairDiv;
+//       }
+//     }
+//   }
+// console.log(`Парные делители данного числа это: ${pairDiv}`)
+// console.log(`${divisString}`);
+// console.log(`Количество делителей: ${count1}`);
+// // console.log(`Summ of divisors is ${sumOfDivis}`);
+// // console.log(`NUMBER OF DIVISORS OF THIS NATURAL NUMBER IS ${count1}`);
+
+var naturNumber = +prompt("Slava, enter here any natural number, please", '');
+var count1 = 0;
+var sumOfDivis = 0;
+var divisString = "Делители введенного числа: ";
+var pairDiv = '';
+var sumPairDiv = 0;
+for (var divis = 1; divis <= naturNumber; divis++) {
+  if (naturNumber % divis === 0) {
+    divisString += divis + ', ';
+    count1++;
+    if (divis % 2 === 0) {
+      pairDiv += divis + ', ';
+      sumPairDiv += divis;
+    }
   }
 }
-
-// заполнение массива 159 задание
+console.log("\u041F\u0430\u0440\u043D\u044B\u0435 \u0434\u0435\u043B\u0438\u0442\u0435\u043B\u0438 \u0434\u0430\u043D\u043D\u043E\u0433\u043E \u0447\u0438\u0441\u043B\u0430: ".concat(pairDiv));
+console.log("".concat(divisString));
+console.log("\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0434\u0435\u043B\u0438\u0442\u0435\u043B\u0435\u0439: ".concat(count1));
+console.log("\u0421\u0443\u043C\u043C\u0430 \u043F\u0430\u0440\u043D\u044B\u0445 \u0434\u0435\u043B\u0438\u0442\u0435\u043B\u0435\u0439: ".concat(sumPairDiv));

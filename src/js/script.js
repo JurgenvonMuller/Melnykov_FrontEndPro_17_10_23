@@ -634,10 +634,63 @@ console.log(res);
 
 11 12 13 21 22 23 31 32 33
  */
- for( let i = 1; i <=3; i++) {
-  for(let j = 1; j <= 3; j++) {
-    document.write(`${i}${j}   `);
-  }
- }
+//  for( let i = 1; i <=3; i++) {
+//   for(let j = 1; j <= 3; j++) {
+//     document.write(`${i}${j}   `);
+//   }
+//  }
 
  // заполнение массива 159 задание 
+
+ 
+/*
+Дано натуральне число. Знайти та вивести на сторінку всі його дільники.
+Визначити кількість його парних дільників.
+Знайти суму його парних дільників.
+*/
+
+// let naturNumber = +prompt("Slava, enter here any natural number, please", '');
+// let count1 = 0;
+// let sumOfDivis = 0;
+// let divisString = "Делители введенного числа: ";
+// let pairDiv;
+
+// for (let divis = 1; divis <= naturNumber; divis++) {
+//   if(naturNumber % divis === 0) {
+//     sumOfDivis += divis;
+//     divisString += divis +',  ';
+//     count1++;
+//       if(divis % 2 === 0) {
+//         divis = PairDiv;
+//       }
+//     }
+//   }
+// console.log(`Парные делители данного числа это: ${pairDiv}`)
+// console.log(`${divisString}`);
+// console.log(`Количество делителей: ${count1}`);
+// // console.log(`Summ of divisors is ${sumOfDivis}`);
+// // console.log(`NUMBER OF DIVISORS OF THIS NATURAL NUMBER IS ${count1}`);
+
+
+let naturNumber = +prompt("Slava, enter here any natural number, please", '');
+let count1 = 0;
+let sumOfDivis = 0;
+let divisString = "Делители введенного числа: ";
+let pairDiv = '';
+let sumPairDiv = 0;
+
+for (let divis = 1; divis <= naturNumber; divis++) {
+  if (naturNumber % divis === 0) {
+    divisString += divis + ', ';
+    count1++;
+    if (divis % 2 === 0) {
+      pairDiv += divis + ', ';
+      sumPairDiv  += divis;
+    }
+  }
+}
+
+console.log(`Парные делители данного числа: ${pairDiv}`);
+console.log(`${divisString}`);
+console.log(`Количество делителей: ${count1}`);
+console.log(`Сумма парных делителей: ${sumPairDiv}`)

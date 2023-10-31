@@ -97,7 +97,7 @@ for (var num7 = 100; num7 <= 200; num7++) {
 var naturNumber = +prompt("Slava, enter here any natural number, please", '');
 var count1 = 0;
 var sumOfDivis = 0;
-for (var divis = 1; divis <= naturNumber; divis++) {
+for (var divis = 2; divis <= naturNumber; divis++) {
   if (naturNumber % divis === 0) {
     console.log(divis);
     sumOfDivis += divis;

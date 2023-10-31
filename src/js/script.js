@@ -95,7 +95,7 @@ let naturNumber = +prompt("Slava, enter here any natural number, please", '');
 let count1 = 0;
 let sumOfDivis = 0;
 
-for (let divis = 1; divis <= naturNumber; divis++) {
+for (let divis = 2; divis <= naturNumber; divis++) {
   if(naturNumber % divis === 0) {
     console.log(divis);
     sumOfDivis += divis;

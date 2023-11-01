@@ -92,29 +92,30 @@
 Знайти суму його парних дільників.
 */
 
-// ИСПРАВЛЕН КОД И ВЫПОЛНЯЕТ ЗАДАНИЕ 
-var naturNumber = +prompt("Enter here any natural number, please", '');
-var count1 = 0;
-var sumOfDivis = 0;
-var divisString = "Делители введенного числа: ";
-var pairDiv = '';
-var sumPairDiv = 0;
-// делитель не изменен на  '2' так как число "1" тоже является делителем 
-// но это больше математический спор о количестве делителей натурального числа.
-for (var divis = 1; divis <= naturNumber; divis++) {
-  if (naturNumber % divis === 0) {
-    divisString += divis + ', ';
-    if (divis % 2 === 0) {
-      pairDiv += divis + ', ';
-      sumPairDiv += divis;
-      count1++;
-    }
-  }
-}
-console.log("".concat(divisString));
-console.log("\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u043F\u0430\u0440\u043D\u044B\u0445 \u0434\u0435\u043B\u0438\u0442\u0435\u043B\u0435\u0439: ".concat(count1));
-console.log("\u041F\u0430\u0440\u043D\u044B\u0435 \u0434\u0435\u043B\u0438\u0442\u0435\u043B\u0438 \u0434\u0430\u043D\u043D\u043E\u0433\u043E \u0447\u0438\u0441\u043B\u0430: ".concat(pairDiv)); // опция
-console.log("\u0421\u0443\u043C\u043C\u0430 \u043F\u0430\u0440\u043D\u044B\u0445 \u0434\u0435\u043B\u0438\u0442\u0435\u043B\u0435\u0439: ".concat(sumPairDiv));
+// // ИСПРАВЛЕН КОД И ВЫПОЛНЯЕТ ЗАДАНИЕ 
+// let naturNumber = +prompt("Enter here any natural number, please", '');
+// let count1 = 0;
+// let sumOfDivis = 0;
+// let divisString = "Делители введенного числа: ";
+// let pairDiv = '';
+// let sumPairDiv = 0;
+// // делитель не изменен на  '2' так как число "1" тоже является делителем 
+// // но это больше математический спор о количестве делителей натурального числа.
+// for (let divis = 1; divis <= naturNumber; divis++) {
+//   if (naturNumber % divis === 0) {
+//     divisString += divis + ', ';
+//     if (divis % 2 === 0) {
+//       pairDiv += divis + ', ';
+//       sumPairDiv  += divis;
+//       count1++;
+//     }
+//   }
+// }
+
+// console.log(`${divisString}`);
+// console.log(`Количество парных делителей: ${count1}`);
+// console.log(`Парные делители данного числа: ${pairDiv}`); // опция
+// console.log(`Сумма парных делителей: ${sumPairDiv}`)
 
 /*
 Надрукувати повну таблицю множення від 1 до 10.
@@ -131,72 +132,69 @@ console.log("\u0421\u0443\u043C\u043C\u0430 \u043F\u0430\u0440\u043D\u044B\u0445
 Написати цикли, які роблять наступне:\
 Вивести числа від 20 до 30 через пропуск, використовуючи крок 0,5 (20 20,5 21 21,5….).
 */
+var string = '';
+for (var numberOne = 20; numberOne <= 30; numberOne += 0.5) {
+  console.log(numberOne); // возвращает numbers с шагом 0,5 от 20 до 30
 
-// for( let numberOne = 20; numberOne <= 30; numberOne += 0.5) {
-//   let resultNumber = numberOne;
-//   console.log(resultNumber);
-// }
+  var resultNumber = numberOne.toString(); //опция
+  string += resultNumber + ' '; // опция
+}
+
+console.log(string); // опция - красиво выводит строку)))
 
 /*
 Один долар коштує 27 гривень. Вивести дані з розрахунком вартості 10, 20, 30... 100 доларів.
 */
-// let oneUsdInUah = 27;
-
-// for (let oneUsd = 10; oneUsd <= 100; oneUsd = oneUsd + 10) {
-//  let usdInUah = oneUsdInUah * oneUsd;
-//  console.log(` ${usdInUah} `);
-// }
+var oneUsdInUah = 27; // курс гривны к доллару
+uahInUsdQuantity;
+for (var usdQuantity = 10; usdQuantity <= 100; usdQuantity = usdQuantity + 10) {
+  var _uahInUsdQuantity = oneUsdInUah * usdQuantity;
+  console.log(" ".concat(_uahInUsdQuantity, " "));
+}
 
 /*
 Дане ціле число. Вивести всі цілі числа від 1 до 100, 
 квадрат яких не перевищує числа N.
 */
 
-// let numberN = +prompt (`enter you number`, '');
-
-// for (let j = 1; j <= 100; j++) {
-// let result = j ** 2; 
-//   if( result < numberN && result % 1 === 0)  {  
-/*
-( result < numberN && Number.isInteger(result)) - стандартная функция Number 
-можно использовать------------------------------
-                      для проверки является ли число целым 
-и доп информация:
-Math.sqrt (result) - возвращает корень от result. то есть j.
-// */
-//     console.log(result);
-//   }
-// }
+var userNumber = +prompt("enter you number", '');
+for (var sqrt = 1; sqrt <= 100; sqrt++) {
+  var _resultNumber = Math.pow(sqrt, 2);
+  if (_resultNumber <= userNumber) {
+    console.log(_resultNumber);
+  }
+}
 
 /*
 Дане ціле число. З'ясувати, чи є воно простим (простим називається число, більше 1,
 які не мають інших дільників крім 1 і себе).
 */
 
-// let numberM = +prompt(`Put your number from 2 `, '');
-// let numSimp = true; // работаем через булевы значения если тру - то  выводим результат.
+var userNumberSimple = +prompt("Put your number from 2 ", '');
+var numberIsSimple = true; // работаем через булевы значения если тру - то  выводим результат.
 
-// if(numberM <= 1) {
-//   numSimp = false;
-//   console.log(` It is not a valid number`, '');
-// } else {
-//   for(let k = 2; k <= Math.sqrt(numberM); k++) { // проверка выполнения числа на простоту 
-//     //  1. делитель должен начинаться с 2 (не может быть меньше 2); 
-//     // 2. делитель не должен превышать квадратного корня из данного нам числа;
-//     // 3. шаг поиска делителя - 1 так как ищем простое число (не дробное)
-//     if(numberM % k === 0) {
-//       numSimp = false;
-//       break;  // можно и нужно использовать для ускорения итераций при нахождении первого ТРУ цикл прерывается
-//       //хотя как по мне - начинается новая итерация. 
-//     }
-//   }
-//   if(numSimp) {
-//     console.log( `the number ${numberM} is a simple number`)
-//   }
-//   if(!numSimp) {
-//     console.log( `the number ${numberM} is  NOT a simple number`)
-//   }
-// }
+if (userNumberSimple <= 1) {
+  numberIsSimple = false;
+  console.log(" It is not a valid number", '');
+} else {
+  for (var k = 2; k <= Math.sqrt(userNumberSimple); k++) {
+    // проверка выполнения числа на простоту 
+    //  1. делитель должен начинаться с 2 (не может быть меньше 2); 
+    // 2. делитель не должен превышать квадратного корня из данного нам числа;
+    // 3. шаг поиска делителя - 1 так как ищем простое число (не дробное)
+    if (userNumberSimple % k === 0) {
+      numberIsSimple = false;
+      break; // можно и нужно использовать для ускорения итераций при нахождении первого ТРУ цикл прерывается
+      //хотя как по мне - начинается новая итерация. 
+    }
+  }
+
+  if (numberIsSimple) {
+    console.log("the number ".concat(userNumbersimple, " is a simple number"));
+  } else {
+    console.log("the number ".concat(userNumbersimple, " is  NOT a simple number"));
+  }
+}
 
 /// ЭТО БЫЛ ЗАВОРОТ МОЗГОВ И КОШМАР!!! 
 

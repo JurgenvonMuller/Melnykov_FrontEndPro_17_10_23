@@ -91,30 +91,30 @@
 Знайти суму його парних дільників.
 */
 
-// ИСПРАВЛЕН КОД И ВЫПОЛНЯЕТ ЗАДАНИЕ 
-let naturNumber = +prompt("Enter here any natural number, please", '');
-let count1 = 0;
-let sumOfDivis = 0;
-let divisString = "Делители введенного числа: ";
-let pairDiv = '';
-let sumPairDiv = 0;
-// делитель не изменен на  '2' так как число "1" тоже является делителем 
-// но это больше математический спор о количестве делителей натурального числа.
-for (let divis = 1; divis <= naturNumber; divis++) {
-  if (naturNumber % divis === 0) {
-    divisString += divis + ', ';
-    if (divis % 2 === 0) {
-      pairDiv += divis + ', ';
-      sumPairDiv  += divis;
-      count1++;
-    }
-  }
-}
+// // ИСПРАВЛЕН КОД И ВЫПОЛНЯЕТ ЗАДАНИЕ 
+// let naturNumber = +prompt("Enter here any natural number, please", '');
+// let count1 = 0;
+// let sumOfDivis = 0;
+// let divisString = "Делители введенного числа: ";
+// let pairDiv = '';
+// let sumPairDiv = 0;
+// // делитель не изменен на  '2' так как число "1" тоже является делителем 
+// // но это больше математический спор о количестве делителей натурального числа.
+// for (let divis = 1; divis <= naturNumber; divis++) {
+//   if (naturNumber % divis === 0) {
+//     divisString += divis + ', ';
+//     if (divis % 2 === 0) {
+//       pairDiv += divis + ', ';
+//       sumPairDiv  += divis;
+//       count1++;
+//     }
+//   }
+// }
 
-console.log(`${divisString}`);
-console.log(`Количество парных делителей: ${count1}`);
-console.log(`Парные делители данного числа: ${pairDiv}`); // опция
-console.log(`Сумма парных делителей: ${sumPairDiv}`)
+// console.log(`${divisString}`);
+// console.log(`Количество парных делителей: ${count1}`);
+// console.log(`Парные делители данного числа: ${pairDiv}`); // опция
+// console.log(`Сумма парных делителей: ${sumPairDiv}`)
 
 /*
 Надрукувати повну таблицю множення від 1 до 10.
@@ -129,75 +129,73 @@ console.log(`Сумма парных делителей: ${sumPairDiv}`)
 
                                 /* HOMEWORK 11 
 Написати цикли, які роблять наступне:\
-
 Вивести числа від 20 до 30 через пропуск, використовуючи крок 0,5 (20 20,5 21 21,5….).
 */
+let string = '';
+for( let numberOne = 20; numberOne <= 30; numberOne += 0.5) {
+  console.log(numberOne); // возвращает numbers с шагом 0,5 от 20 до 30
 
-// for( let numberOne = 20; numberOne <= 30; numberOne += 0.5) {
-//   let resultNumber = numberOne;
-//   console.log(resultNumber);
-// }
+  let resultNumber = numberOne.toString(); //опция
+  string += resultNumber +' '; // опция
+}
+console.log(string); // опция - красиво выводит строку)))
 
 /*
 Один долар коштує 27 гривень. Вивести дані з розрахунком вартості 10, 20, 30... 100 доларів.
 */
-// let oneUsdInUah = 27;
+let oneUsdInUah = 27; // курс гривны к доллару
+uahInUsdQuantity;
+for (let usdQuantity = 10; usdQuantity <= 100; usdQuantity = usdQuantity + 10) {
+let uahInUsdQuantity = oneUsdInUah * usdQuantity; 
+console.log(` ${uahInUsdQuantity} `);
+}
 
-// for (let oneUsd = 10; oneUsd <= 100; oneUsd = oneUsd + 10) {
-//  let usdInUah = oneUsdInUah * oneUsd;
-//  console.log(` ${usdInUah} `);
-// }
 
 /*
 Дане ціле число. Вивести всі цілі числа від 1 до 100, 
 квадрат яких не перевищує числа N.
 */
 
-// let numberN = +prompt (`enter you number`, '');
+let userNumber = +prompt (`enter you number`, '');
 
-// for (let j = 1; j <= 100; j++) {
-// let result = j ** 2; 
-//   if( result < numberN && result % 1 === 0)  {  
-/*
-( result < numberN && Number.isInteger(result)) - стандартная функция Number 
-можно использовать------------------------------
-                      для проверки является ли число целым 
-и доп информация:
-Math.sqrt (result) - возвращает корень от result. то есть j.
-// */
-//     console.log(result);
-//   }
-// }
+for (let sqrt = 1; sqrt <= 100; sqrt++) {
+ let resultNumber = sqrt ** 2; 
+  if(resultNumber <= userNumber)  {  
+
+    console.log(resultNumber);
+  }
+}
+
+
 
 /*
 Дане ціле число. З'ясувати, чи є воно простим (простим називається число, більше 1,
 які не мають інших дільників крім 1 і себе).
 */
 
-// let numberM = +prompt(`Put your number from 2 `, '');
-// let numSimp = true; // работаем через булевы значения если тру - то  выводим результат.
+let userNumberSimple = +prompt(`Put your number from 2 `, '');
+let numberIsSimple = true; // работаем через булевы значения если тру - то  выводим результат.
 
-// if(numberM <= 1) {
-//   numSimp = false;
-//   console.log(` It is not a valid number`, '');
-// } else {
-//   for(let k = 2; k <= Math.sqrt(numberM); k++) { // проверка выполнения числа на простоту 
-//     //  1. делитель должен начинаться с 2 (не может быть меньше 2); 
-//     // 2. делитель не должен превышать квадратного корня из данного нам числа;
-//     // 3. шаг поиска делителя - 1 так как ищем простое число (не дробное)
-//     if(numberM % k === 0) {
-//       numSimp = false;
-//       break;  // можно и нужно использовать для ускорения итераций при нахождении первого ТРУ цикл прерывается
-//       //хотя как по мне - начинается новая итерация. 
-//     }
-//   }
-//   if(numSimp) {
-//     console.log( `the number ${numberM} is a simple number`)
-//   }
-//   if(!numSimp) {
-//     console.log( `the number ${numberM} is  NOT a simple number`)
-//   }
-// }
+if(userNumberSimple <= 1) {
+  numberIsSimple = false;
+  console.log(` It is not a valid number`, '');
+} else {
+  for(let k = 2; k <= Math.sqrt(userNumberSimple); k++) { // проверка выполнения числа на простоту 
+    //  1. делитель должен начинаться с 2 (не может быть меньше 2); 
+    // 2. делитель не должен превышать квадратного корня из данного нам числа;
+    // 3. шаг поиска делителя - 1 так как ищем простое число (не дробное)
+    if(userNumberSimple % k === 0) {
+      numberIsSimple = false;
+      break;  // можно и нужно использовать для ускорения итераций при нахождении первого ТРУ цикл прерывается
+      //хотя как по мне - начинается новая итерация. 
+    }
+  }
+  if(numberIsSimple) {
+    console.log( `the number ${userNumbersimple} is a simple number`)
+  } else {
+    console.log( `the number ${userNumbersimple} is  NOT a simple number`)
+  }
+}
 
 /// ЭТО БЫЛ ЗАВОРОТ МОЗГОВ И КОШМАР!!! 
 

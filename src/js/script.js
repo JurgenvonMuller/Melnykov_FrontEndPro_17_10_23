@@ -215,15 +215,12 @@ if(userNumberSimple <= 1) {
 let userNumberAny = +prompt(`Введите ваше число`, '');
 let x = 1;
 
-while (x < userNumberAny) {
+while (x <= userNumberAny) {
     x *= 3;
 }
 const message = (x === userNumberAny) ?
   `${userNumberAny} может быть получено путем возведения числа 3 в степень.` :
   `${userNumberAny} не может быть получено путем возведения числа 3 в степень.`;
-
-
-
 // KONIEC)
 
 /*  ЗАМЕЧАНИЯ ПРЕПОДАВАТЕЛЯ

@@ -128,9 +128,13 @@
 // }
 
                                 /* HOMEWORK 11 
+
+                                
 Написати цикли, які роблять наступне:\
 Вивести числа від 20 до 30 через пропуск, використовуючи крок 0,5 (20 20,5 21 21,5….).
 */
+// ================ ПРОСТО ДОБАВИЛ ОПЦИЮ ВЫВОДА В СТРОКУ ДЛЯ СЕБЯ ============
+
 let string = '';
 for( let numberOne = 20; numberOne <= 30; numberOne += 0.5) {
   console.log(numberOne); // возвращает numbers с шагом 0,5 от 20 до 30
@@ -143,18 +147,22 @@ console.log(string); // опция - красиво выводит строку)
 /*
 Один долар коштує 27 гривень. Вивести дані з розрахунком вартості 10, 20, 30... 100 доларів.
 */
+
+// ==========    ИЗМЕНИЛ НАЗВАНИЯ ПЕРЕМЕННЫХ НА БОЛЕЕ ЛОГИЧНЫЕ ===========
+
 let oneUsdInUah = 27; // курс гривны к доллару
-uahInUsdQuantity;
+let uahInUsdQuantity;
 for (let usdQuantity = 10; usdQuantity <= 100; usdQuantity = usdQuantity + 10) {
 let uahInUsdQuantity = oneUsdInUah * usdQuantity; 
 console.log(` ${uahInUsdQuantity} `);
 }
 
-
 /*
 Дане ціле число. Вивести всі цілі числа від 1 до 100, 
 квадрат яких не перевищує числа N.
 */
+
+// ==========    ИЗМЕНИЛ НАЗВАНИЯ ПЕРЕМЕННЫХ НА БОЛЕЕ ЛОГИЧНЫЕ ===========
 
 let userNumber = +prompt (`enter you number`, '');
 
@@ -166,73 +174,61 @@ for (let sqrt = 1; sqrt <= 100; sqrt++) {
   }
 }
 
-
-
 /*
 Дане ціле число. З'ясувати, чи є воно простим (простим називається число, більше 1,
 які не мають інших дільників крім 1 і себе).
 */
+// ==========    ИЗМЕНИЛ НАЗВАНИЯ ПЕРЕМЕННЫХ НА БОЛЕЕ ЛОГИЧНЫЕ ===========
 
 let userNumberSimple = +prompt(`Put your number from 2 `, '');
 let numberIsSimple = true; // работаем через булевы значения если тру - то  выводим результат.
 
 if(userNumberSimple <= 1) {
   numberIsSimple = false;
-  console.log(` It is not a valid number`, '');
+  console.log(` It is not a valid number`);
 } else {
   for(let k = 2; k <= Math.sqrt(userNumberSimple); k++) { // проверка выполнения числа на простоту 
-    //  1. делитель должен начинаться с 2 (не может быть меньше 2); 
+    // 1. делитель должен начинаться с 2 (не может быть меньше 2); 
     // 2. делитель не должен превышать квадратного корня из данного нам числа;
     // 3. шаг поиска делителя - 1 так как ищем простое число (не дробное)
     if(userNumberSimple % k === 0) {
       numberIsSimple = false;
-      break;  // можно и нужно использовать для ускорения итераций при нахождении первого ТРУ цикл прерывается
-      //хотя как по мне - начинается новая итерация. 
+    break;   
     }
   }
-  if(numberIsSimple) {
-    console.log( `the number ${userNumbersimple} is a simple number`)
-  } else {
-    console.log( `the number ${userNumbersimple} is  NOT a simple number`)
-  }
+  // if(numberIsSimple) {
+  //   console.log( `the number ${userNumberSimple} is a simple number`)
+  // } else {
+  //   console.log( `the number ${userNumberSimple} is  NOT a simple number`)
+  // }
+
+  //==============ПЕРЕПИСАЛ ЧЕРЕЗ ТРЕНАРНЫЙ ОПЕРАТОР===========
+  console.log(numberIsSimple ? `the number ${userNumberSimple} is a simple number` : `the number ${userNumberSimple} is NOT a simple number`);
 }
-
-/// ЭТО БЫЛ ЗАВОРОТ МОЗГОВ И КОШМАР!!! 
-
 
 /*
 Дане деяке число. Визначити, чи можна одержати це число шляхом 
 зведення числа 3 у деякий ступінь. 
 (Наприклад, числа 9, 81 можна отримати, а 13 - не можна).
 */
-              // ТУТ Я ЧЕСТНО ПРОБОВАЛ ЧЕРЕЗ ЛАГОРИФМЫ )))) 
-// let userNumberAny = +prompt(`Put your number`, '');
-// let checkSqrt = Math.log(userNumberAny) / Math.log(3);
-// console.log(checkSqrt); // возвращает 2.0000000000000004 поэтому округляем??? ) 
-// и ничего не получится ))))) 
 
-// if (userNumberAny > 0 && checkSqrt % 1 === 0) {
-//     console.log(`${userNumberAny} может быть получено путем возведения числа 3 в степень.`);
-// } else {
-//     console.log(`${userNumberAny} Не может быть получено путем возведения числа 3 в степень.`);
-// }
-                // способ деревянный но верный )))) Хотя долгий при вводе больших чисел.
+let userNumberAny = +prompt(`Введите ваше число`, '');
+let x = 1;
 
-// let userNumberAny = +prompt(`Введите ваше число`, '');
-// let x = 1;
+while (x < userNumberAny) {
+    x *= 3;
+}
+const message = (x === userNumberAny) ?
+  `${userNumberAny} может быть получено путем возведения числа 3 в степень.` :
+  `${userNumberAny} не может быть получено путем возведения числа 3 в степень.`;
 
-// while (x < userNumberAny) {
-//     x *= 3;
-// }
-// if (x === userNumberAny) {
-//     console.log(`${userNumberAny} может быть получено путем возведения числа 3 в степень.`);
-// } else {
-//     console.log(`${userNumberAny} Не может быть получено путем возведения числа 3 в степень.`);
-// }
+
 
 // KONIEC)
 
-/*
+/*  ЗАМЕЧАНИЯ ПРЕПОДАВАТЕЛЯ
+
+
 2 - назви зминніх дуже нелогічні
 
 let oneUsd = 10

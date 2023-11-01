@@ -1,5 +1,3 @@
-"use strict";
-
 /*  HOMEWORK 9 
 Переписати код нижче з використанням конструкції switch…case*/
 
@@ -666,23 +664,26 @@ console.log(res);
 // // console.log(`Summ of divisors is ${sumOfDivis}`);
 // // console.log(`NUMBER OF DIVISORS OF THIS NATURAL NUMBER IS ${count1}`);
 
-var naturNumber = +prompt("Slava, enter here any natural number, please", '');
-var count1 = 0;
-var sumOfDivis = 0;
-var divisString = "Делители введенного числа: ";
-var pairDiv = '';
-var sumPairDiv = 0;
-for (var divis = 1; divis <= naturNumber; divis++) {
-  if (naturNumber % divis === 0) {
-    divisString += divis + ', ';
-    count1++;
-    if (divis % 2 === 0) {
-      pairDiv += divis + ', ';
-      sumPairDiv += divis;
-    }
-  }
-}
-console.log("\u041F\u0430\u0440\u043D\u044B\u0435 \u0434\u0435\u043B\u0438\u0442\u0435\u043B\u0438 \u0434\u0430\u043D\u043D\u043E\u0433\u043E \u0447\u0438\u0441\u043B\u0430: ".concat(pairDiv));
-console.log("".concat(divisString));
-console.log("\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0434\u0435\u043B\u0438\u0442\u0435\u043B\u0435\u0439: ".concat(count1));
-console.log("\u0421\u0443\u043C\u043C\u0430 \u043F\u0430\u0440\u043D\u044B\u0445 \u0434\u0435\u043B\u0438\u0442\u0435\u043B\u0435\u0439: ".concat(sumPairDiv));
+// let naturNumber = +prompt("Slava, enter here any natural number, please", '');
+// let count1 = 0;
+// let sumOfDivis = 0;
+// let divisString = "Делители введенного числа: ";
+// let pairDiv = '';
+// let sumPairDiv = 0;
+
+// for (let divis = 1; divis <= naturNumber; divis++) {
+//   if (naturNumber % divis === 0) {
+//     divisString += divis + ', ';
+//     count1++;
+//     if (divis % 2 === 0) {
+//       pairDiv += divis + ', ';
+//       sumPairDiv  += divis;
+//     }
+//   }
+// }
+
+// console.log(`Парные делители данного числа: ${pairDiv}`);
+// console.log(`${divisString}`);
+// console.log(`Количество делителей: ${count1}`);
+// console.log(`Сумма парных делителей: ${sumPairDiv}`)
+"use strict";

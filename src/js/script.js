@@ -672,25 +672,25 @@ console.log(res);
 // // console.log(`NUMBER OF DIVISORS OF THIS NATURAL NUMBER IS ${count1}`);
 
 
-let naturNumber = +prompt("Slava, enter here any natural number, please", '');
-let count1 = 0;
-let sumOfDivis = 0;
-let divisString = "Делители введенного числа: ";
-let pairDiv = '';
-let sumPairDiv = 0;
+// let naturNumber = +prompt("Slava, enter here any natural number, please", '');
+// let count1 = 0;
+// let sumOfDivis = 0;
+// let divisString = "Делители введенного числа: ";
+// let pairDiv = '';
+// let sumPairDiv = 0;
 
-for (let divis = 1; divis <= naturNumber; divis++) {
-  if (naturNumber % divis === 0) {
-    divisString += divis + ', ';
-    count1++;
-    if (divis % 2 === 0) {
-      pairDiv += divis + ', ';
-      sumPairDiv  += divis;
-    }
-  }
-}
+// for (let divis = 1; divis <= naturNumber; divis++) {
+//   if (naturNumber % divis === 0) {
+//     divisString += divis + ', ';
+//     count1++;
+//     if (divis % 2 === 0) {
+//       pairDiv += divis + ', ';
+//       sumPairDiv  += divis;
+//     }
+//   }
+// }
 
-console.log(`Парные делители данного числа: ${pairDiv}`);
-console.log(`${divisString}`);
-console.log(`Количество делителей: ${count1}`);
-console.log(`Сумма парных делителей: ${sumPairDiv}`)
+// console.log(`Парные делители данного числа: ${pairDiv}`);
+// console.log(`${divisString}`);
+// console.log(`Количество делителей: ${count1}`);
+// console.log(`Сумма парных делителей: ${sumPairDiv}`)

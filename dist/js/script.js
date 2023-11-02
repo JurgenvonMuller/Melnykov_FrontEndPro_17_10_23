@@ -1,3 +1,25 @@
+"use strict";
+
+var maxElem = 0;
+var key_maxElem = 0;
+var arr = [1, 2, 6, 4, 5, 3];
+for (var i = 0; i < arr.length - 1; i++) {
+  if (arr[i] > maxElem) {
+    maxElem = arr[i];
+    key_maxElem = i;
+  }
+  if (arr[i] !== maxElem && i !== key_maxElem) {
+    arr[i] = 0;
+  }
+}
+console.log(maxElem);
+console.log(key_maxElem);
+// for(let i = 0;  i <= arr.length - 1; i++) {
+
+// }
+
+console.log(arr);
+
 /*  HOMEWORK 9 
 Переписати код нижче з використанням конструкції switch…case*/
 
@@ -686,4 +708,3 @@ console.log(res);
 // console.log(`${divisString}`);
 // console.log(`Количество делителей: ${count1}`);
 // console.log(`Сумма парных делителей: ${sumPairDiv}`)
-"use strict";

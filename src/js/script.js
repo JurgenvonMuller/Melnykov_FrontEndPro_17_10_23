@@ -21,31 +21,8 @@ let teacherArray = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 2
 // 9. Знайти добуток позитивних елементів.
 let countPositiveElem_var1 = 0;   // КОличество позитивных элементов вариант 1
 let countNegativeElem_var1 = 0;   // Количество негативных элементов вариант 1
-let countPositiveElem_var2 = 0;   // КОличество позитивных элементов ваиант 2
-let countNegativeElem_var2 = 0;   // Количество негативных элементов  вариант 2
 let summPositiveElemTeacherArray_var1 = 0;  // сумма позитивных элементов решения вариант 1
-let summPositiveElemTeacherArray_var2 = 0;  // сумма позитивных элементов  решения вариант 2
-let productPositiveElem = 1;      // Произведение положительных элементов массива
 
-// переменные для второго блока 
-let minElemOfArray = teacherArray[0]; // Наименьший элемент массива
-let key_minElemOfArray = 0;           // Ключ наименьшего элемента массива
-let maxElemOfArray = teacherArray[0]; // наибольший элемент массива
-let key_maxElemOfArray = 0;           // ключ наибольшего элемента массива.
-
-// переменные для 3-го блока 
-let count_number_OddElements = 0; // кількість парних позитивних елементів
-let count_number_Odd_Par_Elements = 0;
-let count_number_EvenElements = 0; // кількість непарних позитивних елементів
-let count_number_Odd_None_Par_Elements = 0;
-let sum_Odd_Positive_Elements = 0; // сума парних позитивних елементів
-let sum_Odd_Par_Elements = 0;
-let sum_Even_Negative_Elements = 0; // сума непарних позитивних елементів
-let sum_Odd_None_Par_elements = 0;
-
-/* Знайти суму та кількість позитивних елементів.
-  Визначити кількість негативних елементів.
-  Знайти добуток позитивних елементів.*/
 for(let elem of teacherArray) {
   if(elem > 0) {
     summPositiveElemTeacherArray_var1 += elem;
@@ -60,6 +37,30 @@ console.log(countPositiveElem_var1  + ' - количество положите�
 console.log(countNegativeElem_var1 + ' - количество отрицательных элементов в массиве');
 console.log(productPositiveElem + ' - произведение положительных элементов массива');
 
+
+//  переменные для первого блока задания 
+
+let countPositiveElem_var2 = 0;   // КОличество позитивных элементов ваиант 2
+let countNegativeElem_var2 = 0;   // Количество негативных элементов  вариант 2
+let summPositiveElemTeacherArray_var2 = 0;  // сумма позитивных элементов  решения вариант 2
+let productPositiveElem = 1;      // Произведение положительных элементов массива
+
+// переменные для второго блока 
+let minElemOfArray = teacherArray[0]; // Наименьший элемент массива
+let key_minElemOfArray = 0;           // Ключ наименьшего элемента массива
+let maxElemOfArray = teacherArray[0]; // наибольший элемент массива
+let key_maxElemOfArray = 0;           // ключ наибольшего элемента массива.
+
+// переменные для 3-го блока 
+// let count_number_OddElements = 0; // кількість парних позитивних елементів
+let count_Odd_Par_Elements = 0;
+// let count_number_EvenElements = 0; // кількість непарних позитивних елементів
+let count_Odd_None_Par_Elements = 0;
+// let sum_Odd_Positive_Elements = 0; // сума парних позитивних елементів
+let sum_Odd_Par_Elements = 0;
+// let sum_Even_Negative_Elements = 0; // сума непарних позитивних елементів
+let sum_Odd_None_Par_Elements = 0;
+
 //     =================  2 -й способ первого и последующие задания   ====================
 
 /* Знайти суму та кількість позитивних елементів.
@@ -68,11 +69,11 @@ console.log(productPositiveElem + ' - произведение положите�
 
 for(let i = 0; i <= teacherArray.length - 1; i++) {
   if(teacherArray[i] > 0) {
-    summPositiveElemTeacherArray_var2 += teacherArray[i];
-    productPositiveElem = teacherArray[i] * productPositiveElem;
-    countPositiveElem_var2++
+    summPositiveElemTeacherArray_var2 += teacherArray[i];  // сумма положительных элементов
+    productPositiveElem = teacherArray[i] * productPositiveElem; // произведение положительных элементов
+    countPositiveElem_var2++ ;                              //  Количество положительных элементов
   } else if (teacherArray[i] < 0) {
-    countNegativeElem_var2++
+    countNegativeElem_var2++;                               //  количество отрицательных элементов
   }
 
   /*
@@ -81,26 +82,25 @@ for(let i = 0; i <= teacherArray.length - 1; i++) {
 ================================================
 6. Знайти кількість парних позитивних елементів.
 7. Знайти суму парних позитивних елементів.
-
-Odd  ------>>>>>   четные элементы
-Even ------->>>>>   нечетные элементы
+                                                      Odd  ------>>>>>   четные элементы
+                                                      Even ------->>>>>   нечетные элементы
  */
 
   if(teacherArray[i] > 0 && teacherArray[i] % 2 !== 0) {
-    sum_Odd_Par_Elements += teacherArray[i];
-    count_number_Odd_None_Par_Elements++;
+    sum_Odd_None_Par_Elements += teacherArray[i];           //  Сумма непарных элементов     
+    count_Odd_None_Par_Elements++;                 // КОЛИЧЕСТВО НЕПАРНЫХ ЭЛЕМЕНТОВ
   } else if (teacherArray[i] > 0 && teacherArray[i] % 2 === 0) {
-    sum_Odd_None_Par_elements += teacherArray[i];
-    count_number_Odd_Par_Elements++;
+    sum_Odd_Par_Elements += teacherArray[i];              // Сумма парных элементов
+    count_Odd_Par_Elements++;                      // Количество парных элементов
   }
   //2. Знайти мінімальний елемент масиву та його порядковий номер.
   // 3. Знайти максимальний елемент масиву та його порядковий номер.
   if(teacherArray[i] < minElemOfArray) {
-    minElemOfArray = teacherArray[i];
-    key_minElemOfArray = i;
+    minElemOfArray = teacherArray[i]; //  минимальный элемент массива
+    key_minElemOfArray = i;           //   ключ минимального элемента
   }  else if (teacherArray[i] > maxElemOfArray) {
-    maxElemOfArray = teacherArray[i];
-    key_maxElemOfArray = i;
+    maxElemOfArray = teacherArray[i];   // максимальный элемент массива
+    key_maxElemOfArray = i;             //  ключ максимального элемента массива
   } else if (teacherArray[i] !== maxElemOfArray && teacherArray[i] !== key_maxElemOfArray) {
       teacherArray[i] = 0;
   }
@@ -116,10 +116,10 @@ console.log(key_minElemOfArray + ' - Ключ наименьшего элеме�
 console.log(maxElemOfArray + ' - Наибольший элемент массива');
 console.log(key_maxElemOfArray + ' - Ключ наибольшего элемента массива');
 
-console.log('Кількість непарних позитивних елементів   ' + count_number_Odd_None_Par_Elements); 
-console.log('Сума непарних позитивних елементів   '  + sum_Odd_None_Par_elements);
+console.log('Кількість непарних позитивних елементів   ' + count_Odd_None_Par_Elements); 
+console.log('Сума непарних позитивних елементів   '  + sum_Odd_None_Par_Elements);
 
-console.log('Кількість парних позитивних елементів:   ' + count_number_Odd_Par_Elements);
+console.log('Кількість парних позитивних елементів:   ' + count_Odd_Par_Elements);
 console.log('Сума парних позитивних елементів   ' + sum_Odd_Par_Elements);
 
 console.log(teacherArray);

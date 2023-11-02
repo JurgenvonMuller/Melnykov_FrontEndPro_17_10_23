@@ -20,7 +20,7 @@ let teacherArray = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 2
 // 4. Визначити кількість негативних елементів.
 // 9. Знайти добуток позитивних елементів.
 
-let countPositiveElem_var1 = 0;   // КОличество позитивных элементов вариант 1
+let countPositiveElem_var1 = 0;   // Количество позитивных элементов вариант 1
 let countNegativeElem_var1 = 0;   // Количество негативных элементов вариант 1
 let summPositiveElemTeacherArray_var1 = 0;  // сумма позитивных элементов решения вариант 1
 let productPositiveElem1 = 1;
@@ -90,7 +90,6 @@ for(let i = 0; i <= teacherArray.length - 1; i++) {
   /*
   2.  Знайти мінімальний елемент масиву та його порядковий номер.
   3.  Знайти максимальний елемент масиву та його порядковий номер.
-  10. Знайти найбільший серед елементів масиву, остальні обнулити
   */
   if(teacherArray[i] < minElemOfArray) {
     minElemOfArray = teacherArray[i]; //  минимальный элемент массива
@@ -118,14 +117,15 @@ console.log('Кількість парних позитивних елемент
 console.log('Сума парних позитивних елементів   ' + sum_Odd_Par_Elements);
 console.log(teacherArray);
 
+// 10. Знайти найбільший серед елементів масиву, остальні обнулити
+
 for(let i = 0; i <= teacherArray.length - 1; i++) {
   if (teacherArray[i] > maxElemOfArray) {
     maxElemOfArray = teacherArray[i];   // максимальный элемент массива
     key_maxElemOfArray = i;             //  ключ максимального элемента массива
   } 
   if( teacherArray[i] !== maxElemOfArray && i !== key_maxElemOfArray) {
-    teacherArray[i] = 0;
+    teacherArray[i] = 0;  // присваиваем НОЛЬ всем элементам массива которые не являются максимальным элементом
   }
 }
 console.log(teacherArray);
-

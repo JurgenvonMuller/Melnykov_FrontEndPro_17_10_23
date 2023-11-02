@@ -98,9 +98,7 @@ for(let i = 0; i <= teacherArray.length - 1; i++) {
   }  else if (teacherArray[i] > maxElemOfArray) {
     maxElemOfArray = teacherArray[i];   // максимальный элемент массива
     key_maxElemOfArray = i;             //  ключ максимального элемента массива
-  } else if (teacherArray[i] !== maxElemOfArray && teacherArray[i] !== key_maxElemOfArray) {
-      teacherArray[i] = 0;
-  }
+  } 
 }
 
 console.log(summPositiveElemTeacherArray_var2 + '-   Сумма положительных элементов массива');

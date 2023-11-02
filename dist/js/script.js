@@ -21,15 +21,16 @@ var teacherArray = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 2
 // 1. Знайти суму та кількість позитивних елементів.
 // 4. Визначити кількість негативних елементів.
 // 9. Знайти добуток позитивних елементів.
+
 var countPositiveElem_var1 = 0; // КОличество позитивных элементов вариант 1
 var countNegativeElem_var1 = 0; // Количество негативных элементов вариант 1
 var summPositiveElemTeacherArray_var1 = 0; // сумма позитивных элементов решения вариант 1
-
+var productPositiveElem1 = 1;
 for (var _i = 0, _teacherArray = teacherArray; _i < _teacherArray.length; _i++) {
   var elem = _teacherArray[_i];
   if (elem > 0) {
     summPositiveElemTeacherArray_var1 += elem;
-    productPositiveElem = elem * productPositiveElem;
+    productPositiveElem1 = elem * productPositiveElem1;
     countPositiveElem_var1++;
   } else if (elem < 0) {
     countNegativeElem_var1++;
@@ -38,7 +39,7 @@ for (var _i = 0, _teacherArray = teacherArray; _i < _teacherArray.length; _i++) 
 console.log(summPositiveElemTeacherArray_var1 + ' - сумма положительных элементов');
 console.log(countPositiveElem_var1 + ' - количество положительных элементов в массиве');
 console.log(countNegativeElem_var1 + ' - количество отрицательных элементов в массиве');
-console.log(productPositiveElem + ' - произведение положительных элементов массива');
+console.log(productPositiveElem1 + ' - произведение положительных элементов массива');
 
 /* =================   ОСНОВНОЙ ВАРИАНТ РЕШЕНИЯ   ===================== */
 
@@ -112,6 +113,7 @@ for (var i = 0; i <= teacherArray.length - 1; i++) {
 console.log(summPositiveElemTeacherArray_var2 + '-   Сумма положительных элементов массива');
 console.log(countPositiveElem_var2 + '-   Количество положительных элементов массива');
 console.log(countNegativeElem_var2 + '-   Количество отрицательных элементов массива');
+console.log(productPositiveElem + ' - произведение положительных элементов массива');
 console.log(minElemOfArray + ' - Наименьший элемент массива');
 console.log(key_minElemOfArray + ' - Ключ наименьшего элемента массива');
 console.log(maxElemOfArray + ' - Наибольший элемент массива');

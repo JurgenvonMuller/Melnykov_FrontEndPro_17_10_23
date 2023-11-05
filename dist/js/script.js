@@ -1,164 +1,82 @@
 "use strict";
 
 /*
-========================    HOMEWORK 12     ==========================
-
-  Дан масив [16,-37,54,-4,72,-56,47,4, -16,25,-37,46,4,-51,27,-63,4,-54,76,-4,12,-35,4,47] 
-
-1. Знайти суму та кількість позитивних елементів. +
-2. Знайти мінімальний елемент масиву та його порядковий номер. +
-3. Знайти максимальний елемент масиву та його порядковий номер. +
-4. Визначити кількість негативних елементів. 
-5. Знайти кількість непарних позитивних елементів.
-6. Знайти кількість парних позитивних елементів.
-7. Знайти суму парних позитивних елементів.
-8. Знайти суму непарних позитивних елементів.
-9. Знайти добуток позитивних елементів.
-10. Знайти найбільший серед елементів масиву, остальні обнулити.
+Створити масив, довжину та елементи якого задає користувач.
+Відсортувати масив за зростанням.
+Видалити елементи з масиву з 2 по 4 (включно!).
+У міру змін виводити вміст масиву на сторінку.
 */
 
-/*
-let teacherArray = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54, 76, -4, 12, -35, 4, 47];
-
-// 1. Знайти суму та кількість позитивних елементів.
-// 4. Визначити кількість негативних елементів.
-// 9. Знайти добуток позитивних елементів.
-
-let countPositiveElemvar1 = 0;   // Количество позитивных элементов вариант 1
-let countNegativeElemvar1 = 0;   // Количество негативных элементов вариант 1
-let summPositiveElemTeacherArrayvar1 = 0;  // сумма позитивных элементов решения вариант 1
-let productPositiveElem1 = 1;
-for(let elem of teacherArray) {
-  if(elem > 0) {
-    summPositiveElemTeacherArrayvar1 += elem;
-    productPositiveElem1 = elem * productPositiveElem1;
-    countPositiveElemvar1++
-  } else if (elem < 0) {
-    countNegativeElemvar1++
-  }
-}
-console.log(summPositiveElemTeacherArrayvar1 + ' - сумма положительных элементов');
-console.log(countPositiveElemvar1  + ' - количество положительных элементов в массиве');
-console.log(countNegativeElemvar1 + ' - количество отрицательных элементов в массиве');
-console.log(productPositiveElem1 + ' - произведение положительных элементов массива');
-
-=================   ОСНОВНОЙ ВАРИАНТ РЕШЕНИЯ   ===================== 
-
-//  переменные для первого блока задания 
-
-let countPositiveElemvar2 = 0;   // КОличество позитивных элементов ваиант 2
-let countNegativeElemvar2 = 0;   // Количество негативных элементов  вариант 2
-let summPositiveElemTeacherArrayvar2 = 0;  // сумма позитивных элементов  решения вариант 2
-let productPositiveElem = 1;      // Произведение положительных элементов массива
-
-// переменные для второго блока 
-let minElemOfArray = teacherArray[0]; // Наименьший элемент массива
-let keyminElemOfArray = 0;           // Ключ наименьшего элемента массива
-let maxElemOfArray = teacherArray[0]; // наибольший элемент массива
-let keymaxElemOfArray = 0;           // ключ наибольшего элемента массива.
-
-// переменные для 3-го блока 
-let countOddParElements = 0;       // Количество положительных парных элементов
-let countOddNoneParElements = 0;  // Количество положительных непарных элементов
-let sumOddParElements = 0;       //  Сумма положительных парных элементов
-let sumOddNoneParElements = 0;  //  Сумма положительных непарных элементов
-
- Знайти суму та кількість позитивних елементів.
-  Визначити кількість негативних елементів.
-  Знайти добуток позитивних елементів.
-
-for(let i = 0; i <= teacherArray.length - 1; i++) {
-  if(teacherArray[i] > 0) {
-    summPositiveElemTeacherArrayvar2 += teacherArray[i];  // сумма положительных элементов
-    productPositiveElem = teacherArray[i] * productPositiveElem; // произведение положительных элементов
-    countPositiveElemvar2++ ;                              //  Количество положительных элементов
-  } else if (teacherArray[i] < 0) {
-    countNegativeElemvar2++;                               //  количество отрицательных элементов
-  }
-
-5. Знайти кількість непарних позитивних елементів.
-8. Знайти суму непарних позитивних елементів.
-================================================
-6. Знайти кількість парних позитивних елементів.
-7. Знайти суму парних позитивних елементів.
-                                                      Odd  ------>>>>>   четные элементы
-                                                      Even ------->>>>>   нечетные элементы
-
-  if(teacherArray[i] > 0 && teacherArray[i] % 2 !== 0) {
-    sumOddNoneParElements += teacherArray[i];           //  Сумма непарных элементов     
-    countOddNoneParElements++;                 // КОЛИЧЕСТВО НЕПАРНЫХ ЭЛЕМЕНТОВ
+var arr = [];
+var userArrLength = +prompt('Put LENGTH of your arrow', '');
+for (var i = 0; i <= userArrLength - 1; i++) {
+  var item = prompt("Put your elements into arrow which has length only ".concat(userArrLength, " items"), '');
+  if (!isNaN(parseFloat(item))) {
+    arr.push(parseFloat(item));
   } else {
-    sumOddParElements += teacherArray[i];              // Сумма парных элементов
-    countOddParElements++;                      // Количество парных элементов
+    arr.push(item);
   }
-  
-  2.  Знайти мінімальний елемент масиву та його порядковий номер.
-  3.  Знайти максимальний елемент масиву та його порядковий номер.
-  
-  if(teacherArray[i] < minElemOfArray) {
-    minElemOfArray = teacherArray[i]; //  минимальный элемент массива
-    keyminElemOfArray = i;           //   ключ минимального элемента
-  }  else if (teacherArray[i] > maxElemOfArray) {
-    maxElemOfArray = teacherArray[i];   // максимальный элемент массива
-    keymaxElemOfArray = i;             //  ключ максимального элемента массива
-  } 
 }
-console.log(summPositiveElemTeacherArrayvar2 + '-   Сумма положительных элементов массива');
-console.log(countPositiveElemvar2 + '-   Количество положительных элементов массива'); 
-console.log(countNegativeElemvar2 + '-   Количество отрицательных элементов массива'); 
-console.log(productPositiveElem + ' - произведение положительных элементов массива');
+console.log('You are created arrow :');
+console.log(arr); // создан пользовательский массив 
+//"Этот массив может содержать и строки и числа!!!!"
 
-console.log(minElemOfArray + ' - Наименьший элемент массива');
-console.log(keyminElemOfArray + ' - Ключ наименьшего элемента массива');
-console.log(maxElemOfArray + ' - Наибольший элемент массива');
-console.log(keymaxElemOfArray + ' - Ключ наибольшего элемента массива');
+/* ==================Задание 2 Відсортувати масив за зростанням. ==================
 
-console.log('Кількість непарних позитивних елементів   ' + countOddNoneParElements); 
-console.log('Сума непарних позитивних елементів   '  + sumOddNoneParElements);
-
-console.log('Кількість парних позитивних елементів:   ' + countOddParElements);
-console.log('Сума парних позитивних елементів   ' + sumOddParElements);
-console.log(teacherArray);
+Так как массив может содержать строки и числа то их надо сортировать отдельно. 
+Для этого надо задать условия сортировки
 */
+
+arr.sort(function (a, b) {
+  // Открываем фигурные скобки для функции сравнения sort().
+  if (typeof a === 'number' && typeof b === 'number') {
+    // если параметр а и параметр б - числа
+    return a - b; // Сортировка чисел  на возрастание
+  } else if (typeof a === 'string' && typeof b === 'string') {
+    //если параметры строки 
+    return a.localeCompare(b); // Сравнение строк по лексографическому признаку а больше б
+  } else {
+    // если переметр ни строка ни число - оставляем как есть 
+    return 0; // Оставить элементы без изменений, если они не являются ни числами, ни строками
+  }
+}); // Закрываем фигурные скобки для функции сравнения и метода sort
+
+console.log(arr);
+
+// ЭТО БЫЛО ОЧЕНЬ СЛОЖНО!!!! 
 
 /*
-// 10. Знайти найбільший серед елементів масиву, остальні обнулити
-let teacherArray = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54, 76, -4, 12, -35, 4, 47];
-console.log(teacherArray);
-let maxElemOfArray = teacherArray[0];
-let keyMaxElemOfArray = 0;
-for(let i = 1; i < teacherArray.length; i++) {
-  if (teacherArray[i] > maxElemOfArray) {
-    maxElemOfArray = teacherArray[i]; 
-    keyMaxElemOfArray = i;  
-  }
-}
-  
-for(let i = 0; i < teacherArray.length; i++)
-if(i !== keyMaxElemOfArray) {
-  teacherArray[i] = 0;  // присваиваем НОЛЬ всем элементам массива которые не являются максимальным элементом
-}
-
-console.log(maxElemOfArray + '  - максимальный элемент массива');   // максимальный элемент массива
-console.log(keyMaxElemOfArray + '  - ключ максимального элемента массива') //  ключ максимального элемента массива
-console.log(teacherArray + '  - обнуленные элементы массива все кроме максимального');
-
+Видалити елементи з масиву з 2 по 4 (включно!).
+У міру змін виводити вміст масиву на сторінку.
 */
-
-var teacherArray = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54, 76, -4, 12, -35, 4, 47];
-var countPositiveEvenElements = 0;
-var sumPositiveEvenElements = 0;
-var countPositiveOddElements = 0;
-var sumPositiveOddElements = 0;
-for (var i = 0; i < teacherArray.length; i++) {
-  if (teacherArray[i] > 0) {
-    if (teacherArray[i] % 2 === 0) {
-      sumPositiveEvenElements += teacherArray[i];
-      countPositiveEvenElements++;
+var arrForDelete = [];
+console.log(arrForDelete);
+var userLengthArr = +prompt('Put LENGTH of your arrow min 4 items', '');
+if (userLengthArr < 4) {
+  alert('Put please arrow length 4 or more');
+} else {
+  for (var _i = 0; _i <= userLengthArr - 1; _i++) {
+    var _item = prompt("Put your elements into arrow which has length only ".concat(userLengthArr, " items"), '');
+    if (!isNaN(parseFloat(_item))) {
+      arrForDelete.push(parseFloat(_item));
     } else {
-      sumPositiveOddElements += teacherArray[i];
-      countPositiveOddElements++;
+      arrForDelete.push(_item);
     }
   }
 }
-console.log(sumPositiveEvenElements, countPositiveEvenElements, sumPositiveOddElements, countPositiveOddElements);
+console.log('You are created arrow for delite 4 items :');
+console.log(arrForDelete);
+
+// for(let j = 1; j <= 3; j++) {
+//   delete arrForDelete[j];                                 удаляем последовательно элементы 2, 3, 4 но остаются пустые места 
+//   console.log(arrForDelete);                              выводим изменения в консоль каждое!
+// }
+
+/*=============== ИСПОЛЬЗОВАНИЕ МЕТОДА SPLICE  ======================
+Удаляет элементы и изменяет длину массива не оставляет пустых мест НЕ СОЗДАЕТ НОВЫЙ МАССИВ! 
+*/
+for (var k = 3; k >= 1; k--) {
+  arrForDelete.splice(k, 1);
+  console.log(arrForDelete + 'Результат рабты цикла с функцией splice ИЗМЕНЕНИЕ МАССИВА');
+}
+// xxx.splice(индекс элемента с которго начинается удалениеб индекс где удаление заканчивается)

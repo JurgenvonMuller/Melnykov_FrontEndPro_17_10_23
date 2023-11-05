@@ -1,26 +1,26 @@
-let maxElem = 0;
-let key_maxElem = 0;
+// let maxElem = 0;
+// let key_maxElem = 0;
 
 
-let arr = [1, 2, 6, 4, 5, 3];
-for(let i = 0;  i < arr.length - 1; i++) {
-  if(arr[i] > maxElem) {
-    maxElem = arr[i];
-    key_maxElem = i;
-  }
-    if( arr[i] !== maxElem && i !== key_maxElem) {
-      arr[i] = 0;
-    }
-
-}
-console.log(maxElem);
-console.log(key_maxElem);
-// for(let i = 0;  i <= arr.length - 1; i++) {
+// let arr = [1, 2, 6, 4, 5, 3];
+// for(let i = 0;  i < arr.length - 1; i++) {
+//   if(arr[i] > maxElem) {
+//     maxElem = arr[i];
+//     key_maxElem = i;
+//   }
+//     if( arr[i] !== maxElem && i !== key_maxElem) {
+//       arr[i] = 0;
+//     }
 
 // }
+// console.log(maxElem);
+// console.log(key_maxElem);
+// // for(let i = 0;  i <= arr.length - 1; i++) {
+
+// // }
 
 
-console.log(arr);
+// console.log(arr);
 
 
 
@@ -725,3 +725,303 @@ console.log(res);
 // console.log(`${divisString}`);
 // console.log(`Количество делителей: ${count1}`);
 // console.log(`Сумма парных делителей: ${sumPairDiv}`)
+
+
+// let arr = [];
+// let symb = 'x';
+// for( let i = 0;  i <= 10; i++)  {
+//   arr.push('x');
+// }
+// console.log(arr);
+/*
+const keys = ['name', 'age', 'city', 'gender', 'occupation'];
+const values = ['John', 30, 'New York', 'Male', 'Engineer'];
+let obj = {};
+for(let i = 0; i <= 6; i++) {
+  obj[keys[i]] = values[i];
+}
+console.log(obj);
+*/
+
+/* 
+С помощью цикла создайте объект, ключами которого будут названия
+дней, а значениями - их номера.
+*/
+/*
+let arr1 = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс']; 
+let arr2 = [1, 2, 3, 4, 5, 6, 7];
+let week = {};
+let maxLength = Math.max(arr1.length, arr2.length);
+
+for(let i = 0; i < maxLength; i++) {
+  week[arr2[i]] = arr1[i];
+}
+console.log(week);
+*/
+/*
+Переберите этот объект циклом и запишите в новый объект 
+те элементы, которые являются четными числами.
+*/
+/*
+
+let obj = {a: 1, b: 2, c: 3, d: 4, e: 5};
+
+let keysArray = Object.keys(obj);
+console.log(keysArray);
+
+let maxLength_keys = keysArray.length;
+console.log(maxLength_keys);
+
+let valuesArray = Object.values(obj);
+console.log(valuesArray);
+
+let maxLength_values = valuesArray.length;
+console.log(maxLength_values);
+
+let obj1 = {};
+
+for(let i = 0; i < maxLength_keys && i < maxLength_values; i++) {
+  if( valuesArray[i] % 2 === 0) {
+    obj1[keysArray[i]] = valuesArray[i];
+  }
+}
+console.log(obj1);
+*/
+
+/*
+Переберите этот объект циклом и создайте новый объект так, 
+чтобы его ключами стали элементы старого объекта, 
+а значениями - ключи старого объекта.
+*/
+/*
+let obj = {a: 1, b: 2, c: 3, d: 4, e: 5};
+console.log(obj);
+let keyArray_obj = Object.keys(obj);
+let valueArray_obj = Object.values(obj);
+
+let obj_new = {};
+
+for(let i = 0; i < keyArray_obj.length; i++) {
+  obj_new[valueArray_obj[i]] = keyArray_obj[i];
+}
+console.log(obj_new);
+
+function myName(){
+  console.log('Jarne');
+}
+
+myName();
+*/
+// let sum = 0;
+// function summ_1_100() {
+//   for(let i = 1; i<=100; i++) {
+//   sum += i;
+//   console.log(sum);
+//   }
+//   console.log(sum);
+// }
+// summ_1_100() 
+// console.log(sum);
+
+// let sum = 0;
+
+// function summ_1_100() {
+//   for (let i = 1; i <= 100; i++) {
+//     sum += i; // Накапливаем сумму, используя глобальную переменную
+//     // console.log(sum); // Выводим сумму на каждой итерации
+//   }
+//   console.log(sum); // Выводим окончательную сумму после цикла
+// }
+
+// summ_1_100(); // Вызываем функцию для вычисления суммы
+// console.log(sum); // Выводим глобальную переменную sum вне функции
+/*
+let numInKub;
+let num = 3;
+function inKub() {
+  // Math.pow(base, exponent) 3**2 =>>>> Math.pow(3,2);
+  numInKub = Math.pow(num, 3);
+  console.log (numInKub);
+}
+inKub(num);
+*/
+/*
+Сделайте функцию, которая параметром принимает число и проверяет,
+ положительное это число или отрицательное. В первом 
+случае пусть функция выводит в консоль текст '+++', а во втором '---'.
+*/
+// let res;
+// let exp = 3;
+// function paramFunc(num) {
+//   res = Math.pow(num, exp);
+//   console.log(res);
+//   console.log(num);
+//   console.log(exp);
+// }
+// let param = -2;
+// paramFunc(param);
+
+// function check_num() {
+//   (res >0) ? console.log('+++++++') : console.log(' ------ ');
+// }
+// check_num();
+
+/*
+Сделайте функцию func, которая параметром будет принимать 3 числа
+ и выводить в консоль их сумму. Пусть даны 3 переменные с числами:
+
+let param1 = 1;
+let param2 = 2;
+let param3 = 3;
+С помощью созданной вами функции выведите в консоль сумму значений эти переменных.
+*/
+
+// function well(num) {
+ 
+//   return num**3
+// }
+
+// let r = 4;
+// let res = well(r)
+// console.log(res);
+// let res1 = well(2);
+// console.log(res1);
+
+
+// let res;
+// let n = 30;
+// function ref(num) {
+//   res = num * 3;
+//   return num * 4;
+// }
+// console.log(n);
+// let res1 = ref(5);
+// console.log(res1);
+// console.log(res1 + res);
+
+/*
+Сделайте функцию, которая параметром принимает число,
+а возвращает куб этого числа. С помощью этой функции найдите куб числа 3 
+и запишите его в переменную res.
+*/
+
+
+// function kub(num) {
+//   let res = Math.pow(num, 3);
+//   console.log(res);
+//   return res;
+// }
+// let res1 = kub(3);
+// console.log(res1);
+
+/* 
+Сделайте функцию, которая параметром принимает число, 
+а возвращает квадратный корень из этого числа. С помощью этой функции найдите корень числа 3, 
+затем найдите корень числа 4. Просуммируйте полученные результаты и выведите их в консоль.
+*/
+
+// function geo(num1, num2) {
+// let sum = Math.sqrt(num1) + Math.sqrt(num2);
+// return sum;
+// }
+
+// console.log(geo(3,4));
+/*
+Пусть у вас есть функция, возвращающая квадратный корень из числа, и функция, 
+округляющая дробь до трех знаков в дробной части:
+
+function sqrt(num) {
+	return Math.sqrt(num);
+}
+
+function round(num) {
+	return num.toFixed(3);
+}
+С помощью этих функций найдите квадратный корень из числа 2 
+и округлите его до трех знаков в дробной части.
+*/
+
+
+// function sqrt(num) {
+// 	return Math.sqrt(num);
+// }
+// function round(num) {
+// 	return num.toFixed(3);
+// }
+// let result = Number(round(sqrt(3)));
+// console.log(result);
+
+/*
+Пусть у вас есть функция, возвращающая квадратный корень из числа, и функция,
+ возвращающая сумму трех чисел:
+function sqrt(num) {
+	return Math.sqrt(num);
+}
+function sum(num1, num2, num3) {
+	return num1 + num2 + num3;
+}
+С помощью этих функций найдите сумму корней чисел 2, 3 и 4 и запишите ее в переменную res.
+*/
+
+// function sqrt(num) {
+// 	return Math.sqrt(num);
+// }
+
+// function sum(num1, num2, num3) {
+// 	return num1 + num2 + num3;
+// }
+
+// let res = sum(sqrt(2), sqrt(3), sqrt(4));
+// console.log(res);
+
+/*
+Пусть у вас есть функция, округляющая дробь до трех знаков в дробной части:
+
+function round(num) {
+	return num.toFixed(3);
+}
+С помощью этой функции модифицируйте предыдущую задачу так, 
+чтобы в переменную res записывалась дробь, округленная 
+до 3-х знаков в дробной части.
+*/
+
+
+// function sqrt(num) {
+// 	return Math.sqrt(num);
+// }
+
+// function sum(num1, num2, num3) {
+// 	return num1 + num2 + num3;
+// }
+
+// function round(num) {
+//   return num.toFixed(3);
+// }
+// let ressum = sum(sqrt(2), sqrt(3), sqrt(4));
+// let res = parseInt(round(ressum));
+// console.log(res);
+
+function func(num) {
+	let sum = 0;
+	
+	for (let i = 1; i <= num; i++) {
+		sum += i;
+	}
+  return sum;
+}
+
+console.log( func(5) );
+
+
+
+=====================================================
+
+const pushIntoArray = function(arr) {
+  
+};
+
+sum([], 1,2,3) // [1,2,3]
+sum([0], 1,2,3,4,5,6) // [0, .....6]
+// использование arguments не объявленные параметры в вызове функции
+// повторить преобразования явные и неявные 
+========================================================

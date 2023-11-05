@@ -86,7 +86,7 @@ for(let i = 0; i <= teacherArray.length - 1; i++) {
   if(teacherArray[i] > 0 && teacherArray[i] % 2 !== 0) {
     sumOddNoneParElements += teacherArray[i];           //  Сумма непарных элементов     
     countOddNoneParElements++;                 // КОЛИЧЕСТВО НЕПАРНЫХ ЭЛЕМЕНТОВ
-  } else if (teacherArray[i] > 0 && teacherArray[i] % 2 === 0) {
+  } else {
     sumOddParElements += teacherArray[i];              // Сумма парных элементов
     countOddParElements++;                      // Количество парных элементов
   }
@@ -119,6 +119,8 @@ console.log('Кількість парних позитивних елемент
 console.log('Сума парних позитивних елементів   ' + sumOddParElements);
 console.log(teacherArray);
 */
+
+/*
 // 10. Знайти найбільший серед елементів масиву, остальні обнулити
 let teacherArray = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54, 76, -4, 12, -35, 4, 47];
 console.log(teacherArray);
@@ -139,3 +141,26 @@ if(i !== keyMaxElemOfArray) {
 console.log(maxElemOfArray + '  - максимальный элемент массива');   // максимальный элемент массива
 console.log(keyMaxElemOfArray + '  - ключ максимального элемента массива') //  ключ максимального элемента массива
 console.log(teacherArray + '  - обнуленные элементы массива все кроме максимального');
+
+*/
+
+let teacherArray = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54, 76, -4, 12, -35, 4, 47];
+
+let countPositiveEvenElements = 0;
+let sumPositiveEvenElements = 0;
+let countPositiveOddElements = 0;
+let sumPositiveOddElements = 0;
+
+for (let i = 0; i < teacherArray.length; i++) {
+  if (teacherArray[i] > 0) {
+    if (teacherArray[i] % 2 === 0) {
+      sumPositiveEvenElements += teacherArray[i];
+      countPositiveEvenElements++;
+    } else {
+      sumPositiveOddElements += teacherArray[i];
+      countPositiveOddElements++;
+    }
+  }
+}
+
+console.log(sumPositiveEvenElements,  countPositiveEvenElements, sumPositiveOddElements, countPositiveOddElements);

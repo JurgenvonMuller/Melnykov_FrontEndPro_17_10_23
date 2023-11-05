@@ -1,93 +1,34 @@
 /*
-
-===============        ДОМАШНЕЕ ЗАДАНИЕ 13 ===============
-
-Створити масив, довжину та елементи якого задає користувач.
-Відсортувати масив за зростанням.
-Видалити елементи з масиву з 2 по 4 (включно!).
-У міру змін виводити вміст масиву на сторінку.
+Реалізуйте функцію removeElement(array, item), щоб видалити елемент 
+item з масиву array.
+Наприклад:
 */
+const array = [1, 2, 3, 4, 5, 6, 7];
+console.log(array + '  - Исходный вариант массива')
 
-
-
-/*
-Створити масив, довжину та елементи якого задає користувач.
-Відсортувати масив за зростанням.
-*/
-
-let arr = [];
-
-let userArrLength = +prompt('Put LENGTH of your arrow', '');
-
-for(let i = 0; i <= userArrLength - 1; i++) {
-  let item = prompt(`Put your elements into arrow which has length only ${userArrLength} items`, '');
-  if(!isNaN(parseFloat(item))) {
-    arr.push(parseFloat(item))
-  } else {
-    arr.push(item)
-  }
-}
-console.log('You are created arrow :');
-console.log(arr); // создан пользовательский массив 
-//"Этот массив может содержать и строки и числа!!!!"
-
-
-/* ==================Задание 2 Відсортувати масив за зростанням. ==================
-
-Так как массив может содержать строки и числа то их надо сортировать отдельно. 
-Для этого надо задать условия сортировки
-*/
-
-arr.sort(function(a, b) {                                            // Открываем фигурные скобки для функции сравнения sort().
-  if (typeof a === 'number' && typeof b === 'number') {             // если параметр а и параметр б - числа
-    return a - b;                                                   // Сортировка чисел  на возрастание
-  } else if (typeof a === 'string' && typeof b === 'string') {      //если параметры строки 
-    return a.localeCompare(b);                                      // Сравнение строк по лексографическому признаку а больше б
-  } else {                                                          // если переметр ни строка ни число - оставляем как есть 
-    return 0;                                                        // Оставить элементы без изменений, если они не являются ни числами, ни строками
-  }
-});                                                                 // Закрываем фигурные скобки для функции сравнения и метода sort
-
-console.log(arr);
-
-// ЭТО БЫЛО ОЧЕНЬ СЛОЖНО!!!! 
-
-/*
-Видалити елементи з масиву з 2 по 4 (включно!).
-У міру змін виводити вміст масиву на сторінку.
-*/
-let arrForDelete = [];
-console.log(arrForDelete);
-
-let userLengthArr = +prompt('Put LENGTH of your arrow min 4 items', '');
-
-if (userLengthArr < 4) {
-  alert('Put please arrow length 4 or more');
-} else { 
-    for(let i = 0; i <= userLengthArr - 1; i++) {
-      let item = prompt(`Put your elements into arrow which has length only ${userLengthArr} items`, '');
-      if(!isNaN(parseFloat(item))) {
-        arrForDelete.push(parseFloat(item))
-    } else {
-      arrForDelete.push(item)
+let removeElement = function(arr, num) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === num) {
+      arr.splice(i, 1);
+      break; // Прерываем цикл, когда элемент найден и удален
     }
   }
-}
+  return arr;
+};
 
-console.log('You are created arrow for delite 4 items :');
-console.log(arrForDelete);
-
-// for(let j = 1; j <= 3; j++) {
-//   delete arrForDelete[j];                                 удаляем последовательно элементы 2, 3, 4 но остаются пустые места 
-//   console.log(arrForDelete);                              выводим изменения в консоль каждое!
-// }
+console.log(removeElement(array, 5));
+console.log(`Ожидаемый результат: [1, 2, 3, 4, 6, 7]`);
 
 
-/*=============== ИСПОЛЬЗОВАНИЕ МЕТОДА SPLICE  ======================
-Удаляет элементы и изменяет длину массива не оставляет пустых мест НЕ СОЗДАЕТ НОВЫЙ МАССИВ! 
+// ================ УНИВЕРСАЛЬНОЕ РЕШЕНИЕ  ============================
+/*
+let deleteElemArr = function(arr, indexElem, quantityElem) {
+  arr.splice(indexElem, quantityElem);
+  console.log(arr);
+};
+console.log(deleteElemArr);
+deleteElemArr(myArray, 1, 3);
+console.log(myArray);
+
 */
-for (let k = 3; k >= 1; k--) {
-  arrForDelete.splice(k, 1);
-  console.log(arrForDelete + 'Результат рабты цикла с функцией splice ИЗМЕНЕНИЕ МАССИВА');
-}
-// xxx.splice(индекс элемента с которго начинается удалениеб индекс где удаление заканчивается)
+

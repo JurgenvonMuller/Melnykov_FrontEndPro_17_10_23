@@ -1024,4 +1024,50 @@ sum([], 1,2,3) // [1,2,3]
 sum([0], 1,2,3,4,5,6) // [0, .....6]
 // использование arguments не объявленные параметры в вызове функции
 // повторить преобразования явные и неявные 
-========================================================
+// ========================================================
+
+Реалізуйте функцію generateKey(length, characters), яка повертає рядок випадкових 
+символів із набору characters довжиною length. span>
+
+Наприклад:
+
+const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+
+const key = generateKey(16, characters);
+console.log(key); // eg599gb60q926j8i
+
+адание предполагает создание функции generateKey, которая возвращает строку случайных символов 
+
+из заданного набора characters заданной длины length.
+
+
+function generateKey(length, characters) {
+  let result = '';
+  const charactersLength = characters.length;
+
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * charactersLength);
+    result += characters.charAt(randomIndex);
+  }
+
+  return result;
+}
+
+Эта функция принимает два параметра: length - длина генерируемой строки и 
+characters - строка, содержащая символы, из которых будет формироваться случайный ключ.
+
+Функция создает пустую строку result и в цикле добавляет случайные символы из 
+characters до достижения нужной длины, используя Math.random() для выбора случайного 
+индекса в строке characters.
+
+Обратите внимание, что это лишь пример реализации. В реальных системах для генерации 
+ключей безопасности лучше использовать специализированные библиотеки или функции, 
+которые обеспечивают высокий уровень безопасности и случайности в ключах.
+
+// Пример использования функции:
+const chars = 'abcdefghijklmnopqrstuvwxyz1234567890!@#$%';
+const generatedKey = generateKey(10, chars); // Генерация ключа из символов chars длиной 10 символов
+
+console.log(generatedKey); // Вывод сгенерированного ключа
+
+

@@ -5,6 +5,33 @@
 // Наприклад:
 
 var characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
-var randomChars = generateKey(num, charString)();
+function generateKey(length, charString) {
+  var randomChars = '';
+  for (var i = 0; i < length; i++) {
+    var randomIndex = Math.floor(Math.random() * charString.length);
+    randomChars += charString[randomIndex];
+  }
+  return randomChars;
+}
 var key = generateKey(16, characters);
-console.log(key); // eg599gb60q926j8i
+console.log(key);
+
+/* ========================  заметки для себя для памяти ======================
+ограничиваем перебор и подбор символов циклом параметром функции
+
+случайные индексы генерируем 
+const randomIndex = Math.floor(Math.random() * charString.length);
+
+Math.random() * charString.length)  - 
+стандартное выражение которое генерирует случайное число от 0 до 1 
+умножая на длину строки - получаем случайный символ 
+например в строке 10 символов 0.156 * 10 = 1.56 
+Math.floor(Math.random() * charString.length)
+полученное значение округляем в меньшую сторону до целого числа 
+ 1.56  == 1  - будет взят второй символ с индексом 1.
+
+ randomChars += charString[randomIndex]; - стандартная 
+ процедура накапливания стрки (суммирования строка + строка)
+
+ функция не ограничивает максимальное число генерируемых символов случайных 
+*/

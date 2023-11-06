@@ -1,6 +1,8 @@
 // let maxElem = 0;
 // let key_maxElem = 0;
 
+const { name } = require("browser-sync");
+
 
 // let arr = [1, 2, 6, 4, 5, 3];
 // for(let i = 0;  i < arr.length - 1; i++) {
@@ -1069,7 +1071,7 @@ function round(num) {
 // const generatedKey = generateKey(10, chars); // Генерация ключа из символов chars длиной 10 символов
 
 // console.log(generatedKey); // Вывод сгенерированного ключа
-
+/*
 let num;
 function getRandomNum(min, max) {
 
@@ -1078,3 +1080,21 @@ function getRandomNum(min, max) {
 }
 getRandomNum(10, 100);
 console.log(num);
+*/
+
+// let arr = [1, 2, 3, 4, 5];
+
+// console.log(arr[1] + arr[2] + arr[3] + arr[4] + arr[0]);
+
+// let arr1 = {1, 2, 3, 4, 5};
+// console.log(arr1.length);
+
+let result = 0;
+let sum = function(num1, num2) {
+  for( let i = num1; i <= num2; i++) {
+    result += i;
+  }
+  console.log(result);
+  return result;
+};
+sum(1,100);

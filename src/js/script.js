@@ -6,18 +6,34 @@ item з масиву array.
 const array = [1, 2, 3, 4, 5, 6, 7];
 console.log(array + '  - Исходный вариант массива')
 
-let removeElement = function(arr, num) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === num) {
-      arr.splice(i, 1);
-      break; // Прерываем цикл, когда элемент найден и удален
-    }
-  }
+let removeElement = function(arr, item) {
+
+  let index = arr.indexOf(item);
+  arr.splice(index, 1);
   return arr;
 };
 
 console.log(removeElement(array, 5));
-console.log(`Ожидаемый результат: [1, 2, 3, 4, 6, 7]`);
+
+console.log(array + ' - Полученный измененный вариант массива');
+console.log(`Ожидаемый результат: [1, 2, 3, 4, 6, 7]`)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // ================ УНИВЕРСАЛЬНОЕ РЕШЕНИЕ  ============================

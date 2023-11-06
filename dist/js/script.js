@@ -7,17 +7,13 @@ item з масиву array.
 */
 var array = [1, 2, 3, 4, 5, 6, 7];
 console.log(array + '  - Исходный вариант массива');
-var removeElement = function removeElement(arr, num) {
-  for (var i = 0; i < arr.length; i++) {
-    if (arr[i] === num) {
-      arr.splice(i, 1);
-      break; // Прерываем цикл, когда элемент найден и удален
-    }
-  }
-
+var removeElement = function removeElement(arr, item) {
+  var index = arr.indexOf(item);
+  arr.splice(index, 1);
   return arr;
 };
 console.log(removeElement(array, 5));
+console.log(array + ' - Полученный измененный вариант массива');
 console.log("\u041E\u0436\u0438\u0434\u0430\u0435\u043C\u044B\u0439 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442: [1, 2, 3, 4, 6, 7]");
 
 // ================ УНИВЕРСАЛЬНОЕ РЕШЕНИЕ  ============================

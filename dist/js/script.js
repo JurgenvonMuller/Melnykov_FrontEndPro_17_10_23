@@ -3,8 +3,7 @@
 // let maxElem = 0;
 // let key_maxElem = 0;
 
-var _require = require("browser-sync"),
-  name = _require.name;
+// const { name } = require("browser-sync");
 
 // let arr = [1, 2, 6, 4, 5, 3];
 // for(let i = 0;  i < arr.length - 1; i++) {
@@ -937,7 +936,7 @@ function round(num) {
 
 /*
 Пусть у вас есть функция, возвращающая квадратный корень из числа, и функция,
- возвращающая сумму трех чисел:
+возвращающая сумму трех чисел:
 function sqrt(num) {
 	return Math.sqrt(num);
 }
@@ -1067,12 +1066,82 @@ console.log(num);
 // let arr1 = {1, 2, 3, 4, 5};
 // console.log(arr1.length);
 
-var result = 0;
-var sum = function sum(num1, num2) {
-  for (var i = num1; i <= num2; i++) {
-    result += i;
-  }
-  console.log(result);
-  return result;
+// let result = 0;
+// let sum = function(num1, num2) {
+//   for( let i = num1; i <= num2; i++) {
+//     result += i;
+//   }
+//   console.log(result);
+//   return result;
+// };
+// sum(1,100);
+
+// let summ = function(a, b) {
+//   console.log(a * b);
+//   return a * b;
+// }
+// summ(4, 6)
+// let sum1 = summ(4,5) - summ(2, 3);
+
+// console.log(sum1);
+// console.log(sum1 - 8);
+
+// Сделайте функцию, которая параметром принимает число, 
+// а возвращает куб этого числа. С помощью этой функции найдите
+//  куб числа 3 и запишите его в переменную res.
+
+// let exp = function(num, expNum = 3) {
+//     let result = Math.pow(num, expNum);
+//     console.log(result);
+//     return result;
+// };
+// let res = exp(3, 5);
+// console.log(res);
+
+// let numSqrt = function(num1, sqrtNum) {
+//   let resultSqrt = Math.sqrt(num1, sqrtNum);
+//   console.log(resultSqrt);
+//   return resultSqrt;
+// };
+// let allRes = numSqrt(3, 2) + numSqrt(4,2);
+// console.log(numSqrt(3, 2),  numSqrt(4,2));
+
+// console.log(allRes);
+
+/*
+Пусть у вас есть функция, возвращающая квадратный корень из числа, и функция, 
+возвращающая сумму трех чисел:
+С помощью этих функций найдите сумму корней чисел 2, 3 и 4 и 
+запишите ее в переменную res.
+*/
+
+// function sqrt(num) {
+// 	return Math.sqrt(num);
+// }
+
+// function sum(num1, num2, num3) {
+// 	return num1 + num2 + num3;
+// }
+// let num1 = 2;
+// let num2 = 3;
+// let num3 = 4;
+// let res = Number((sum(sqrt(num1), sqrt(num2), sqrt(num3))).toFixed(1));
+// console.log(typeof res);
+// console.log(res);
+// console.log(num1, num2, num3);
+
+function func() {
+  console.log('!');
+}
+var test = func;
+console.log(func());
+console.log(test());
+
+// Сделайте функцию func1, которая будет возвращать через return число 3.
+
+var func1 = function func1(num1) {
+  return num1;
 };
-sum(1, 100);
+console.log(func1(3));
+var func2 = func1;
+console.log(func2);

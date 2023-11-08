@@ -1,7 +1,7 @@
 // let maxElem = 0;
 // let key_maxElem = 0;
 
-const { name } = require("browser-sync");
+// const { name } = require("browser-sync");
 
 
 // let arr = [1, 2, 6, 4, 5, 3];
@@ -955,7 +955,7 @@ function round(num) {
 
 /*
 Пусть у вас есть функция, возвращающая квадратный корень из числа, и функция,
- возвращающая сумму трех чисел:
+возвращающая сумму трех чисел:
 function sqrt(num) {
 	return Math.sqrt(num);
 }
@@ -1089,12 +1089,142 @@ console.log(num);
 // let arr1 = {1, 2, 3, 4, 5};
 // console.log(arr1.length);
 
-let result = 0;
-let sum = function(num1, num2) {
-  for( let i = num1; i <= num2; i++) {
-    result += i;
-  }
-  console.log(result);
-  return result;
-};
-sum(1,100);
+// let result = 0;
+// let sum = function(num1, num2) {
+//   for( let i = num1; i <= num2; i++) {
+//     result += i;
+//   }
+//   console.log(result);
+//   return result;
+// };
+// sum(1,100);
+
+// let summ = function(a, b) {
+//   console.log(a * b);
+//   return a * b;
+// }
+// summ(4, 6)
+// let sum1 = summ(4,5) - summ(2, 3);
+
+// console.log(sum1);
+// console.log(sum1 - 8);
+
+// Сделайте функцию, которая параметром принимает число, 
+// а возвращает куб этого числа. С помощью этой функции найдите
+//  куб числа 3 и запишите его в переменную res.
+
+// let exp = function(num, expNum = 3) {
+//     let result = Math.pow(num, expNum);
+//     console.log(result);
+//     return result;
+// };
+// let res = exp(3, 5);
+// console.log(res);
+
+// let numSqrt = function(num1, sqrtNum) {
+//   let resultSqrt = Math.sqrt(num1, sqrtNum);
+//   console.log(resultSqrt);
+//   return resultSqrt;
+// };
+// let allRes = numSqrt(3, 2) + numSqrt(4,2);
+// console.log(numSqrt(3, 2),  numSqrt(4,2));
+
+// console.log(allRes);
+
+/*
+Пусть у вас есть функция, возвращающая квадратный корень из числа, и функция, 
+возвращающая сумму трех чисел:
+С помощью этих функций найдите сумму корней чисел 2, 3 и 4 и 
+запишите ее в переменную res.
+*/
+
+
+// function sqrt(num) {
+// 	return Math.sqrt(num);
+// }
+
+// function sum(num1, num2, num3) {
+// 	return num1 + num2 + num3;
+// }
+// let num1 = 2;
+// let num2 = 3;
+// let num3 = 4;
+// let res = Number((sum(sqrt(num1), sqrt(num2), sqrt(num3))).toFixed(1));
+// console.log(typeof res);
+// console.log(res);
+// console.log(num1, num2, num3);
+
+// function func() {
+// 	console.log('!');
+// }  
+// let test = func;
+// console.log(func());
+// console.log(test());
+
+// // Сделайте функцию func1, которая будет возвращать через return число 3.
+
+// let func1 = function (num1) {
+//   return num1;
+// }
+// console.log(func1(3));
+// let func2 = func1;
+// console.log(func2);
+
+Дан масив об'єктів. Вивести масив телефонних номерів користувачів, у яких баланс більше 2000 доларів. І знайти суму всіх балансів користувачів
+
+let users = [
+{
+"index": 0,
+"isActive": true,
+"balance": "$2,226.60",
+"name": "Eugenia Sawyer",
+"gender": "female",
+"phone": "+1 (840) 583-3207",
+"address": "949 John Street, Rose, Puerto Rico, 1857"
+},
+{
+"index": 1,
+"isActive": true,
+"balance": "$2,613.77",
+"name": "Pauline Gallegos",
+"gender": "female",
+"phone": "+1 (985) 593-3328",
+"address": "328 Greenpoint Avenue, Torboy, North Dakota, 6857"
+},
+{
+"index": 2,
+"isActive": false,
+"balance": "$3,976.41",
+"name": "Middleton Chaney",
+"gender": "male",
+"phone": "+1 (995) 591-2478",
+"address": "807 Fleet Walk, Brutus, Arkansas, 9783"
+},
+{
+"index": 3,
+"isActive": true,
+"balance": "$1,934.58",
+"name": "Burns Poole",
+"gender": "male",
+"phone": "+1 (885) 559-3422",
+"address": "730 Seba Avenue, Osage, Alabama, 6290"
+},
+{
+"index": 4,
+"isActive": true,
+"balance": "$3,261.65",
+"name": "Mcfadden Horne",
+"gender": "male",
+"phone": "+1 (942) 565-3988",
+"address": "120 Scholes Street, Kirk, Michigan, 1018"
+},
+{
+"index": 5,
+"isActive": false,
+"balance": "$1,790.56",
+"name": "Suzette Lewis",
+"gender": "female",
+"phone": "+1 (837) 586-3283",
+"address": "314 Dunne Place, Bawcomville, Guam, 9053"
+}
+]

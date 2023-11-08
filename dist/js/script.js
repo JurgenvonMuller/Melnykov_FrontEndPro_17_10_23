@@ -56,11 +56,36 @@ var users = [{
   "phone": "+1 (837) 586-3283",
   "address": "314 Dunne Place, Bawcomville, Guam, 9053"
 }];
-var usersBalanceAndPones = function usersBalanceAndPones() {
-  var ArrayUsersPhone = [];
-  var userBalance;
-  var TotalUsersBalance = 0;
+var findRichestUsersPhones = function findRichestUsersPhones(arr) {
+  var richUsersBalance = arr.filter(function (obj) {
+    return parseFloat(obj.balance.replace(/[$,]/g, '')) > 2000;
+  });
+  var richUsersPhones = richUsersBalance.map(function (obj) {
+    return obj.phone;
+  });
+  console.log(richUsersPhones);
+  return richUsersPhones;
 };
+var calcTotalUsersMoney = function calcTotalUsersMoney(arr) {
+  // заменяем в объекте строку на число и избавляемся от знака доллара
+  var usersMoneyClearing = arr.map(function (obj) {
+    return parseFloat(obj.balance.replace(/[$,]/g, ''));
+  });
+
+  // Находим сумму всех элементов получившегося массива.
+  var totalUsersMoney = usersMoneyClearing.reduce(function (accu, currentValue) {
+    return accu + currentValue;
+  }, 0);
+
+  // Дробные числа с длинным хвостом  округляем числами с 2 знаками после запятой.
+  totalUsersMoney = Number(totalUsersMoney.toFixed(2));
+  console.log(totalUsersMoney);
+  return totalUsersMoney;
+};
+findRichestUsersPhones(users);
+calcTotalUsersMoney(users);
+
+// =========================   NOTES   ++++++++++++++++++++++++++++++++++
 
 // let usersBilansesAndPhones = () => {
 //   let richUsers = [];

@@ -61,71 +61,68 @@ let users = [
 "address": "314 Dunne Place, Bawcomville, Guam, 9053"
 }
 ];
-let richUsers[];
+let usersBalanceAndPones = () => {
+let ArrayUsersPhone = [];
+let userBalance;
+let TotalUsersBalance = 0;
 
-let usersBilanses = () => {
-  let richUsers[];
+
+
+
+}
+
+
+
+
+// let usersBilansesAndPhones = () => {
+//   let richUsers = [];
+//   let userMoney;
+//   let totalMoney = 0;
+//     for(let obj of users) {
+//       // console.log(obj.balance);
+//       // console.log(obj.phone);
+//       userMoney = parseFloat((obj.balance).replace(/\$|,/g, ''));
+//       totalMoney +=  userMoney;
+//       if(userMoney > 2000) {
+//         richUsers.push(obj.phone);
+//       } 
+//     }
+//   totalMoney = totalMoney.toFixed(2);
+//   // console.log (totalMoney);
+//   // console.log(richUsers);
+
+//   return { totalMoney, richUsers }
+// };
+// let result  = usersBilansesAndPhones();
+// console.log(result.totalMoney);
+// console.log(result.richUsers);
+
+/*
+let usersBilansesAndPhones = () => {
+  let richUsers = [];
   let userMoney;
   let totalMoney = 0;
-    for(let obj of users) {
-      console.log(obj.balance);
-      console.log(obj.phone);
-      userMoney = parseFloat((obj.balance).replace(/\$|,/g, ''));
-      totalMoney +=  userMoney;
-      if(userMoney > 2000) {
-        richUsers.push(obj.phone);
-      } 
-    }
+  
+  // Заменяем parseFloat на стрелочную функцию в методе map
 
-  totalMoney = totalMoney.toFixed(2);
-  console.log (totalMoney);
-};
-usersBilanses();
+  let parsedBalances = users.map(obj => parseFloat((obj.balance).replace(/\$|,/g, '')));
+
+  totalMoney = parsedBalances.reduce((acc, val) => acc + val, 0);
+  
+  richUsers = users.filter(obj => parseFloat((obj.balance).replace(/\$|,/g, '')) > 2000).map(obj => obj.phone);
 
   
 
-  // перебираем  объекты по очереди 
-        // каждый объект перебираем по ключу и находим нужные нам итые ключи 
+  totalMoney = totalMoney.toFixed(2);
 
-        // складываем весь баланс
-        // сортируем тех у кого больше 2000 долларов и выводим их телефонный номер по ключу
+  return { totalMoney, richUsers };
+};
+let result  = usersBilansesAndPhones();
+console.log(result.totalMoney);
+console.log(result.richUsers);
 
-  // let numberOfObjects = users.length;
-
-
-
-  // let keysOfFirstObject = Object.keys(users[0]);
-  // let keysOfSecondObject = Object.keys(users[1]);
-  // let keysOfThirdObject = Object.keys(users[2]);
-  // console.log(keysOfFirstObject);
+*/
 
 
-  // return totalMoney
-  //  return RichUsersTelNumbers
-
-
-// let users = [
-//   { name: "Ivan", money: 1000 },
-//   { name: "Vasyl", money: 2000 }
-// ];
-
-// let usersBalances = () => {
-// for (let obj of users) {
-//   console.log("Объект:", obj);
-
-//   // Получение значений по ключам "name" и "money" для каждого объекта
-//   let nameValue = obj.name;
-//   let moneyValue = obj.money;
-
-//   console.log("Значение ключа 'name':", nameValue);
-//   console.log("Значение ключа 'money':", moneyValue);
-// }
-// };
-
-// usersBalances();
-// Этот код выведет каждый объект, а затем для каждого объекта отобразит значения по ключам "name" и "money". Таким образом, вы сможете увидеть значения каждого ключа в каждом объекте.
-
-
-
-
+// Дан массив с числами. Используя метод map извлеките из каждого элемента массива квадратный корень и запишите результат в новый массив.
 

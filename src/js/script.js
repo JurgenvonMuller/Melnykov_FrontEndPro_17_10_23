@@ -63,9 +63,6 @@ let users = [
   ]
   
   
-  
-  
-  
   let findRichestUsersPhones = (arr) => {
   
   let richUsersBalance =  arr.filter(obj => parseFloat(obj.balance.replace(/[$,]/g, '')) > 2000)
@@ -73,9 +70,8 @@ let users = [
   
   console.log(`There are clients phone numbers which has more than 2000 USD
   ${richUsersPhones}`);
-  
+
   return  richUsersPhones
-    
   };
   
   let calcTotalUsersMoney = (arr) => {

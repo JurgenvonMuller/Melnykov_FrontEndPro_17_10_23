@@ -71,7 +71,9 @@ let users = [
   let richUsersBalance =  arr.filter(obj => parseFloat(obj.balance.replace(/[$,]/g, '')) > 2000)
   let richUsersPhones = richUsersBalance.map(obj => obj.phone);
   
-  console.log(richUsersPhones);
+  console.log(`There are clients phone numbers which has more than 2000 USD
+  ${richUsersPhones}`);
+  
   return  richUsersPhones
     
   };
@@ -87,7 +89,7 @@ let users = [
     // Дробные числа с длинным хвостом  округляем числами с 2 знаками после запятой.
     totalUsersMoney = Number(totalUsersMoney.toFixed(2));
   
-    console.log(totalUsersMoney);
+    console.log(` Actually all clients has  ${totalUsersMoney}  USD`);
   
     return totalUsersMoney
   };
@@ -150,7 +152,7 @@ let users = [
 
 
 
-  
+
 // =========================   NOTES   ++++++++++++++++++++++++++++++++++
 
 // let usersBilansesAndPhones = () => {

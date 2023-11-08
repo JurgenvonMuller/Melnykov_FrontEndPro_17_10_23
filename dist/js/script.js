@@ -63,7 +63,7 @@ var findRichestUsersPhones = function findRichestUsersPhones(arr) {
   var richUsersPhones = richUsersBalance.map(function (obj) {
     return obj.phone;
   });
-  console.log(richUsersPhones);
+  console.log("There are clients phone numbers which has more than 2000 USD\n  ".concat(richUsersPhones));
   return richUsersPhones;
 };
 var calcTotalUsersMoney = function calcTotalUsersMoney(arr) {
@@ -79,7 +79,7 @@ var calcTotalUsersMoney = function calcTotalUsersMoney(arr) {
 
   // Дробные числа с длинным хвостом  округляем числами с 2 знаками после запятой.
   totalUsersMoney = Number(totalUsersMoney.toFixed(2));
-  console.log(totalUsersMoney);
+  console.log(" Actually all clients has  ".concat(totalUsersMoney, "  USD"));
   return totalUsersMoney;
 };
 findRichestUsersPhones(users);

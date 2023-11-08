@@ -1170,7 +1170,11 @@ console.log(num);
 // let func2 = func1;
 // console.log(func2);
 
-Дан масив об'єктів. Вивести масив телефонних номерів користувачів, у яких баланс більше 2000 доларів. І знайти суму всіх балансів користувачів
+/*Дан масив об'єктів. Вивести масив телефонних
+ номерів користувачів, у яких баланс більше 2000 доларів. 
+ І знайти суму всіх балансів користувачів
+*/
+
 
 let users = [
 {
@@ -1228,3 +1232,36 @@ let users = [
 "address": "314 Dunne Place, Bawcomville, Guam, 9053"
 }
 ]
+
+
+
+
+
+let findRichestUsersPhones = (arr) => {
+
+let richUsersBalance =  arr.filter(obj => parseFloat(obj.balance.replace(/[$,]/g, '')) > 2000)
+let richUsersPhones = richUsersBalance.map(obj => obj.phone);
+
+console.log(richUsersPhones);
+return  richUsersPhones
+  
+};
+
+let calcTotalUsersMoney = (arr) => {
+
+  // заменяем в объекте строку на число и избавляемся от знака доллара
+  let usersMoneyClearing = arr.map(obj => parseFloat(obj.balance.replace(/[$,]/g, '')));
+  
+  // Находим сумму всех элементов получившегося массива.
+  let totalUsersMoney = usersMoneyClearing.reduce((accu, currentValue) => accu + currentValue, 0);
+
+  // Дробные числа с длинным хвостом  округляем числами с 2 знаками после запятой.
+  totalUsersMoney = Number(totalUsersMoney.toFixed(2));
+
+  console.log(totalUsersMoney);
+
+  return totalUsersMoney
+};
+findRichestUsersPhones(users);
+calcTotalUsersMoney(users);
+

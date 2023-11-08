@@ -89,7 +89,9 @@ let calcTotalUsersMoney = (arr) => {
 
   return totalUsersMoney
 };
+
 findRichestUsersPhones(users);
+
 calcTotalUsersMoney(users);
   
 

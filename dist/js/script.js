@@ -31,7 +31,36 @@ calcArithmeticMean(mixArray);
  рядок znak. У змінній znak може бути: +, -, *, /, %, ^ (ступінь ).
  Вивести результат математичної дії, вказаної в змінній znak.Обидва числа і знак
   виходять від користувача.
+  
 */
+var numberX = +prompt('Put your first number', '');
+var numberY = +prompt('Put your second number', '');
+var znak = prompt("What mathematical operation do you want to do", '+, -, *, /, %, ^');
+var userMathOperation = function userMathOperation(numberX, numberY, znak) {
+  if (!isNaN(numberX) && !isNaN(numberY)) {
+    if (znak === '+') {
+      var addition = numberX + numberY;
+      console.log("Result of addition:    ".concat(numberX, " ").concat(znak, " ").concat(numberY, " =  ").concat(addition));
+    } else if (znak === '-') {
+      var subtraction = numberX - numberY;
+      console.log("Result of subtraction:    ".concat(numberX, "  ").concat(znak, " ").concat(numberY, " =  ").concat(subtraction));
+    } else if (znak === '/') {
+      var division = numberX / numberY;
+      console.log("Result of division:  ".concat(numberX, " ").concat(znak, " ").concat(numberY, " =  ").concat(division));
+    } else if (znak === '%') {
+      var modulo = numberX % numberY;
+      console.log("Result of modulo:   ".concat(numberX, " ").concat(znak, " ").concat(numberY, " =  ").concat(modulo));
+    } else if (znak === '^') {
+      var exponentiation = Math.pow(numberX, numberY);
+      console.log("Result of exponentiation: ".concat(numberX, " ").concat(znak, " ").concat(numberY, " =  ").concat(exponentiation));
+    } else {
+      console.log('Invalid mathematical operation');
+    }
+  } else {
+    console.log('One or both of the entered values are not numbers');
+  }
+};
+userMathOperation(numberX, numberY, znak);
 
 /*
 Написати функцію заповнення даними користувача двомірного масиву.

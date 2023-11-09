@@ -30,25 +30,59 @@ let calcArithmeticMean = (arr) => {
 calcArithmeticMean(mixArray);
 
 
-
-
-
-
 /*
 Написати функцію doMath(x, znak, y), яка отримує 3 аргументи: числа x і y,
  рядок znak. У змінній znak може бути: +, -, *, /, %, ^ (ступінь ).
  Вивести результат математичної дії, вказаної в змінній znak.Обидва числа і знак
   виходять від користувача.
-*/
+  
+*/let numberX = +prompt('Put your first number', '');
+let numberY = +prompt('Put your second number', '');
+let znak = prompt("What mathematical operation do you want to do", '+, -, *, /, %, ^');
+
+let userMathOperation = (numberX, numberY, znak) => {
+  if (!isNaN(numberX) && !isNaN(numberY)) {
+    if (znak === '+') {
+        let addition = numberX + numberY;
+        console.log(`Result of addition:    ${numberX} ${znak} ${numberY} =  ${addition}`);
+    } else if (znak === '-') {
+        let subtraction = numberX - numberY;
+        console.log(`Result of subtraction:    ${numberX}  ${znak} ${numberY} =  ${subtraction}`);
+    } else if (znak === '/') {
+        let division = numberX / numberY;
+        console.log(`Result of division:  ${numberX} ${znak} ${numberY} =  ${division }`);
+    } else if (znak === '%') {
+        let modulo = numberX % numberY;
+        console.log(`Result of modulo:   ${numberX} ${znak} ${numberY} =  ${modulo}`);
+    } else if (znak === '^') {
+        let exponentiation = Math.pow(numberX, numberY);
+        console.log(`Result of exponentiation: ${numberX} ${znak} ${numberY} =  ${exponentiation}`);
+    } else {
+        console.log('Invalid mathematical operation');
+    }
+  } else {
+      console.log('One or both of the entered values are not numbers');
+  }
+};
+
+userMathOperation(numberX, numberY, znak);
 
 /*
 Написати функцію заповнення даними користувача двомірного масиву.
 Довжину основного масиву і внутрішніх масивів задає користувач. 
 Значення всіх елементів всіх масивів задає користувач.
 */
+let myArray = new Array(1, 2, 3, 4, 5);
+console.log(myArray);
+
+
+
+
 
 /*
 Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом. 
 'func(" hello world", ['l', 'd'])' поверне нам "heo wor". 
 Вихідний рядок та символи для видалення задає користувач.
 */
+
+

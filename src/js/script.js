@@ -1174,7 +1174,7 @@ console.log(num);
  номерів користувачів, у яких баланс більше 2000 доларів. 
  І знайти суму всіх балансів користувачів
 */
-
+/*
 
 let users = [
 {
@@ -1269,3 +1269,36 @@ let myArray = new Array(1, 2, 3, 4, 5);
 console.log(myArray);
 
 let filledArray = new Array(5).fill(0);
+
+*/
+
+/*
+Написати функцію заповнення даними користувача двомірного масиву.
+Довжину основного масиву і внутрішніх масивів задає користувач. 
+Значення всіх елементів всіх масивів задає користувач.
+*/
+
+let mainArray = [];
+
+let userTwoDimArray = () => {
+
+  let longOfMainArray = +prompt(`Put length of main array (srtings)`, '4');
+  let longSecondaryArray = +prompt(`Put length of seconday array (colums)`, '4');
+  
+  for(let i = 0; i < longOfMainArray; i++) {
+    let secondaryArray = [];
+
+    for (let j = 0; j < longSecondaryArray; j++) {
+      let elemSecondaryArray = +prompt(`Put element number ${j +1} to string number ${i +1}`);
+      secondaryArray.push(elemSecondaryArray);
+    }
+
+    mainArray.push(secondaryArray);
+  }
+
+  return mainArray
+};
+
+userTwoDimArray();
+console.log(mainArray);
+

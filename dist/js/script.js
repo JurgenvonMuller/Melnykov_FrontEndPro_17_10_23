@@ -1150,81 +1150,123 @@ console.log(num);
  номерів користувачів, у яких баланс більше 2000 доларів. 
  І знайти суму всіх балансів користувачів
 */
+/*
 
-var users = [{
-  "index": 0,
-  "isActive": true,
-  "balance": "$2,226.60",
-  "name": "Eugenia Sawyer",
-  "gender": "female",
-  "phone": "+1 (840) 583-3207",
-  "address": "949 John Street, Rose, Puerto Rico, 1857"
-}, {
-  "index": 1,
-  "isActive": true,
-  "balance": "$2,613.77",
-  "name": "Pauline Gallegos",
-  "gender": "female",
-  "phone": "+1 (985) 593-3328",
-  "address": "328 Greenpoint Avenue, Torboy, North Dakota, 6857"
-}, {
-  "index": 2,
-  "isActive": false,
-  "balance": "$3,976.41",
-  "name": "Middleton Chaney",
-  "gender": "male",
-  "phone": "+1 (995) 591-2478",
-  "address": "807 Fleet Walk, Brutus, Arkansas, 9783"
-}, {
-  "index": 3,
-  "isActive": true,
-  "balance": "$1,934.58",
-  "name": "Burns Poole",
-  "gender": "male",
-  "phone": "+1 (885) 559-3422",
-  "address": "730 Seba Avenue, Osage, Alabama, 6290"
-}, {
-  "index": 4,
-  "isActive": true,
-  "balance": "$3,261.65",
-  "name": "Mcfadden Horne",
-  "gender": "male",
-  "phone": "+1 (942) 565-3988",
-  "address": "120 Scholes Street, Kirk, Michigan, 1018"
-}, {
-  "index": 5,
-  "isActive": false,
-  "balance": "$1,790.56",
-  "name": "Suzette Lewis",
-  "gender": "female",
-  "phone": "+1 (837) 586-3283",
-  "address": "314 Dunne Place, Bawcomville, Guam, 9053"
-}];
-var findRichestUsersPhones = function findRichestUsersPhones(arr) {
-  var richUsersBalance = arr.filter(function (obj) {
-    return parseFloat(obj.balance.replace(/[$,]/g, '')) > 2000;
-  });
-  var richUsersPhones = richUsersBalance.map(function (obj) {
-    return obj.phone;
-  });
-  console.log(richUsersPhones);
-  return richUsersPhones;
+let users = [
+{
+"index": 0,
+"isActive": true,
+"balance": "$2,226.60",
+"name": "Eugenia Sawyer",
+"gender": "female",
+"phone": "+1 (840) 583-3207",
+"address": "949 John Street, Rose, Puerto Rico, 1857"
+},
+{
+"index": 1,
+"isActive": true,
+"balance": "$2,613.77",
+"name": "Pauline Gallegos",
+"gender": "female",
+"phone": "+1 (985) 593-3328",
+"address": "328 Greenpoint Avenue, Torboy, North Dakota, 6857"
+},
+{
+"index": 2,
+"isActive": false,
+"balance": "$3,976.41",
+"name": "Middleton Chaney",
+"gender": "male",
+"phone": "+1 (995) 591-2478",
+"address": "807 Fleet Walk, Brutus, Arkansas, 9783"
+},
+{
+"index": 3,
+"isActive": true,
+"balance": "$1,934.58",
+"name": "Burns Poole",
+"gender": "male",
+"phone": "+1 (885) 559-3422",
+"address": "730 Seba Avenue, Osage, Alabama, 6290"
+},
+{
+"index": 4,
+"isActive": true,
+"balance": "$3,261.65",
+"name": "Mcfadden Horne",
+"gender": "male",
+"phone": "+1 (942) 565-3988",
+"address": "120 Scholes Street, Kirk, Michigan, 1018"
+},
+{
+"index": 5,
+"isActive": false,
+"balance": "$1,790.56",
+"name": "Suzette Lewis",
+"gender": "female",
+"phone": "+1 (837) 586-3283",
+"address": "314 Dunne Place, Bawcomville, Guam, 9053"
+}
+]
+
+
+
+
+
+let findRichestUsersPhones = (arr) => {
+
+let richUsersBalance =  arr.filter(obj => parseFloat(obj.balance.replace(/[$,]/g, '')) > 2000)
+let richUsersPhones = richUsersBalance.map(obj => obj.phone);
+
+console.log(richUsersPhones);
+return  richUsersPhones
+  
 };
-var calcTotalUsersMoney = function calcTotalUsersMoney(arr) {
-  // заменяем в объекте строку на число и избавляемся от знака доллара
-  var usersMoneyClearing = arr.map(function (obj) {
-    return parseFloat(obj.balance.replace(/[$,]/g, ''));
-  });
 
+let calcTotalUsersMoney = (arr) => {
+
+  // заменяем в объекте строку на число и избавляемся от знака доллара
+  let usersMoneyClearing = arr.map(obj => parseFloat(obj.balance.replace(/[$,]/g, '')));
+  
   // Находим сумму всех элементов получившегося массива.
-  var totalUsersMoney = usersMoneyClearing.reduce(function (accu, currentValue) {
-    return accu + currentValue;
-  }, 0);
+  let totalUsersMoney = usersMoneyClearing.reduce((accu, currentValue) => accu + currentValue, 0);
 
   // Дробные числа с длинным хвостом  округляем числами с 2 знаками после запятой.
   totalUsersMoney = Number(totalUsersMoney.toFixed(2));
+
   console.log(totalUsersMoney);
-  return totalUsersMoney;
+
+  return totalUsersMoney
 };
 findRichestUsersPhones(users);
 calcTotalUsersMoney(users);
+
+let myArray = new Array(1, 2, 3, 4, 5);
+console.log(myArray);
+
+let filledArray = new Array(5).fill(0);
+
+*/
+
+/*
+Написати функцію заповнення даними користувача двомірного масиву.
+Довжину основного масиву і внутрішніх масивів задає користувач. 
+Значення всіх елементів всіх масивів задає користувач.
+*/
+
+var mainArray = [];
+var userTwoDimArray = function userTwoDimArray() {
+  var longOfMainArray = +prompt("Put length of main array (srtings)", '4');
+  var longSecondaryArray = +prompt("Put length of seconday array (colums)", '4');
+  for (var i = 0; i < longOfMainArray; i++) {
+    var secondaryArray = [];
+    for (var j = 0; j < longSecondaryArray; j++) {
+      var elemSecondaryArray = +prompt("Put element number ".concat(j + 1, " to string number ").concat(i + 1));
+      secondaryArray.push(elemSecondaryArray);
+    }
+    mainArray.push(secondaryArray);
+  }
+  return mainArray;
+};
+userTwoDimArray();
+console.log(mainArray);

@@ -68,6 +68,23 @@ userMathOperation(numberX, numberY, znak);
 Значення всіх елементів всіх масивів задає користувач.
 */
 
+var mainArray = [];
+var userTwoDimArray = function userTwoDimArray() {
+  var longOfMainArray = +prompt("Put length of main array (srtings)", '4');
+  var longSecondaryArray = +prompt("Put length of seconday array (colums)", '4');
+  for (var i = 0; i < longOfMainArray; i++) {
+    var secondaryArray = [];
+    for (var j = 0; j < longSecondaryArray; j++) {
+      var elemSecondaryArray = +prompt("Put element number ".concat(j + 1, " to string number ").concat(i + 1));
+      secondaryArray.push(elemSecondaryArray);
+    }
+    mainArray.push(secondaryArray);
+  }
+  return mainArray;
+};
+userTwoDimArray();
+console.log(mainArray);
+
 /*
 Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом. 
 'func(" hello world", ['l', 'd'])' поверне нам "heo wor". 

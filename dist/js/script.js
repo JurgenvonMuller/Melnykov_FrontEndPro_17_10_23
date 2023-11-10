@@ -1253,20 +1253,105 @@ let filledArray = new Array(5).fill(0);
 Довжину основного масиву і внутрішніх масивів задає користувач. 
 Значення всіх елементів всіх масивів задає користувач.
 */
+/*
+let mainArray = [];
 
-var mainArray = [];
-var userTwoDimArray = function userTwoDimArray() {
-  var longOfMainArray = +prompt("Put length of main array (srtings)", '4');
-  var longSecondaryArray = +prompt("Put length of seconday array (colums)", '4');
-  for (var i = 0; i < longOfMainArray; i++) {
-    var secondaryArray = [];
-    for (var j = 0; j < longSecondaryArray; j++) {
-      var elemSecondaryArray = +prompt("Put element number ".concat(j + 1, " to string number ").concat(i + 1));
+let userTwoDimArray = () => {
+
+  let longOfMainArray = +prompt(`Put length of main array (srtings)`, '4');
+  let longSecondaryArray = +prompt(`Put length of seconday array (colums)`, '4');
+  
+  for(let i = 0; i < longOfMainArray; i++) {
+    let secondaryArray = [];
+
+    for (let j = 0; j < longSecondaryArray; j++) {
+      let elemSecondaryArray = +prompt(`Put element number ${j +1} to string number ${i +1}`);
       secondaryArray.push(elemSecondaryArray);
     }
+
     mainArray.push(secondaryArray);
   }
-  return mainArray;
+
+  return mainArray
 };
+
 userTwoDimArray();
 console.log(mainArray);
+*/
+// МЕТОДЫ РАБОТЫ СО СТРОКАМИ ===================
+/*
+let string = 'HELLO, world world';
+// let red = string.substring(string.indexOf('w'), string.lastIndexOf('w') + 6);
+// console.log(red);
+let as = string.slice(string.indexOf('H'), string.lastIndexOf(',') + 1).toLowerCase();
+console.log(as + '   arbeiten');
+
+// let lowerstring = string.toLowerCase(string);
+// let upperstring = string.toUpperCase(string);
+// console.log(upperstring);
+// console.log(lowerstring);
+
+string = 'HELLO, world world';
+let rep = string.replace('world', 'dear');
+console.log(string);
+console.log(rep);
+let rep1 = string.replace(/world/g, "dear");
+console.log(rep1);
+
+let str = "Hello, world!";
+let words = str.replace(/[,ld!]/g, '').split(' ');
+console.log(words); // Вывод: ["Hello", "world!"]
+
+
+str = "apple,orange!banana";
+let charsToRemove = "!,";
+
+let regexPattern = new RegExp("[" + charsToRemove + "]", "g");
+console.log(regexPattern);    //    /[!,]/g
+
+
+let result = str.replace(regexPattern, '');
+
+console.log(result); // Вывод: "appleorangebanana";
+
+
+let userInput = "abc";
+let dynamicPattern = RegExp(userInput);
+console.log(dynamicPattern);
+
+let testString = "abcdefg";
+
+if (dynamicPattern.test(testString)) {
+  console.log("Совпадение найдено!");
+} else {
+  console.log("Совпадение не найдено.");
+}
+
+var names = "Гарри Трамп ;Фрэд Барни; Хелен Ригби ; Билл Абель ;Крис Ханд ";
+
+console.log(names);
+
+var re = /\s*;\s*/
+;
+// var nameList = names.split(re);
+
+// console.log(nameList);
+
+/*
+
+Створити функцію, яка прибирає з рядка всі символи, які ми передали 
+другим аргументом. 'func(" hello world", ['l', 'd'])' поверне нам 
+"heo wor". Вихідний рядок та символи для видалення задає користувач.
+*/
+
+var userString = prompt('Put you frase here, please', '');
+console.log(userString);
+var userCharDelete = function userCharDelete(userString) {
+  var charsToRemove = prompt('Put chars which you want to delete from your string', '');
+  var regPattern = new RegExp('[' + charsToRemove + ']', 'g');
+  console.log(regPattern);
+  var newUserString = userString.replace(regPattern, '');
+  console.log(newUserString);
+  return newUserString;
+};
+userCharDelete(userString);

@@ -1277,7 +1277,7 @@ let filledArray = new Array(5).fill(0);
 Довжину основного масиву і внутрішніх масивів задає користувач. 
 Значення всіх елементів всіх масивів задає користувач.
 */
-
+/*
 let mainArray = [];
 
 let userTwoDimArray = () => {
@@ -1301,4 +1301,87 @@ let userTwoDimArray = () => {
 
 userTwoDimArray();
 console.log(mainArray);
+*/
+// МЕТОДЫ РАБОТЫ СО СТРОКАМИ ===================
+/*
+let string = 'HELLO, world world';
+// let red = string.substring(string.indexOf('w'), string.lastIndexOf('w') + 6);
+// console.log(red);
+let as = string.slice(string.indexOf('H'), string.lastIndexOf(',') + 1).toLowerCase();
+console.log(as + '   arbeiten');
 
+// let lowerstring = string.toLowerCase(string);
+// let upperstring = string.toUpperCase(string);
+// console.log(upperstring);
+// console.log(lowerstring);
+
+string = 'HELLO, world world';
+let rep = string.replace('world', 'dear');
+console.log(string);
+console.log(rep);
+let rep1 = string.replace(/world/g, "dear");
+console.log(rep1);
+
+let str = "Hello, world!";
+let words = str.replace(/[,ld!]/g, '').split(' ');
+console.log(words); // Вывод: ["Hello", "world!"]
+
+
+str = "apple,orange!banana";
+let charsToRemove = "!,";
+
+let regexPattern = new RegExp("[" + charsToRemove + "]", "g");
+console.log(regexPattern);    //    /[!,]/g
+
+
+let result = str.replace(regexPattern, '');
+
+console.log(result); // Вывод: "appleorangebanana";
+
+
+let userInput = "abc";
+let dynamicPattern = RegExp(userInput);
+console.log(dynamicPattern);
+
+let testString = "abcdefg";
+
+if (dynamicPattern.test(testString)) {
+  console.log("Совпадение найдено!");
+} else {
+  console.log("Совпадение не найдено.");
+}
+
+var names = "Гарри Трамп ;Фрэд Барни; Хелен Ригби ; Билл Абель ;Крис Ханд ";
+
+console.log(names);
+
+var re = /\s*;\s*/;
+// var nameList = names.split(re);
+
+// console.log(nameList);
+
+/*
+
+Створити функцію, яка прибирає з рядка всі символи, які ми передали 
+другим аргументом. 'func(" hello world", ['l', 'd'])' поверне нам 
+"heo wor". Вихідний рядок та символи для видалення задає користувач.
+*/
+
+
+let userString = prompt('Put you frase here, please', '');
+console.log(userString);
+
+let userCharDelete = (userString) => {
+
+  let charsToRemove = prompt('Put chars which you want to delete from your string', '');
+
+  let regPattern = new RegExp('[' + charsToRemove + ']', 'g');
+  console.log(regPattern);
+
+  let newUserString = userString.replace(regPattern, '');
+  console.log(newUserString);
+
+  return newUserString
+};
+
+userCharDelete(userString);

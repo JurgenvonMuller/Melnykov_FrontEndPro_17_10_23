@@ -7,24 +7,27 @@
 числових елементів даного масиву.
 */
 
-var a = 12;
-var print = function print() {
-  console.log(a + 'Yes');
-};
-var mixArray = [832, 'defender', print, 23, NaN, 543, a, 987, undefined, 56, true, 456, false, "bignumber"];
-var calcArithmeticMean = function calcArithmeticMean(arr) {
-  var filterNumber = arr.filter(function (item) {
-    return typeof item === 'number' && !isNaN(item);
-  });
-  var summOfNumbers = filterNumber.reduce(function (accu, currentValue) {
-    return accu + currentValue;
-  }, 0);
-  var arithmeticMean = summOfNumbers / filterNumber.length;
+/*
+let a = 12;
+let print = () => { console.log(a + 'Yes')};
+
+let mixArray = [832, 'defender',  print, 23, NaN, 543, a, 987, undefined, 56, true, 456, false, "bignumber"]
+
+let calcArithmeticMean = (arr) => {
+
+  let filterNumber = arr.filter(item => typeof item === 'number' && !isNaN(item));
+
+  let summOfNumbers = filterNumber.reduce((accu, currentValue) => accu + currentValue, 0);
+
+  let arithmeticMean = summOfNumbers / filterNumber.length;
+
   console.log(filterNumber);
   console.log(arithmeticMean);
-  return arithmeticMean;
+
+  return arithmeticMean
 };
 calcArithmeticMean(mixArray);
+*/
 
 /*
 Написати функцію doMath(x, znak, y), яка отримує 3 аргументи: числа x і y,
@@ -33,34 +36,39 @@ calcArithmeticMean(mixArray);
   виходять від користувача.
   
 */
-var numberX = +prompt('Put your first number', '');
-var numberY = +prompt('Put your second number', '');
-var znak = prompt("What mathematical operation do you want to do", '+, -, *, /, %, ^');
-var userMathOperation = function userMathOperation(numberX, numberY, znak) {
+
+/*
+let numberX = +prompt('Put your first number', '');
+let numberY = +prompt('Put your second number', '');
+let znak = prompt("What mathematical operation do you want to do", '+, -, *, /, %, ^');
+
+let userMathOperation = (numberX, numberY, znak) => {
   if (!isNaN(numberX) && !isNaN(numberY)) {
     if (znak === '+') {
-      var addition = numberX + numberY;
-      console.log("Result of addition:    ".concat(numberX, " ").concat(znak, " ").concat(numberY, " =  ").concat(addition));
+        let addition = numberX + numberY;
+        console.log(`Result of addition:    ${numberX} ${znak} ${numberY} =  ${addition}`);
     } else if (znak === '-') {
-      var subtraction = numberX - numberY;
-      console.log("Result of subtraction:    ".concat(numberX, "  ").concat(znak, " ").concat(numberY, " =  ").concat(subtraction));
+        let subtraction = numberX - numberY;
+        console.log(`Result of subtraction:    ${numberX}  ${znak} ${numberY} =  ${subtraction}`);
     } else if (znak === '/') {
-      var division = numberX / numberY;
-      console.log("Result of division:  ".concat(numberX, " ").concat(znak, " ").concat(numberY, " =  ").concat(division));
+        let division = numberX / numberY;
+        console.log(`Result of division:  ${numberX} ${znak} ${numberY} =  ${division }`);
     } else if (znak === '%') {
-      var modulo = numberX % numberY;
-      console.log("Result of modulo:   ".concat(numberX, " ").concat(znak, " ").concat(numberY, " =  ").concat(modulo));
+        let modulo = numberX % numberY;
+        console.log(`Result of modulo:   ${numberX} ${znak} ${numberY} =  ${modulo}`);
     } else if (znak === '^') {
-      var exponentiation = Math.pow(numberX, numberY);
-      console.log("Result of exponentiation: ".concat(numberX, " ").concat(znak, " ").concat(numberY, " =  ").concat(exponentiation));
+        let exponentiation = Math.pow(numberX, numberY);
+        console.log(`Result of exponentiation: ${numberX} ${znak} ${numberY} =  ${exponentiation}`);
     } else {
-      console.log('Invalid mathematical operation');
+        console.log('Invalid mathematical operation');
     }
   } else {
-    console.log('One or both of the entered values are not numbers');
+      console.log('One or both of the entered values are not numbers');
   }
 };
+
 userMathOperation(numberX, numberY, znak);
+*/
 
 /*
 Написати функцію заповнення даними користувача двомірного масиву.
@@ -68,25 +76,55 @@ userMathOperation(numberX, numberY, znak);
 Значення всіх елементів всіх масивів задає користувач.
 */
 
-var mainArray = [];
-var userTwoDimArray = function userTwoDimArray() {
-  var longOfMainArray = +prompt("Put length of main array (srtings)", '4');
-  var longSecondaryArray = +prompt("Put length of seconday array (colums)", '4');
-  for (var i = 0; i < longOfMainArray; i++) {
-    var secondaryArray = [];
-    for (var j = 0; j < longSecondaryArray; j++) {
-      var elemSecondaryArray = +prompt("Put element number ".concat(j + 1, " to string number ").concat(i + 1));
+/*
+let mainArray = [];
+
+let userTwoDimArray = () => {
+
+  let longOfMainArray = +prompt(`Put length of main array (srtings)`, '4');
+  let longSecondaryArray = +prompt(`Put length of seconday array (colums)`, '4');
+  
+  for(let i = 0; i < longOfMainArray; i++) {
+    let secondaryArray = [];
+
+    for (let j = 0; j < longSecondaryArray; j++) {
+      let elemSecondaryArray = +prompt(`Put element number ${j +1} to string number ${i +1}`);
       secondaryArray.push(elemSecondaryArray);
     }
+
     mainArray.push(secondaryArray);
   }
-  return mainArray;
+  return mainArray
 };
+
 userTwoDimArray();
 console.log(mainArray);
+*/
 
 /*
 Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом. 
 'func(" hello world", ['l', 'd'])' поверне нам "heo wor". 
 Вихідний рядок та символи для видалення задає користувач.
 */
+inputUserString = prompt("Put your string here, please", '');
+function func(inputString, charsToRemove) {
+  // Преобразуем строку в массив символов
+  var stringArray = inputString.split('');
+
+  // Проходим по массиву символов и удаляем символы, переданные вторым аргументом
+  var _loop = function _loop(i) {
+    stringArray = stringArray.filter(function (_char) {
+      return _char !== charsToRemove[i];
+    });
+  };
+  for (var i = 0; i < charsToRemove.length; i++) {
+    _loop(i);
+  }
+
+  // Объединяем массив символов обратно в строку и возвращаем результат
+  return stringArray.join('');
+}
+
+// Пример использования функции
+var result = func("hello world", ['l', 'd']);
+console.log(result); // Выведет "heo wor"

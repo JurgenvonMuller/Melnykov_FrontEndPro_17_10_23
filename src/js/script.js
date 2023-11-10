@@ -9,6 +9,7 @@
 числових елементів даного масиву.
 */
 
+/*
 let a = 12;
 let print = () => { console.log(a + 'Yes')};
 
@@ -28,6 +29,11 @@ let calcArithmeticMean = (arr) => {
   return arithmeticMean
 };
 calcArithmeticMean(mixArray);
+*/
+
+
+
+
 
 
 /*
@@ -36,7 +42,11 @@ calcArithmeticMean(mixArray);
  Вивести результат математичної дії, вказаної в змінній znak.Обидва числа і знак
   виходять від користувача.
   
-*/let numberX = +prompt('Put your first number', '');
+*/
+
+
+/*
+let numberX = +prompt('Put your first number', '');
 let numberY = +prompt('Put your second number', '');
 let znak = prompt("What mathematical operation do you want to do", '+, -, *, /, %, ^');
 
@@ -66,6 +76,13 @@ let userMathOperation = (numberX, numberY, znak) => {
 };
 
 userMathOperation(numberX, numberY, znak);
+*/
+
+
+
+
+
+
 
 /*
 Написати функцію заповнення даними користувача двомірного масиву.
@@ -73,6 +90,10 @@ userMathOperation(numberX, numberY, znak);
 Значення всіх елементів всіх масивів задає користувач.
 */
 
+
+
+
+/*
 let mainArray = [];
 
 let userTwoDimArray = () => {
@@ -90,12 +111,12 @@ let userTwoDimArray = () => {
 
     mainArray.push(secondaryArray);
   }
-
   return mainArray
 };
 
 userTwoDimArray();
 console.log(mainArray);
+*/
 
 
 
@@ -107,5 +128,25 @@ console.log(mainArray);
 'func(" hello world", ['l', 'd'])' поверне нам "heo wor". 
 Вихідний рядок та символи для видалення задає користувач.
 */
+inputUserString = prompt(`Put your string here, please`,'');
+
+
+function func(inputString, charsToRemove) {
+  // Преобразуем строку в массив символов
+  let stringArray = inputString.split('');
+
+  // Проходим по массиву символов и удаляем символы, переданные вторым аргументом
+  for (let i = 0; i < charsToRemove.length; i++) {
+      stringArray = stringArray.filter(char => char !== charsToRemove[i]);
+  }
+
+  // Объединяем массив символов обратно в строку и возвращаем результат
+  return stringArray.join('');
+}
+
+// Пример использования функции
+let result = func("hello world", ['l', 'd']);
+console.log(result); // Выведет "heo wor"
+
 
 

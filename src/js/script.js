@@ -1,15 +1,12 @@
 
 //        Ця дз складається з чотирьох невеликих завдань, за реалізацію кожної з них можна отримати 25 балів:
 
-
-
-
 /*
 Дано масив з елементами різних типів. Створити функцію яка вираховує середнє арифметичне лише 
 числових елементів даного масиву.
 */
 
-/*
+
 let a = 12;
 let print = () => { console.log(a + 'Yes')};
 
@@ -29,12 +26,6 @@ let calcArithmeticMean = (arr) => {
   return arithmeticMean
 };
 calcArithmeticMean(mixArray);
-*/
-
-
-
-
-
 
 /*
 Написати функцію doMath(x, znak, y), яка отримує 3 аргументи: числа x і y,
@@ -44,8 +35,6 @@ calcArithmeticMean(mixArray);
   
 */
 
-
-/*
 let numberX = +prompt('Put your first number', '');
 let numberY = +prompt('Put your second number', '');
 let znak = prompt("What mathematical operation do you want to do", '+, -, *, /, %, ^');
@@ -76,12 +65,6 @@ let userMathOperation = (numberX, numberY, znak) => {
 };
 
 userMathOperation(numberX, numberY, znak);
-*/
-
-
-
-
-
 
 
 /*
@@ -90,10 +73,6 @@ userMathOperation(numberX, numberY, znak);
 Значення всіх елементів всіх масивів задає користувач.
 */
 
-
-
-
-/*
 let mainArray = [];
 
 let userTwoDimArray = () => {
@@ -116,10 +95,6 @@ let userTwoDimArray = () => {
 
 userTwoDimArray();
 console.log(mainArray);
-*/
-
-
-
 
 
 
@@ -128,25 +103,22 @@ console.log(mainArray);
 'func(" hello world", ['l', 'd'])' поверне нам "heo wor". 
 Вихідний рядок та символи для видалення задає користувач.
 */
-inputUserString = prompt(`Put your string here, please`,'');
 
+let userString = prompt('Put you frase here, please', '');
+console.log(userString);
 
-function func(inputString, charsToRemove) {
-  // Преобразуем строку в массив символов
-  let stringArray = inputString.split('');
+let userCharDelete = (userString) => {
 
-  // Проходим по массиву символов и удаляем символы, переданные вторым аргументом
-  for (let i = 0; i < charsToRemove.length; i++) {
-      stringArray = stringArray.filter(char => char !== charsToRemove[i]);
-  }
+  let charsToRemove = prompt('Put chars which you want to delete from your string', '');
 
-  // Объединяем массив символов обратно в строку и возвращаем результат
-  return stringArray.join('');
-}
+  let regPattern = new RegExp('[' + charsToRemove + ']', 'g');
+  console.log(regPattern);
 
-// Пример использования функции
-let result = func("hello world", ['l', 'd']);
-console.log(result); // Выведет "heo wor"
+  let newUserString = userString.replace(regPattern, '');
+  console.log(newUserString);
 
+  return newUserString
+};
 
+userCharDelete(userString);
 

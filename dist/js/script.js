@@ -92,8 +92,6 @@ console.log(mainArray);
 Вихідний рядок та символи для видалення задає користувач.
 */
 
-var userString = prompt('Put you frase here, please', '');
-console.log(userString);
 var userCharDelete = function userCharDelete(userString) {
   var charsToRemove = prompt('Put chars which you want to delete from your string', '');
   var regPattern = new RegExp('[' + charsToRemove + ']', 'g');

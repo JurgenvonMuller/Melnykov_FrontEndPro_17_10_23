@@ -1368,10 +1368,12 @@ var re = /\s*;\s*/;
 */
 
 
-let userString = prompt('Put you frase here, please', '');
-console.log(userString);
+
 
 let userCharDelete = (userString) => {
+
+  let userString = prompt('Put you frase here, please', '');
+  console.log(userString);
 
   let charsToRemove = prompt('Put chars which you want to delete from your string', '');
 

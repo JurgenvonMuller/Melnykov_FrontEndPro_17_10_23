@@ -1,5 +1,7 @@
 "use strict";
 
+// var _lodash = _interopRequireDefault(require("lodash"));
+// function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 // let maxElem = 0;
 // let key_maxElem = 0;
 
@@ -1344,14 +1346,29 @@ var re = /\s*;\s*/
 "heo wor". Вихідний рядок та символи для видалення задає користувач.
 */
 
-var userString = prompt('Put you frase here, please', '');
-console.log(userString);
-var userCharDelete = function userCharDelete(userString) {
-  var charsToRemove = prompt('Put chars which you want to delete from your string', '');
-  var regPattern = new RegExp('[' + charsToRemove + ']', 'g');
+/*
+
+let userCharDelete = (userString) => {
+
+  let userString = prompt('Put you frase here, please', '');
+  console.log(userString);
+
+  let charsToRemove = prompt('Put chars which you want to delete from your string', '');
+
+  let regPattern = new RegExp('[' + charsToRemove + ']', 'g');
   console.log(regPattern);
-  var newUserString = userString.replace(regPattern, '');
+
+  let newUserString = userString.replace(regPattern, '');
   console.log(newUserString);
-  return newUserString;
+
+  return newUserString
 };
+
 userCharDelete(userString);
+*/
+
+// const _ = require('lodash');
+
+// let originalObject = { a: 1, b: { c: [1, 2, 3] }, d: 3 };
+// const deepCopyObject = _.cloneDeep(originalObject);
+// console.log(deepCopyObject);

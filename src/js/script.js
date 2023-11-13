@@ -1,3 +1,7 @@
+
+
+// import _ from 'lodash';
+
 // let maxElem = 0;
 // let key_maxElem = 0;
 
@@ -235,1155 +239,344 @@ boolean -> number -> 1 / 0
 // let count;
 // for(let item of arr) {
 //   console.log(item);
- 
+
 // }
 // console.log(arr.length + '  length');
+// let test = function func() {
 
-/*
-let key1; 
-let obj = {a: 11, b: 22, c: 33, d: 44};
+//   console.log('!');
+//   test();
 
-for( let key in obj) {
-  console.log(key);
-  console.log(`${key} ${obj[key]}`);
-}
-
-let f = 7;
-let count = 0;
-while(f < 20) {
-  console.log(f);
-  f += 5;
-  count++
-}
-console.log(count + ' count');
-
-
-let bred = 8;
-let count = 0;
-
-while(bred >=4) {
-  console.log(bred);
-  bred--
-  count++
-}
-console.log(count + '  count');
-
-*/
-// let cvvt = 9;
-// let count = 0;
-
-// while(cvvt <= 12) {
-//   console.log(cvvt);
-//   cvvt++
-//   count++
+// }
+// test();
+// let obj = {
+//   func1: function() {return 1},
+//   func2: function() {return 2},
+//   func3: function() {return 3},
+//   func4: function() {return 4}
 // };
-// console.log(count);
+// console.log(obj.func1() + obj.func2() + obj.func3() + obj.func4());
 
-/*
-for(let num = 100; num >=0; num--) {
-  console.log(num);
-}
-*/
-//Найдите произведение целых чисел от 1 до 20.
-/*
-let mult = 1;
-
-for(let k = 1; k <=20; k++) {
-  mult = mult * k;
-}
-console.log(mult);
-*/
-// https://forms.gle/bodpDxEVVAAhdwmH7
-// const minimalAge = 18;
-// var ageConfirmed = confirm('Are you ${minimalAge}?')
-
-// if (ageConfirmed) {
-//   alert('Go to website');
+// for(let elem in obj) {
+//   console.log(elem());
+//   let summ = 0;
+//   summ += elem(); 
 // }
 
-// // Cykle FOR ... OF only for arrow 
-// let arr = ['q','' , 'w','' ,'e', '7'];
+// let math = {
+//   square: function(num) {return num + num},
+//   cube: function(num) {return (num * num) + (num * num)},
+//   cube1: function(num) {return (num * num* num) + (num * num * num)},
+// };
+// console.log(math.square(2));
+// console.log(math.cube(2));
+// console.log(math.cube1(2));
 
-// for(let item of arr) {
-//   console.log(item);
-// }
 
-// let newarr = new Array(5);
-// console.log(newarr);
-// newarr[0] = 1;
-// console.log(newarr);
+// let test = function(func1, func2, func3) {
+// console.log(func1() + func2() + func3());
+// };
 
-// let arr1 = ['a', 'b', 'c', 'd', 'e'];
-// console.log(arr1);
-// for(let item of arr1) {
-//   console.log(item);
-// }
+// test(function() {return 1}, function() {return 2}, function() {return 3});
 
-// Цикл FOR ...IN  предназначен для объектов! 
-// let obj = {x: 1, y: 2, z: 3};
-// for(let key in obj) {
-//   console.log(key);
-//   console.log(obj[key]);
-// }
 
-// let num = 500;
+// let func1 = () => {return 1};
+// let func2 = () => { return 2};
+// let func3 = () => {return 88};
 
-// while (num > 10) {
-// 	num = num / 2;
-// }
+// let test = (fu1, fu2, fu3) => {
 
-// console.log(num); // результат
+//   console.log(fu1() + fu2() + fu3());
 
-// let num = 0;
-// while(num <= 99 ) {
-//   num++
-//   console.log(num);
-// }
+// };
+// test(func1, func2, func3);
+// let test =(num, func1, func2) => {
+//   console.log(func1(num) + func2(num));
+// };
+// let f1 = (num) => { return num * num };
+// let f2 = (num) => { return num * num * num};
+// test(3, f1, f2);
 
-// Выведите в консоль числа от 11 до 33.
+// let test = (arr, func) => {
 
-// let num1 = 33;
-// while(num1 >=11) {
-//   console.log(num1);
-//   num1--
-// }
-
-/*Дано число num с неким начальным значением.
-Умножайте его на 3 столько раз, пока результат умножения не
-станет больше 1000. Какое число получится? Посчитайте количество
-итераций, необходимых для этого. */
-
-// let num = 1000;
-// let count = 0;
-// while(num >= 1 ) {
-//   console.log(num);
-//   num = num / 3;
-//   count++
-// }
-// console.log(count);
-
-// let num5 = 500;
-
-// while (num5 > 10) {
-// 	num5 = num5 / 2;
-// }
-
-// console.log(num5); // результат
-
-// С помощью цикла for выведите в консоль числа от 1 до 100.
-
-// for(let num = 1; num <=100; num++) {
-//   if(num % 2 ===0) {
-//     console.log(num);
+//   for(let i = 0; i < arr.length; i++) {
+//     arr[i] = func(arr[i]);
 //   }
-// }
-
-// С помощью цикла for выведите в консоль нечетные числа в промежутке от 1 до 99.
-
-// for(let num = 1; num <= 100; num++) {
-//   if(num % 2 !== 0) {
-//     console.log(num);
-//   }
-// }
-
-// С помощью цикла for выведите в консоль числа от 100 до 0.
-
-// for( let num = 100; num >= 1; num--) {
-//   console.log(num);
-// }
-
-// Цикл for для массивов 
-
-// let arr = [2, 5, 9, 15, 1, 4];
-
-// for(let j = 0; j <= arr.length - 1; j++) {
-  
-
-//   if( arr[j] > 3 && arr[j] < 10) {
-//     console.log(arr[j]);
-//   }
-// }
-/*
-let obj = {a: 1, b: 2, c: 3, d: 4, e: 5};
-// Выведите в консоль те элементы объекта, значения которых - нечетные числа.
-
-for(let key in obj) {
-  console.log(obj[key]);
-  console.log(key);
-
-  // if((obj[key]) % 2 !== 0) {
-  //   console.log(obj[key]);
-  // }
-} 
-  console.log(obj)
-  */
-
-/* Найдите сумму четных чисел от 2 до 100.
-
-let res = 0;
-
-for(let j = 2; j <= 100; j++) {
-  if( j % 2 ===0 ) {
-    res += j;
-  }
-}
-console.log(res);
-*/
-
-/*
-Найдите сумму нечетных чисел от 1 до 99.
-*/
-// let sum = 0;
-//   for(let j = 1; j <= 99; j++) 
-//   if(j % 2 !== 0){
-//   sum += j;
-//   }
-// console.log(sum);
-
-/*
-Найдите произведение целых чисел от 1 до 20.
-*/
-// let mult = 1;
-// for( let j = 1; j <= 20; j++) {
-//   if( j % 1 === 0) {
-//     mult = mult*j;
-//   }
-// }
-// console.log(mult);
-/*
-let arr = [2, 5, 9, 3, 1, 4];
-// Найдите сумму элементов этого массива.
-let res = 0;
-for(let elem of arr) {
-  res += elem;
-}
-console.log(res);
-*/
-
-// let arr = [2, 5, 9, 3, 1, 4];
-// // Найдите сумму элементов элементов, являющихся четными числами.
-// let res = 0;
-// for(let elem of arr) {
-//   if( elem % 2 === 0) {
-//     res += elem;
-//   }
-// }
-// console.log(res);
-
-
-/*
-Найдите сумму квадратов элементов этого массива.
-*/
-// let arr = [2, 5, 9, 3, 1, 4];
-// let sumSqrt = 0;
-// for(let elem of arr) {
-//   sumSqrt += elem ** 2;
-// }
-// console.log(sumSqrt);
-
-/*
-Найдите произведение элементов этого массива.
-*/
-// let arr = [2, 5, 9, 3, 1, 4];
-// let res = 1;
-// for(let elem of arr) {
-//     res *= elem;
-//   }
-//   console.log(res);
-
-// let str = '';
-
-// for (let i = 1; i <= 5; i++) {
-// 	str += i;
-// }
-
-// console.log(str); // выведет '12345'
-
-// С помощью цикла сформируйте строку, заполненную 5-тью дефисами.
-
-// let str = '';
-// let res;
-// for(let i = 0; i <= 5; i ++) {
-// str += '-';
-// }
-// console.log(str);
-
-// let str = '';
-// for(let i = 1; i <= 9; i++) {
-//   str += i;
-// }
-// console.log(str);
-  
-  
-  //  123456789'. '987654321' С помощью цикла сформируйте строку '-1-2-3-4-5-6-7-8-9-'.
-
-//  let str = ' ';
-//  for(let i = 1; i <= 9; i++) {
-//   str +='-' + i;
-//  }
-// console.log(str);
-//  урок 153  начать
-
-// for (let i = 1; i <= 100; i++) {
-// 	let str = String(i); // преобразуем число в строку
-	
-// 	if (str[0] === '1' || str[0] === '2') {
-// 		console.log(i);
-// 	}
-// }
-
-// for(let k = 1; k <= 100; k++) {
-//   let str1 = String(k);
-//   if(str1[0] === '1' || str1[0] === '2') {
-//     console.log(str1)
-//   }
-// }
-
-
-// Переберите циклом числа от 10 до 1000 и выведите в консоль первую цифру каждого числа.
-// let result = '';
-
-// for(let j = 10; j <= 100; j++) {
-//   let str2 = String(j);
-//   result += str2[0] + ", ";
-//   console.log(result);
-// }
-
-/*
-// Переберите циклом числа от 10 до 1000 и выведите в консоль 
-// сумму первой и второй цифры каждого числа.
-// */
-// let result = 0;
-// for (let j = 10; j <= 1000; j++) {
-//   let str = String(j);
-//   if(str.length >=2) {
-//     result = Number(str[0]) + Number(str[1]);
-//     console.log(result);
-//   }
-// }
-
-/*
-Переберите циклом числа от 10 до 1000 и выведите
- те числа, первая цифра которых равна 1.
-*/
-
-// for(let j = 10; j <= 1000; j++)  {
-//   let str = String(j);
-//   if(str[0] === '1') {
-//     console.log(str);
-//   }
-// }
-/*
-Переберите циклом числа от 10 до 1000 и 
-выведите на экран те числа, сумма двух первых цифр которых равна 5.
-*/
-
-// let result;
-// for(let j = 10; j <= 1000; j++) {
-//   let str = String(j);
-//   if (Number(str[0]) + Number(str[1]) === 5) {
-//     console.log(str);
-//   }
-// }
-
-/*
-Дан массив с числами. Запустите цикл, который будет по очереди выводить
-элементы этого массива в консоль до тех пор, пока не встретится элемент
-со значением 0. После этого цикл должен завершить свою работу.
-*/
-
-// let result;
-// let arr = [1, 2, 3, 0, 40, 9];
-
-// for(let j = 0;  j <= arr.length -1; j++) {
-//   let str = String(arr[j]);
-//   if(str.includes('0')) {
-//     console.log(arr[j]);
-//     // break;
-//   }
-// }
-/*
-Дан массив с числами. Найдите сумму элементов, 
-расположенных от начала массива до первого отрицательного числа.
-*/
-
-// let arr = [1, 2, 3, -4, -5, 9, 90, 78];
-// let result;
-
-/*
-Дан массив с числами. 
-Найдите позицию первого числа 3 в этом массиве 
-(считаем, что это число обязательно есть в массиве).
-*/
-// let arr = [1, 2, 3, -4, -5, 9, 3, 78];
-// let result;
-// for( let j = 0; j <= arr.length - 1; j++) {
-
-// if(arr[j] === 3) {
-//   console.log(j);
-// }
-
-// }
-/*
-Определите, сколько целых чисел, начиная с числа 1, нужно сложить, 
-чтобы сумма получилась больше 100.
-*/
-// let count = 0;
-// let result = 0;
-// for(let j = 1; j <= 100; j++) {
-// result += j;
-// count++;
-// if(result >= 100 ) {
-//   console.log(count)
-//   break;
-// }
-// }
-
-// for (let i = 1; i <= 3; i++) {
-// 	for (let j = 1; j <= 2; j++) {
-// 		document.write(i);
-   
-// 	}
-// }
-
-/*
-С помощью двух вложенных циклов выведите на экран следующую строку:
-
-111222333444555666777888999
-// */
-// for(let i = 1; i <= 9; i++) {
-//   for(let j = 1; j <= 3; j++) {
-//     document.write(i);
-//   }
-// }
-
-// for(let i = 1; i <= 9; i++) {
-//   for(let j = 1; j <= 3; j++) {
-//     console.log(i, j);
-//   }
-// }
- /* 
-С помощью двух вложенных циклов выведите на экран следующую строку:
-
-11 12 13 21 22 23 31 32 33
- */
-//  for( let i = 1; i <=3; i++) {
-//   for(let j = 1; j <= 3; j++) {
-//     document.write(`${i}${j}   `);
-//   }
-//  }
-
- // заполнение массива 159 задание 
-
- 
-/*
-Дано натуральне число. Знайти та вивести на сторінку всі його дільники.
-Визначити кількість його парних дільників.
-Знайти суму його парних дільників.
-*/
-
-// let naturNumber = +prompt("Slava, enter here any natural number, please", '');
-// let count1 = 0;
-// let sumOfDivis = 0;
-// let divisString = "Делители введенного числа: ";
-// let pairDiv;
-
-// for (let divis = 1; divis <= naturNumber; divis++) {
-//   if(naturNumber % divis === 0) {
-//     sumOfDivis += divis;
-//     divisString += divis +',  ';
-//     count1++;
-//       if(divis % 2 === 0) {
-//         divis = PairDiv;
-//       }
-//     }
-//   }
-// console.log(`Парные делители данного числа это: ${pairDiv}`)
-// console.log(`${divisString}`);
-// console.log(`Количество делителей: ${count1}`);
-// // console.log(`Summ of divisors is ${sumOfDivis}`);
-// // console.log(`NUMBER OF DIVISORS OF THIS NATURAL NUMBER IS ${count1}`);
-
-
-// let naturNumber = +prompt("Slava, enter here any natural number, please", '');
-// let count1 = 0;
-// let sumOfDivis = 0;
-// let divisString = "Делители введенного числа: ";
-// let pairDiv = '';
-// let sumPairDiv = 0;
-
-// for (let divis = 1; divis <= naturNumber; divis++) {
-//   if (naturNumber % divis === 0) {
-//     divisString += divis + ', ';
-//     count1++;
-//     if (divis % 2 === 0) {
-//       pairDiv += divis + ', ';
-//       sumPairDiv  += divis;
-//     }
-//   }
-// }
-
-// console.log(`Парные делители данного числа: ${pairDiv}`);
-// console.log(`${divisString}`);
-// console.log(`Количество делителей: ${count1}`);
-// console.log(`Сумма парных делителей: ${sumPairDiv}`)
-
-
-// let arr = [];
-// let symb = 'x';
-// for( let i = 0;  i <= 10; i++)  {
-//   arr.push('x');
-// }
-// console.log(arr);
-/*
-const keys = ['name', 'age', 'city', 'gender', 'occupation'];
-const values = ['John', 30, 'New York', 'Male', 'Engineer'];
-let obj = {};
-for(let i = 0; i <= 6; i++) {
-  obj[keys[i]] = values[i];
-}
-console.log(obj);
-*/
-
-/* 
-С помощью цикла создайте объект, ключами которого будут названия
-дней, а значениями - их номера.
-*/
-/*
-let arr1 = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс']; 
-let arr2 = [1, 2, 3, 4, 5, 6, 7];
-let week = {};
-let maxLength = Math.max(arr1.length, arr2.length);
-
-for(let i = 0; i < maxLength; i++) {
-  week[arr2[i]] = arr1[i];
-}
-console.log(week);
-*/
-/*
-Переберите этот объект циклом и запишите в новый объект 
-те элементы, которые являются четными числами.
-*/
-/*
-
-let obj = {a: 1, b: 2, c: 3, d: 4, e: 5};
-
-let keysArray = Object.keys(obj);
-console.log(keysArray);
-
-let maxLength_keys = keysArray.length;
-console.log(maxLength_keys);
-
-let valuesArray = Object.values(obj);
-console.log(valuesArray);
-
-let maxLength_values = valuesArray.length;
-console.log(maxLength_values);
-
-let obj1 = {};
-
-for(let i = 0; i < maxLength_keys && i < maxLength_values; i++) {
-  if( valuesArray[i] % 2 === 0) {
-    obj1[keysArray[i]] = valuesArray[i];
-  }
-}
-console.log(obj1);
-*/
-
-/*
-Переберите этот объект циклом и создайте новый объект так, 
-чтобы его ключами стали элементы старого объекта, 
-а значениями - ключи старого объекта.
-*/
-/*
-let obj = {a: 1, b: 2, c: 3, d: 4, e: 5};
-console.log(obj);
-let keyArray_obj = Object.keys(obj);
-let valueArray_obj = Object.values(obj);
-
-let obj_new = {};
-
-for(let i = 0; i < keyArray_obj.length; i++) {
-  obj_new[valueArray_obj[i]] = keyArray_obj[i];
-}
-console.log(obj_new);
-
-function myName(){
-  console.log('Jarne');
-}
-
-myName();
-*/
-// let sum = 0;
-// function summ_1_100() {
-//   for(let i = 1; i<=100; i++) {
-//   sum += i;
-//   console.log(sum);
-//   }
-//   console.log(sum);
-// }
-// summ_1_100() 
-// console.log(sum);
-
-// let sum = 0;
-
-// function summ_1_100() {
-//   for (let i = 1; i <= 100; i++) {
-//     sum += i; // Накапливаем сумму, используя глобальную переменную
-//     // console.log(sum); // Выводим сумму на каждой итерации
-//   }
-//   console.log(sum); // Выводим окончательную сумму после цикла
-// }
-
-// summ_1_100(); // Вызываем функцию для вычисления суммы
-// console.log(sum); // Выводим глобальную переменную sum вне функции
-/*
-let numInKub;
-let num = 3;
-function inKub() {
-  // Math.pow(base, exponent) 3**2 =>>>> Math.pow(3,2);
-  numInKub = Math.pow(num, 3);
-  console.log (numInKub);
-}
-inKub(num);
-*/
-/*
-Сделайте функцию, которая параметром принимает число и проверяет,
- положительное это число или отрицательное. В первом 
-случае пусть функция выводит в консоль текст '+++', а во втором '---'.
-*/
-// let res;
-// let exp = 3;
-// function paramFunc(num) {
-//   res = Math.pow(num, exp);
-//   console.log(res);
-//   console.log(num);
-//   console.log(exp);
-// }
-// let param = -2;
-// paramFunc(param);
-
-// function check_num() {
-//   (res >0) ? console.log('+++++++') : console.log(' ------ ');
-// }
-// check_num();
-
-/*
-Сделайте функцию func, которая параметром будет принимать 3 числа
- и выводить в консоль их сумму. Пусть даны 3 переменные с числами:
-
-let param1 = 1;
-let param2 = 2;
-let param3 = 3;
-С помощью созданной вами функции выведите в консоль сумму значений эти переменных.
-*/
-
-// function well(num) {
- 
-//   return num**3
-// }
-
-// let r = 4;
-// let res = well(r)
-// console.log(res);
-// let res1 = well(2);
-// console.log(res1);
-
-
-// let res;
-// let n = 30;
-// function ref(num) {
-//   res = num * 3;
-//   return num * 4;
-// }
-// console.log(n);
-// let res1 = ref(5);
-// console.log(res1);
-// console.log(res1 + res);
-
-/*
-Сделайте функцию, которая параметром принимает число,
-а возвращает куб этого числа. С помощью этой функции найдите куб числа 3 
-и запишите его в переменную res.
-*/
-
-
-// function kub(num) {
-//   let res = Math.pow(num, 3);
-//   console.log(res);
-//   return res;
-// }
-// let res1 = kub(3);
-// console.log(res1);
-
-/* 
-Сделайте функцию, которая параметром принимает число, 
-а возвращает квадратный корень из этого числа. С помощью этой функции найдите корень числа 3, 
-затем найдите корень числа 4. Просуммируйте полученные результаты и выведите их в консоль.
-*/
-
-// function geo(num1, num2) {
-// let sum = Math.sqrt(num1) + Math.sqrt(num2);
-// return sum;
-// }
-
-// console.log(geo(3,4));
-/*
-Пусть у вас есть функция, возвращающая квадратный корень из числа, и функция, 
-округляющая дробь до трех знаков в дробной части:
-
-function sqrt(num) {
-	return Math.sqrt(num);
-}
-
-function round(num) {
-	return num.toFixed(3);
-}
-С помощью этих функций найдите квадратный корень из числа 2 
-и округлите его до трех знаков в дробной части.
-*/
-
-
-// function sqrt(num) {
-// 	return Math.sqrt(num);
-// }
-// function round(num) {
-// 	return num.toFixed(3);
-// }
-// let result = Number(round(sqrt(3)));
+//   return arr
+// };
+
+// let arr = [3, 4, 5, 6, 7];
+// let f1 = (num) => { return num ** 3};
+// let result = test(arr, f1);
 // console.log(result);
 
+// let func = (num1, num2) => {
+//   return num1 * num1 + num2 * num2;
+// };
+// console.log(func(2,3));
+
+// let test =(num1, num2) => {
+//   let square =(num) => {
+//     return num * num
+//   };
+//   return square(num1) + square(num2);
+// };
+
+// let result = test(4,5);
+// console.log(result);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
-Пусть у вас есть функция, возвращающая квадратный корень из числа, и функция,
-возвращающая сумму трех чисел:
-function sqrt(num) {
-	return Math.sqrt(num);
-}
-function sum(num1, num2, num3) {
-	return num1 + num2 + num3;
-}
-С помощью этих функций найдите сумму корней чисел 2, 3 и 4 и запишите ее в переменную res.
+Сделайте функцию func, которая параметрами будет принимать два 
+числа, а возвращать сумму квадрата первого числа с кубом второго числа.
+ Сделайте для этого вспомогательную функцию square, возводящую число в 
+ квадрат, и вспомогательную функцию cube, возводящую число в куб.
 */
 
-// function sqrt(num) {
-// 	return Math.sqrt(num);
+// let func =(num1, num2) => {
+
+// let square = (num) => {return num * num};
+
+// let cube = (num) => {return Math.pow(num, 3)};
+//   return square(num2) + cube(num1);
+// };
+// let result = func(23,3);
+// console.log(result);
+// let func1 = () => {
+//   let func2 =() => {
+//     let func3 = () => {
+//       let func4 = () => {
+//         return '!';
+//       };
+//       return func4;
+//     };
+//     return func3;
+//   };
+//   return func2;
+// };
+
+// let result = func1()()()();
+// console.log(result);
+
+// let func1 = (num1) => {
+//   return function(num2) {
+//     return num1 + num2;
+//   }
+// };
+
+// console.log( func1(4)(5));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let func = (num1) => {
+//   return function(num2) {
+//     return function (num3) {
+//       return num1 + num2 + num3;
+//     }
+//   }
+// };
+// console.log(func(2)(3)(4));
+
+// Сделайте функцию func, которая будучи вызвана вот 
+// так: func(2)(3)(4)(5)(), вернет массив переданных в параметры чисел.
+// let func2 = (num1) => {
+//   let arr = [num1];
+//   return function (num2) {
+//     arr.push(num2);
+//     return function (num3) {
+//       arr.push(num3)
+//       return function (num4) {
+//         arr.push(num4);
+//         return arr;
+//       };
+//     };
+//   };
+// };
+
+
+// let func1 = (num1) => {
+//   let arr = [num1];
+
+//   return function (num2) {
+//     arr.push(num2);
+
+//     return function (num3) {
+//       arr.push(num3);
+
+//       return function (num4) {
+//         arr.push(num4);
+
+//         return arr;
+//       };
+//     };
+//   };
+// // };
+
+// let result = func2(2)(3)(4)(5);
+// console.log(result); // Выведет: [2, 3, 4, 5]
+
+// function each(arr, callback) {
+//   res = [];
+//   for(let elem of arr) {
+//     res.push(callback(elem));
+//   }
+//   return res;
 // }
 
-// function sum(num1, num2, num3) {
-// 	return num1 + num2 + num3;
-// }
+// let all = each(['abc', 'cde', 'fge'], function callback(str) {return str.charAt(0).toUpperCase() + str.slice(1)});
+// console.log(all);
 
-// let res = sum(sqrt(2), sqrt(3), sqrt(4));
-// console.log(res);
+// let func2 = (num1, num2) => num1 * num2;
+// console.log(func2(2, 8));
 
-/*
-Пусть у вас есть функция, округляющая дробь до трех знаков в дробной части:
+// let func = num => num * num;
+// console.log(func(50));
 
-function round(num) {
-	return num.toFixed(3);
-}
-С помощью этой функции модифицируйте предыдущую задачу так, 
-чтобы в переменную res записывалась дробь, округленная 
-до 3-х знаков в дробной части.
-*/
-
-
-// function sqrt(num) {
-// 	return Math.sqrt(num);
-// }
-
-// function sum(num1, num2, num3) {
-// 	return num1 + num2 + num3;
-// }
-
-// function round(num) {
-//   return num.toFixed(3);
-// }
-// let ressum = sum(sqrt(2), sqrt(3), sqrt(4));
-// let res = parseInt(round(ressum));
-// console.log(res);
-
-// function func(num) {
-// 	let sum = 0;
-	
-// 	for (let i = 1; i <= num; i++) {
-// 		sum += i;
+// let result = filter([1, 2, 3, 4, 5], function(elem) {
+// 	if (elem > 0) {
+// 		return true;
+// 	} else {
+// 		return false;
 // 	}
-//   return sum;
+// });
+
+// let result = filter([1, 2, 3, 4, 5], elem => elem > 0);
+// console.log(result);
+
+// function test() {
+// 	let num = 1;
+	
+// 	return function() {
+// 		console.log(num);
+// 	}
 // }
 
-// console.log( func(5) );
+// let func = test();
+// func(); // выведет 1
+// console.log(test()());
 
-
-
-// =====================================================
-
-// const pushIntoArray = function(arr) {
-  
-// };
-
-// sum([], 1,2,3) // [1,2,3]
-// sum([0], 1,2,3,4,5,6) // [0, .....6]
-// использование arguments не объявленные параметры в вызове функции
-// повторить преобразования явные и неявные 
-// ========================================================
-
-// Реалізуйте функцію generateKey(length, characters), яка повертає рядок випадкових 
-// символів із набору characters довжиною length. span>
-
-// Наприклад:
-
-// const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
-
-// const key = generateKey(16, characters);
-// console.log(key); // eg599gb60q926j8i
-
-// адание предполагает создание функции generateKey, которая возвращает строку случайных символов 
-
-// из заданного набора characters заданной длины length.
-
-
-// function generateKey(length, characters) {
-//   let result = '';
-//   const charactersLength = characters.length;
-
-//   for (let i = 0; i < length; i++) {
-//     const randomIndex = Math.floor(Math.random() * charactersLength);
-//     result += characters.charAt(randomIndex);
+// let counter =() => {
+//   let num = 1;
+//   return function() {
+//     console.log(num);
+//     num++
+//     return num;
 //   }
+// };
+// let res = counter();
+// res();
+// // console.log(res());console.log(res());console.log(res());console.log(res());console.log(res());
 
-//   return result;
-// }
-
-// Эта функция принимает два параметра: length - длина генерируемой строки и 
-// characters - строка, содержащая символы, из которых будет формироваться случайный ключ.
-
-// Функция создает пустую строку result и в цикле добавляет случайные символы из 
-// characters до достижения нужной длины, используя Math.random() для выбора случайного 
-// индекса в строке characters.
-
-// Обратите внимание, что это лишь пример реализации. В реальных системах для генерации 
-// ключей безопасности лучше использовать специализированные библиотеки или функции, 
-// которые обеспечивают высокий уровень безопасности и случайности в ключах.
-
-// // Пример использования функции:
-// const chars = 'abcdefghijklmnopqrstuvwxyz1234567890!@#$%';
-// const generatedKey = generateKey(10, chars); // Генерация ключа из символов chars длиной 10 символов
-
-// console.log(generatedKey); // Вывод сгенерированного ключа
-/*
-let num;
-function getRandomNum(min, max) {
-
-  num = Math.random() * (max - min) + min;
-	return num;
-}
-getRandomNum(10, 100);
-console.log(num);
-*/
-
-// let arr = [1, 2, 3, 4, 5];
-
-// console.log(arr[1] + arr[2] + arr[3] + arr[4] + arr[0]);
-
-// let arr1 = {1, 2, 3, 4, 5};
-// console.log(arr1.length);
-
-// let result = 0;
-// let sum = function(num1, num2) {
-//   for( let i = num1; i <= num2; i++) {
-//     result += i;
+// let countmin = () => {
+//   let num = 10;
+//   let innerCounter = () => {
+//     if( num <= 0) {
+//       console.log('Current count  '  + num);
+//       num--
+//       innerCounter();
+//     } else {
+//       console.log ('All is empty');
+//     }
 //   }
-//   console.log(result);
-//   return result;
+//   return  innerCounter
 // };
-// sum(1,100);
-
-// let summ = function(a, b) {
-//   console.log(a * b);
-//   return a * b;
-// }
-// summ(4, 6)
-// let sum1 = summ(4,5) - summ(2, 3);
-
-// console.log(sum1);
-// console.log(sum1 - 8);
-
-// Сделайте функцию, которая параметром принимает число, 
-// а возвращает куб этого числа. С помощью этой функции найдите
-//  куб числа 3 и запишите его в переменную res.
-
-// let exp = function(num, expNum = 3) {
-//     let result = Math.pow(num, expNum);
-//     console.log(result);
-//     return result;
-// };
-// let res = exp(3, 5);
-// console.log(res);
-
-// let numSqrt = function(num1, sqrtNum) {
-//   let resultSqrt = Math.sqrt(num1, sqrtNum);
-//   console.log(resultSqrt);
-//   return resultSqrt;
-// };
-// let allRes = numSqrt(3, 2) + numSqrt(4,2);
-// console.log(numSqrt(3, 2),  numSqrt(4,2));
-
-// console.log(allRes);
+// let res = countmin();
+// res();
 
 /*
-Пусть у вас есть функция, возвращающая квадратный корень из числа, и функция, 
-возвращающая сумму трех чисел:
-С помощью этих функций найдите сумму корней чисел 2, 3 и 4 и 
-запишите ее в переменную res.
-*/
-
-
-// function sqrt(num) {
-// 	return Math.sqrt(num);
-// }
-
-// function sum(num1, num2, num3) {
-// 	return num1 + num2 + num3;
-// }
-// let num1 = 2;
-// let num2 = 3;
-// let num3 = 4;
-// let res = Number((sum(sqrt(num1), sqrt(num2), sqrt(num3))).toFixed(1));
-// console.log(typeof res);
-// console.log(res);
-// console.log(num1, num2, num3);
-
-// function func() {
-// 	console.log('!');
-// }  
-// let test = func;
-// console.log(func());
-// console.log(test());
-
-// // Сделайте функцию func1, которая будет возвращать через return число 3.
-
-// let func1 = function (num1) {
-//   return num1;
-// }
-// console.log(func1(3));
-// let func2 = func1;
-// console.log(func2);
-
-/*Дан масив об'єктів. Вивести масив телефонних
- номерів користувачів, у яких баланс більше 2000 доларів. 
- І знайти суму всіх балансів користувачів
-*/
-/*
-
-let users = [
-{
-"index": 0,
-"isActive": true,
-"balance": "$2,226.60",
-"name": "Eugenia Sawyer",
-"gender": "female",
-"phone": "+1 (840) 583-3207",
-"address": "949 John Street, Rose, Puerto Rico, 1857"
-},
-{
-"index": 1,
-"isActive": true,
-"balance": "$2,613.77",
-"name": "Pauline Gallegos",
-"gender": "female",
-"phone": "+1 (985) 593-3328",
-"address": "328 Greenpoint Avenue, Torboy, North Dakota, 6857"
-},
-{
-"index": 2,
-"isActive": false,
-"balance": "$3,976.41",
-"name": "Middleton Chaney",
-"gender": "male",
-"phone": "+1 (995) 591-2478",
-"address": "807 Fleet Walk, Brutus, Arkansas, 9783"
-},
-{
-"index": 3,
-"isActive": true,
-"balance": "$1,934.58",
-"name": "Burns Poole",
-"gender": "male",
-"phone": "+1 (885) 559-3422",
-"address": "730 Seba Avenue, Osage, Alabama, 6290"
-},
-{
-"index": 4,
-"isActive": true,
-"balance": "$3,261.65",
-"name": "Mcfadden Horne",
-"gender": "male",
-"phone": "+1 (942) 565-3988",
-"address": "120 Scholes Street, Kirk, Michigan, 1018"
-},
-{
-"index": 5,
-"isActive": false,
-"balance": "$1,790.56",
-"name": "Suzette Lewis",
-"gender": "female",
-"phone": "+1 (837) 586-3283",
-"address": "314 Dunne Place, Bawcomville, Guam, 9053"
-}
-]
-
-
-
-
-
-let findRichestUsersPhones = (arr) => {
-
-let richUsersBalance =  arr.filter(obj => parseFloat(obj.balance.replace(/[$,]/g, '')) > 2000)
-let richUsersPhones = richUsersBalance.map(obj => obj.phone);
-
-console.log(richUsersPhones);
-return  richUsersPhones
-  
-};
-
-let calcTotalUsersMoney = (arr) => {
-
-  // заменяем в объекте строку на число и избавляемся от знака доллара
-  let usersMoneyClearing = arr.map(obj => parseFloat(obj.balance.replace(/[$,]/g, '')));
-  
-  // Находим сумму всех элементов получившегося массива.
-  let totalUsersMoney = usersMoneyClearing.reduce((accu, currentValue) => accu + currentValue, 0);
-
-  // Дробные числа с длинным хвостом  округляем числами с 2 знаками после запятой.
-  totalUsersMoney = Number(totalUsersMoney.toFixed(2));
-
-  console.log(totalUsersMoney);
-
-  return totalUsersMoney
-};
-findRichestUsersPhones(users);
-calcTotalUsersMoney(users);
-
-let myArray = new Array(1, 2, 3, 4, 5);
-console.log(myArray);
-
-let filledArray = new Array(5).fill(0);
-
-*/
-
-/*
-Написати функцію заповнення даними користувача двомірного масиву.
-Довжину основного масиву і внутрішніх масивів задає користувач. 
-Значення всіх елементів всіх масивів задає користувач.
-*/
-/*
-let mainArray = [];
-
-let userTwoDimArray = () => {
-
-  let longOfMainArray = +prompt(`Put length of main array (srtings)`, '4');
-  let longSecondaryArray = +prompt(`Put length of seconday array (colums)`, '4');
-  
-  for(let i = 0; i < longOfMainArray; i++) {
-    let secondaryArray = [];
-
-    for (let j = 0; j < longSecondaryArray; j++) {
-      let elemSecondaryArray = +prompt(`Put element number ${j +1} to string number ${i +1}`);
-      secondaryArray.push(elemSecondaryArray);
+let countmin = () => {
+  let num = 10;
+  let innerCounter = () => {
+    if (num > 0) {
+      console.log('Current count:', num);
+      num--;
+      innerCounter(); // Рекурсивный вызов innerCounter
+    } else {
+      console.log('All is empty');
     }
+  };
 
-    mainArray.push(secondaryArray);
-  }
-
-  return mainArray
+  return innerCounter;
 };
 
-userTwoDimArray();
-console.log(mainArray);
+let res = countmin();
+res(); // Вызывает цикл, выводя текущий счетчик от 10 до 1
+// // Теперь код будет выполнять цикл и выводить текущее значение счетчика до тех пор, пока num не станет меньше или равным 0, после чего будет выведено 'All is empty'.
+
 */
-// МЕТОДЫ РАБОТЫ СО СТРОКАМИ ===================
-/*
-let string = 'HELLO, world world';
-// let red = string.substring(string.indexOf('w'), string.lastIndexOf('w') + 6);
-// console.log(red);
-let as = string.slice(string.indexOf('H'), string.lastIndexOf(',') + 1).toLowerCase();
-console.log(as + '   arbeiten');
-
-// let lowerstring = string.toLowerCase(string);
-// let upperstring = string.toUpperCase(string);
-// console.log(upperstring);
-// console.log(lowerstring);
-
-string = 'HELLO, world world';
-let rep = string.replace('world', 'dear');
-console.log(string);
-console.log(rep);
-let rep1 = string.replace(/world/g, "dear");
-console.log(rep1);
-
-let str = "Hello, world!";
-let words = str.replace(/[,ld!]/g, '').split(' ');
-console.log(words); // Вывод: ["Hello", "world!"]
 
 
-str = "apple,orange!banana";
-let charsToRemove = "!,";
 
-let regexPattern = new RegExp("[" + charsToRemove + "]", "g");
-console.log(regexPattern);    //    /[!,]/g
+//  ЗАМЫКАНИЯ 
 
 
-let result = str.replace(regexPattern, '');
+// let counter = 0;
+		
+// function test() {
+// 	return function() {
+// 		console.log(counter);
+// 		counter++;
+// 	};
+// }
 
-console.log(result); // Вывод: "appleorangebanana";
+// let func = test;
 
+// let func1 = func();
+// let func2 = func();
+// func1();
+// func2();
+// func1();
+// func2()
 
-let userInput = "abc";
-let dynamicPattern = RegExp(userInput);
-console.log(dynamicPattern);
+// let res = (() => {
+//   return (num1) => {
+//     return (num2) => {
+//       let sum = num1 + num2;
+//       return sum;
+//     }
+//   }
+// }) ()(1)(2);
 
-let testString = "abcdefg";
-
-if (dynamicPattern.test(testString)) {
-  console.log("Совпадение найдено!");
-} else {
-  console.log("Совпадение не найдено.");
+function curryAdd(x) {
+  return function(y) {
+    return function(z) {
+      return x + y + z;
+    };
+  };
 }
+// / Использование функции без каррирования
+// let resultWithoutCurry = add(1, 2, 3);
+// console.log(resultWithoutCurry); // Выведет 6
 
-var names = "Гарри Трамп ;Фрэд Барни; Хелен Ригби ; Билл Абель ;Крис Ханд ";
-
-console.log(names);
-
-var re = /\s*;\s*/;
-// var nameList = names.split(re);
-
-// console.log(nameList);
-
-/*
-
-Створити функцію, яка прибирає з рядка всі символи, які ми передали 
-другим аргументом. 'func(" hello world", ['l', 'd'])' поверне нам 
-"heo wor". Вихідний рядок та символи для видалення задає користувач.
-*/
-
-
-
-
-let userCharDelete = (userString) => {
-
-  let userString = prompt('Put you frase here, please', '');
-  console.log(userString);
-
-  let charsToRemove = prompt('Put chars which you want to delete from your string', '');
-
-  let regPattern = new RegExp('[' + charsToRemove + ']', 'g');
-  console.log(regPattern);
-
-  let newUserString = userString.replace(regPattern, '');
-  console.log(newUserString);
-
-  return newUserString
-};
-
-userCharDelete(userString);
+// Использование функции с каррированием
+let curryAddResult = curryAdd(1)(2)(3);
+console.log(curryAddResult); // Выведет 6

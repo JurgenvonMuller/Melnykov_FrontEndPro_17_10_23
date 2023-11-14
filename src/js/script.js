@@ -14,6 +14,12 @@ let goToExpo = (num, degree) => {
     return num * goToExpo(num, degree - 1);
   }
 };
-
-
 console.log(goToExpo(2, 3)) // 2 в степени 3  возвратит 8.
+
+/*  ============== NOTES =======================
+ИТЕРАЦИИ   1.      2 * (goToexp(2,2));
+                    2 * (2 * (goToExp(2, 1)));
+                    2 * (2 * (2 * (goToExp (2,0)))); degree === 0 return 1.
+                                  --------------------------------------
+         RESULT :   2 *  2 *  2 *   1      = 2^3.  
+*/   

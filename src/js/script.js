@@ -557,26 +557,31 @@ res(); // Вызывает цикл, выводя текущий счетчик 
 // func1();
 // func2()
 
-// let res = (() => {
-//   return (num1) => {
-//     return (num2) => {
-//       let sum = num1 + num2;
-//       return sum;
-//     }
-//   }
-// }) ()(1)(2);
+// // let res = (() => {
+// //   return (num1) => {
+// //     return (num2) => {
+// //       let sum = num1 + num2;
+// //       return sum;
+// //     }
+// //   }
+// // }) ()(1)(2);
 
-function curryAdd(x) {
-  return function(y) {
-    return function(z) {
-      return x + y + z;
-    };
-  };
-}
-// / Использование функции без каррирования
-// let resultWithoutCurry = add(1, 2, 3);
-// console.log(resultWithoutCurry); // Выведет 6
+// function curryAdd(x) {
+//   return function(y) {
+//     return function(z) {
+//       return x + y + z;
+//     };
+//   };
+// }
+// // / Использование функции без каррирования
+// // let resultWithoutCurry = add(1, 2, 3);
+// // console.log(resultWithoutCurry); // Выведет 6
 
-// Использование функции с каррированием
-let curryAddResult = curryAdd(1)(2)(3);
-console.log(curryAddResult); // Выведет 6
+// // Использование функции с каррированием
+// let curryAddResult = curryAdd(1)(2)(3);
+// console.log(curryAddResult); // Выведет 6
+
+let a = 5;
+console.log(++a);
+console.log(b);
+let b = 5;

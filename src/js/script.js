@@ -9,21 +9,28 @@ sum(20) = 28
 
 // ============= ЗАМЫКАНИЕ С ГЛОБАЛЬНОЙ ПЕРЕМЕННОЙ +===================
 
-let number = 0;
-		
+
+// let number = 0;  Перенесено вовнутрь функции 
+
 let  countAdd = () => {
+
+  let number = 0;
+
 	return (num) => {
     number += num;
+
+    return number;
+    
 	};
-}
+};
 
 let sum = countAdd();
-sum(3);                       // возвращает число 3.
-console.log(number);        
-sum(5);                       // возвращает число 8.  
-console.log(number);       
-sum(20);   
-console.log(number);          // возвращает число 28.
+                
+console.log(sum(3));    // возвращает число  3.    
+                      
+console.log(sum(5));    // возвращает число  8.   
+
+console.log(sum(20));   // возвращает число 28.
 
 // Замыкание позволяет менять значение глобальной переменной number.
 

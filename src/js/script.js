@@ -7,3 +7,13 @@
 Число, яке треба піднести до ступеню, передається як перший аргумент у функції;
 Ступінь передається як другий аргумент у функціюpow (num, degree).
 */
+let goToExpo = (num, degree) => {
+  if (degree === 0) {
+    return 1;
+  } else {
+    return num * goToExpo(num, degree - 1);
+  }
+};
+
+
+console.log(goToExpo(2, 3)) // 2 в степени 3  возвратит 8.

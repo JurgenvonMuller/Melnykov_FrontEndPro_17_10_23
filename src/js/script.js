@@ -18,7 +18,6 @@ let  countAdd = () => {
 
 	return (num) => {
     number += num;
-
     return number;
     
 	};

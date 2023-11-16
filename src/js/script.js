@@ -581,7 +581,162 @@ res(); // Вызывает цикл, выводя текущий счетчик 
 // let curryAddResult = curryAdd(1)(2)(3);
 // console.log(curryAddResult); // Выведет 6
 
-let a = 5;
-console.log(++a);
-console.log(b);
-let b = 5;
+/*
+
+
+В JavaScript существует несколько способов создания массива. Вот несколько из них:
+
+Литерал массива:
+
+javascript
+Copy code
+const array1 = [1, 2, 3, 4, 5];
+С использованием конструктора Array:
+
+javascript
+Copy code
+const array2 = new Array(1, 2, 3, 4, 5);
+С использованием Array.from():
+
+javascript
+Copy code
+const array3 = Array.from([1, 2, 3, 4, 5]);
+С использованием Array.of():
+
+javascript
+Copy code
+const array4 = Array.of(1, 2, 3, 4, 5);
+С использованием Array() без аргументов (пустой массив):
+
+javascript
+Copy code
+const emptyArray = Array();
+С использованием расширенного синтаксиса:
+
+javascript
+Copy code
+const array5 = [...[1, 2, 3, 4, 5]];
+С использованием метода push():
+
+javascript
+Copy code
+const array6 = [];
+array6.push(1, 2, 3, 4, 5);
+С использованием метода concat():
+
+javascript
+Copy code
+const array7 = [].concat(1, 2, 3, 4, 5);
+*/
+
+
+/*
+const array1 = [1, 2, 3, 4];
+
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+const sumWithInitial = array1.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  initialValue,
+);
+
+console.log(sumWithInitial);
+// Expected output: 10
+
+*/
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8];
+// arr.forEach(function(element) {
+//   console.log(element);
+// });
+
+
+
+// arr.forEach(function(element, index, arr) {
+//   numberOfElement = element * 7;
+//   console.log(`Элемент ${numberOfElement} имеет индекс ${index} в массиве [${arr}]`);
+// });
+// // Выводит 1, 2, 
+// console.log(arr);
+
+
+// let squaredArr = arr.map(function(element) {
+//   return element * element;
+// });
+// console.log(squaredArr);
+
+// let arr0 = [1, 2, 3, 4, 5];
+// let arr1 = 'sdfsdfsdf';
+// console.log(arr0.at(-1))
+
+// let obj = {x: 1, y: 2, z: 3};
+// console.log( typeof obj['x'] );
+
+
+
+// const arr111 = ['a', 'b', 'c'];
+// arr111 = ['a', 'b', 'c'];
+// console.log(arr111);
+
+// let number = 1;
+// const doubleObj = {
+//   set x(value) {
+//     number = value;
+//   },
+//   get x() {
+//     return number * 2;
+//   },
+//   y() {
+//     return number * 2;
+//   },
+//   setX(value) {
+//     number = value;
+//   },
+//   getX() {
+//     return number;
+//   },
+// };
+
+// console.log(doubleObj.x); // Выведет: 2
+// console.log(doubleObj.y()); // Выведет: 2
+
+// doubleObj.x = 10;
+// doubleObj.setX(10);
+
+// console.log(doubleObj.x); // Выведет: 20
+// console.log(doubleObj.getX()); // Выведет: 10
+
+
+
+
+// let number = 1;
+
+// let obj = {
+//   set x(value) {
+//   number = value;
+//   },
+//   get x() {
+//     return number;
+//   }
+// };
+// obj.x = 20;
+// console.log(obj.x)
+
+(function(){
+let f = function() {
+  return this.number ;
+};
+
+let obj1 = {
+  number: 18,
+  method: f,
+};
+
+let obj2 = {
+  number: 28,
+  method: f,
+};
+console.log(obj1.method());
+console.log(obj2.method());
+
+}());
+

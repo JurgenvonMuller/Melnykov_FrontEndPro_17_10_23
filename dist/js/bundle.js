@@ -15,7 +15,7 @@
   \**************************/
 /***/ (() => {
 
-eval("var ladder = {\n  step: 0,\n  up: function up() {\n    this.step++;\n    return this;\n  },\n  down: function down() {\n    this.step--;\n    return this;\n  },\n  showStep: function showStep() {\n    alert(this.step);\n    return this;\n  }\n};\nladder.up().up().down().showStep(); // Возвращает 1\n/*\r\n============== с методом this  можно использовать \r\nметод цепочки (последовательного вызова)  ===============\r\n*/\n\n//# sourceURL=webpack:///./src/js/script.js?");
+eval("var ladder = {\n  step: 0,\n  up: function up() {\n    this.step++;\n    return this; // важно! \n  },\n\n  down: function down() {\n    this.step--;\n    return this; // важно!\n  },\n\n  showStep: function showStep() {\n    alert(this.step);\n    return this; //важно!\n  }\n};\n\nladder.up().up().down().showStep(); // Возвращает 1\n/*\r\n============== с методом this  можно использовать \r\nметод цепочки (последовательного вызова)  ===============\r\n*/\n\n//# sourceURL=webpack:///./src/js/script.js?");
 
 /***/ })
 

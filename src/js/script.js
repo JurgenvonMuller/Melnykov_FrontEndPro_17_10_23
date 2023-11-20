@@ -1,12 +1,9 @@
-
-
 // import _ from 'lodash';
 
 // let maxElem = 0;
 // let key_maxElem = 0;
 
 // const { name } = require("browser-sync");
-
 
 // let arr = [1, 2, 6, 4, 5, 3];
 // for(let i = 0;  i < arr.length - 1; i++) {
@@ -25,15 +22,7 @@
 
 // // }
 
-
 // console.log(arr);
-
-
-
-
-
-
-
 
 /*  HOMEWORK 9 
 Переписати код нижче з використанням конструкції switch…case*/
@@ -74,7 +63,6 @@ switch(true) {
 }
 
 */
-
 
 /*      Hometask additional "Check - list"
         
@@ -178,7 +166,7 @@ boolean -> string -> 'true'/'false'
 boolean -> number -> 1 / 0
 */
 // HOMETASK 2 - > create a table with all transformations
-// ------ 
+// ------
 // WTF JS  ---------------  просмотрено но не осознано )))
 
 // const a = 10;
@@ -231,7 +219,6 @@ boolean -> number -> 1 / 0
 // const string = 'a';
 // const number = Number(string);
 
-
 // const a = true || ...; // -> true
 // const c = false && ...; // -> false
 
@@ -260,7 +247,7 @@ boolean -> number -> 1 / 0
 // for(let elem in obj) {
 //   console.log(elem());
 //   let summ = 0;
-//   summ += elem(); 
+//   summ += elem();
 // }
 
 // let math = {
@@ -272,13 +259,11 @@ boolean -> number -> 1 / 0
 // console.log(math.cube(2));
 // console.log(math.cube1(2));
 
-
 // let test = function(func1, func2, func3) {
 // console.log(func1() + func2() + func3());
 // };
 
 // test(function() {return 1}, function() {return 2}, function() {return 3});
-
 
 // let func1 = () => {return 1};
 // let func2 = () => { return 2};
@@ -325,22 +310,6 @@ boolean -> number -> 1 / 0
 // let result = test(4,5);
 // console.log(result);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 Сделайте функцию func, которая параметрами будет принимать два 
 числа, а возвращать сумму квадрата первого числа с кубом второго числа.
@@ -381,22 +350,6 @@ boolean -> number -> 1 / 0
 
 // console.log( func1(4)(5));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // let func = (num1) => {
 //   return function(num2) {
 //     return function (num3) {
@@ -406,7 +359,7 @@ boolean -> number -> 1 / 0
 // };
 // console.log(func(2)(3)(4));
 
-// Сделайте функцию func, которая будучи вызвана вот 
+// Сделайте функцию func, которая будучи вызвана вот
 // так: func(2)(3)(4)(5)(), вернет массив переданных в параметры чисел.
 // let func2 = (num1) => {
 //   let arr = [num1];
@@ -421,7 +374,6 @@ boolean -> number -> 1 / 0
 //     };
 //   };
 // };
-
 
 // let func1 = (num1) => {
 //   let arr = [num1];
@@ -474,7 +426,7 @@ boolean -> number -> 1 / 0
 
 // function test() {
 // 	let num = 1;
-	
+
 // 	return function() {
 // 		console.log(num);
 // 	}
@@ -534,13 +486,10 @@ res(); // Вызывает цикл, выводя текущий счетчик 
 
 */
 
-
-
-//  ЗАМЫКАНИЯ 
-
+//  ЗАМЫКАНИЯ
 
 // let counter = 0;
-		
+
 // function test() {
 // 	return function() {
 // 		console.log(counter);
@@ -629,7 +578,6 @@ Copy code
 const array7 = [].concat(1, 2, 3, 4, 5);
 */
 
-
 /*
 const array1 = [1, 2, 3, 4];
 
@@ -649,15 +597,12 @@ console.log(sumWithInitial);
 //   console.log(element);
 // });
 
-
-
 // arr.forEach(function(element, index, arr) {
 //   numberOfElement = element * 7;
 //   console.log(`Элемент ${numberOfElement} имеет индекс ${index} в массиве [${arr}]`);
 // });
-// // Выводит 1, 2, 
+// // Выводит 1, 2,
 // console.log(arr);
-
 
 // let squaredArr = arr.map(function(element) {
 //   return element * element;
@@ -670,8 +615,6 @@ console.log(sumWithInitial);
 
 // let obj = {x: 1, y: 2, z: 3};
 // console.log( typeof obj['x'] );
-
-
 
 // const arr111 = ['a', 'b', 'c'];
 // arr111 = ['a', 'b', 'c'];
@@ -705,9 +648,6 @@ console.log(sumWithInitial);
 // console.log(doubleObj.x); // Выведет: 20
 // console.log(doubleObj.getX()); // Выведет: 10
 
-
-
-
 // let number = 1;
 
 // let obj = {
@@ -721,22 +661,174 @@ console.log(sumWithInitial);
 // obj.x = 20;
 // console.log(obj.x)
 
-(function(){
-let f = function() {
-  return this.number ;
+// (function(){
+// let f = function() {
+//   return this.number ;
+// };
+
+// let obj1 = {
+//   number: 18,
+//   method: f,
+// };
+
+// let obj2 = {
+//   number: 28,
+//   method: f,
+// };
+// console.log(obj1.method());
+// console.log(obj2.method());
+
+// }());
+
+// class Users {
+//   #name;
+//   #sur;
+//   #age;
+//   constructor(name, sur, age) {
+//     this.#name = name;
+//     this.#sur = sur;
+//     this.#age = age;
+//   }
+//   setAge(newAge) {
+//     this.#age = newAge;
+//     return this;
+//   }
+//   setName(newName) {
+//     this.#name = newName;
+//     return this;
+//   }
+//   setSur(newSur) {
+//     this.#sur = newSur;
+//     return this;
+//   }
+//   getAge() {
+//     return this.#age;
+//   }
+//   getName() {
+//     return this.#name;
+//   }
+//   getSur() {
+//     return this.#sur;
+//   }
+// };
+
+// let user = new Users("Bill", "Davidson", 89);
+// console.log(user);
+// console.log(user.Name);
+// user.setName('Gregory').setSur('Stivenson').setAge(68);
+// console.log(user.getName());
+// console.log(user instanceof Users);
+
+class Student {
+	constructor(name) {
+		this.name = name;
+	}
+}
+// class Employee {
+// 	constructor(name) {
+// 		this.name = name;
+// 	}
+// }
+
+// let users = [
+// 	new Student('user1'),
+// 	new Employee('user2'),
+// 	new Student('user3'),
+// 	new Employee('user4'),
+// 	new Student('user5'),
+// 	new Employee('user6'),
+// 	new Student('user7'),
+// ];
+
+//  let studentsNames = [];
+//   let employees = [];
+// for (let i = 0; i <= users.length - 1; i++) {
+//   if(users[i] instanceof Student) {
+//     studentsNames.push(users[i].name);
+//   } else if( users [i] instanceof Employee) {
+//     employees.push(users[i].name);
+//   }
+//   // console.log(employees);
+// };
+// console.log("Students: ", studentsNames);
+// console.log("Employees: ", employees);
+
+// class HelperArray {
+//   getSum(arr) {
+//     let sum = 0;
+//     for(let elem of arr) {
+//       sum += elem;
+//     }
+//     return sum;
+//   }
+//   getArrithm(arr) {
+//     if(arr.length >0) {
+//       let sum = this.getSum(arr);
+//       return sum / arr.length;
+//     }else {
+//       return 0;
+//     }
+//   }
+// };
+
+// let arrHelper = new HelperArray();
+
+// let sum1 = arrHelper.getSum([4,5,6]);
+// console.log(sum1);
+
+// let r = arrHelper.getArrithm([4,5,6]);
+// console.log(r);
+
+// class City {
+//   nameOfCity;
+//   constructor(nameOfCity) {
+//     this.nameOfCity = nameOfCity;
+//   }
+// };
+// class Users {
+//   name;
+//   age;
+//   city;
+//   constructor(name, age, city) {
+//     this.name = name;
+//     this.age = age;
+//     this.city = city;
+
+//   }
+// };
+
+// let cityName = new City('London');
+
+// let user = new Users ('Mike', 60, cityName);
+
+// console.log(user.city.nameOfCity);
+
+class Employee {
+	constructor(name, position, department) {
+		this.name = name;
+		this.position = position;
+		this.department = department;
+	}
+};
+class Departments {
+  department;
+  constructor(department) {
+    this.department = department;
+  }
+
 };
 
-let obj1 = {
-  number: 18,
-  method: f,
+class Positions {
+  pos = 'manager';
+  constructor(pos) {
+    this.pos = pos;
+  }
 };
 
-let obj2 = {
-  number: 28,
-  method: f,
-};
-console.log(obj1.method());
-console.log(obj2.method());
+let newPosition = new Positions('Cheaf');
+let newDepartment = new Departments('Logistic');
 
-}());
-
+let worker = new Employee('Bill', newPosition.pos, newDepartment.department);
+console.log(worker.name);
+console.log(worker.position);
+console.log(worker);

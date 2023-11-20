@@ -1,105 +1,25 @@
 /*
-1. Створити клас Людина.
+1. Створити сутність "Людина".
 
 Властивості:
 імʼя;
-стать.
+вік.
 Методи:
-конструктор, який приймає два параметри: імʼя та стать.
-
-2. Створити клас Квартира.
-Властивості:
-конструктор не потрібен;
-масив жителів, який при створенні пустий.
-Методи:
-додати жителя - метод повинен приймати екземпляр класу Людина, 
-та додавати до масиву жителів.
-
-
-3. Створити клас Будинок.
+конструктор, який приймає два параметри: імʼя та вік;
+метод, який виводить у консоль інформацію про людину.
+2. Створити сутність "Автомобіль".
 
 Властивості:
-масив квартир, який при створенні пустий;
-максимальна кількість квартир.
+марка, модель, рік виписку, номерний знак (або на Ваш розсуд);
+власник.
 Методи:
-конструктор, який приймає один параметр: максимальну кількість квартир;
-додати квартиру - метод повинен приймати екземпляр класу Квартира, перевіряти, 
-чи не буде кількість перевищувати максимальну кількість 
-квартир, і якщо це так, додати квартиру, 
-в іншому випадку виводить у консоль відповідне повідомлення.
+конструктор, який приймає чотитри параметри (тобто, всі окрім власника): марка, модель, рік виписку, номерний знак 
+присвоїти власника - метод повинен приймати екземпляр класу Людина, та зберігати екземпляр класу Людина у відповідному полі, якщо вік більше 18, інакше виводити у консоль відповідне повідомлення
+метод, який виводить у консоль інформацію про автомобіль та викликає метод виводу інформації класу Людина для виведення інформації про власника
 В якості демонстраціїї створити:
 
 декілька екземплярів класу Людина;
-декілька екземплярів класу Квартира;
-додадити екземпляри класу Людина до екземплярів класу Квартира;
-екземпляр класу Будинок;
-додадити екземпляри класу Квартира до екземплярів класу Будинок.
+декілька екземплярів класу Автомобіль;
+присвоїти власників автомобілям.
 
 */
-class Persons {
-  name;
-  gender;
-  constructor(name, gender) {
-    this.name = name;
-    this.gender = gender;
-  }
-}
-
-class Flat {
-  peopleInFlat = [];
-  maxPeopleInFlat = 2;
-
-  addPerson(person) {
-    if (this.peopleInFlat.length < this.maxPeopleInFlat) {
-      this.peopleInFlat.push(person);
-    } else {
-      console.log(`Flat is full. Next person must go to the next flat.`);
-    }
-    return this;
-  }
-}
-
-class House {
-  flats = [];
-  maxFlats = 3;
-
-  constructor(maxFlats) {
-    this.maxFlats = maxFlats;
-  }
-
-  addFlat() {
-    if (this.flats.length < this.maxFlats) {
-      let newFlat = new Flat();
-      this.flats.push(newFlat);
-      return newFlat;
-    } else {
-      console.log("The house is full");
-      return null;
-    }
-  }
-}
-
-let person1 = new Persons("Heinrich", "male");
-let person2 = new Persons("Mikki", "female");
-let person3 = new Persons("Billy", "male");
-let person4 = new Persons("Lily", "female");
-let person5 = new Persons("Bartek", "male");
-let person6 = new Persons("Iwona", "female");
-
-let house1 = new House(3);
-
-//  Расселяем по квартирам ))))
-house1.addFlat().addPerson(person1).addPerson(person2);
-house1.addFlat().addPerson(person3).addPerson(person4);
-house1.addFlat().addPerson(person5).addPerson(person6);
-
-console.log(house1.flats);
-let house2 = new House(2);
-
-//  Расселяем по квартирам  во втором доме тех же так как не стал городить огород))))
-house2.addFlat().addPerson(person1).addPerson(person2);
-house2.addFlat().addPerson(person3).addPerson(person4);
-
-
-console.log(house2.flats);
-

@@ -6,13 +6,16 @@
 стать.
 Методи:
 конструктор, який приймає два параметри: імʼя та стать.
-2. Створити клас Квартира.
 
+2. Створити клас Квартира.
 Властивості:
 конструктор не потрібен;
 масив жителів, який при створенні пустий.
 Методи:
-додати жителя - метод повинен приймати екземпляр класу Людина, та додавати до масиву жителів.
+додати жителя - метод повинен приймати екземпляр класу Людина, 
+та додавати до масиву жителів.
+
+
 3. Створити клас Будинок.
 
 Властивості:
@@ -40,46 +43,63 @@ class Persons {
     this.name = name;
     this.gender = gender;
   }
-};
+}
 
 class Flat {
   peopleInFlat = [];
   maxPeopleInFlat = 2;
+
   addPerson(person) {
-    
-    if(this.peopleInFlat.length < this.maxPeopleInFlat) {
+    if (this.peopleInFlat.length < this.maxPeopleInFlat) {
       this.peopleInFlat.push(person);
     } else {
-      console.log('This flat is full. Next person will go to next flat', '')
-      this.createNewFlat().addPerson();
+      console.log(`Flat is full. Next person must go to the next flat.`);
     }
     return this;
   }
-  createNewFlat() {
-    return new Flat();
-  }
-};
+}
 
 class House {
-  flats = new Array(3); // Ограничение в 3 квартиры создан пустой массив 30 мест))
-  constructor(flat) {
-    this.flat = flat;
+  flats = [];
+  maxFlats = 3;
+
+  constructor(maxFlats) {
+    this.maxFlats = maxFlats;
   }
-  addFlat(flat) {
-    this.flats.push(flat);
+
+  addFlat() {
+    if (this.flats.length < this.maxFlats) {
+      let newFlat = new Flat();
+      this.flats.push(newFlat);
+      return newFlat;
+    } else {
+      console.log("The house is full");
+      return null;
+    }
   }
-};
+}
 
-let person1 = new Persons('Heinrich', 'male');
-let person2 = new Persons('Mikki', 'female');
-let person3 = new Persons('Billy', 'male');
-let person4 = new Persons('Lily', 'female');
-console.log(person4.name);
+let person1 = new Persons("Heinrich", "male");
+let person2 = new Persons("Mikki", "female");
+let person3 = new Persons("Billy", "male");
+let person4 = new Persons("Lily", "female");
+let person5 = new Persons("Bartek", "male");
+let person6 = new Persons("Iwona", "female");
 
-let flat  = new Flat();
+let house1 = new House(3);
 
-// let flat3  = new Flat();
+//  Расселяем по квартирам ))))
+house1.addFlat().addPerson(person1).addPerson(person2);
+house1.addFlat().addPerson(person3).addPerson(person4);
+house1.addFlat().addPerson(person5).addPerson(person6);
 
-flat.addPerson(person1).addPerson(person2).addPerson(person3);
-console.log(flat.peopleInFlat);
+console.log(house1.flats);
+let house2 = new House(2);
+
+//  Расселяем по квартирам  во втором доме тех же так как не стал городить огород))))
+house2.addFlat().addPerson(person1).addPerson(person2);
+house2.addFlat().addPerson(person3).addPerson(person4);
+
+
+console.log(house2.flats);
 

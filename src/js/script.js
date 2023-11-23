@@ -720,9 +720,9 @@ console.log(sumWithInitial);
 // console.log(user instanceof Users);
 
 class Student {
-	constructor(name) {
-		this.name = name;
-	}
+  constructor(name) {
+    this.name = name;
+  }
 }
 // class Employee {
 // 	constructor(name) {
@@ -803,32 +803,429 @@ class Student {
 
 // console.log(user.city.nameOfCity);
 
-class Employee {
-	constructor(name, position, department) {
-		this.name = name;
-		this.position = position;
-		this.department = department;
-	}
+// class Employee {
+// 	constructor(name, position, department) {
+// 		this.name = name;
+// 		this.position = position;
+// 		this.department = department;
+// 	}
+// };
+// class Departments {
+//   department;
+//   constructor(department) {
+//     this.department = department;
+//   }
+
+// };
+
+// class Positions {
+//   pos = 'manager';
+//   constructor(pos) {
+//     this.pos = pos;
+//   }
+// };
+
+// let newPosition = new Positions('Cheaf');
+// let newDepartment = new Departments('Logistic');
+
+// let worker = new Employee('Bill', newPosition.pos, newDepartment.department);
+// console.log(worker.name);
+// console.log(worker.position);
+// console.log(worker);
+
+// class Employee {
+//   #name;
+//   #salary;
+//   constructor(name, salary) {
+//     this.#name = name;
+//     this.#salary = salary;
+//   }
+//   getName() {
+//     return this.#name;
+//   }
+//   getSalary() {
+//     return this.#salary;
+//   }
+// };
+
+// let employee = [
+//   new Employee('Gregory', 90),
+//   new Employee('Kollins', 100),
+//   new Employee('Thomas', 120),
+//   new Employee('Henry', 400),
+// ];
+// for(let employee of employee) {
+//   console.log(employee.getName(), employee.getSalary());
+
+// }
+
+// class User {
+
+//   showName() {
+//     return this.cape(this.name)
+//   }
+//   showSur() {
+//     return this.cape(this.sur);
+//   }
+//   cape(elem) {
+//     return elem[0].toUpperCase() + elem.slice(1);
+//   }
+// };
+
+// let user = new User;
+// user.name = 'naomi';
+// user.sur = 'campbell';
+// // console.log(user.name);
+// console.log(user.showName(), user.showSur());
+
+// class Students {
+//   showLetterName() {
+//     return this.showCap(this.name);
+//   }
+//   showLetterSurn() {
+//     return this.showCap(this.surn);
+//   }
+//   firstLetterName() {
+//     return this.charToUpper(this.name);
+//   }
+//   firstLetterSur() {
+//     return this.charToUpper(this.surn);
+//   }
+//   showCap(str) {
+//     return str[0].toUpperCase() +  str.slice(1);
+//   }
+//   charToUpper(char) {
+//     return char.charAt(0).toUpperCase();
+//   }
+// }
+
+// let user = new Students();
+// user.name = "mike";
+// user.surn = "davidson";
+
+// console.log(user.showLetterName()); // Выведет "Mike"
+// console.log(user.showLetterSurn()); // Выведет "Davidson"
+// console.log(user.firstLetterName(), user.firstLetterSur());
+
+// class Usres {
+//   constructor(name, surn) {
+//     this.name = name;
+//     this.surn = surn;
+//   }
+//   show() {
+//     return this.name + '  ' + this.surn;
+//   }
+// };
+
+// let user = new Usres('Billy', 'Douel');
+
+// console.log(user.name);
+// console.log(user.surn);
+// console.log(user.show());
+
+// class Users {
+//   #name;
+//   #surn;
+//   constructor(name, surn) {
+//     this.#name = name;
+//     this.#surn = surn;
+//   }
+//   set Name(name) {
+//     return  this.name = name;
+//   }
+//   get Name() {
+//     return this.name
+//   }
+//   showUser(){
+//     console.log(this.#Cap(this.name) + ' sdfsdfsdfsdf' + this.#Cap(this.surn))
+//   }
+//   #Cap(str) {
+//     return str[0].toUpperCase() + str.slice(1);
+//   }
+// };
+
+// let user = new Users();
+// user.name = "bill" ;
+// user.surn = 'klinton';
+// console.log(user.name, user.surn);
+// console.log(user.showUser());
+
+// class Employee {
+// 	constructor(name, salary) {
+// 		this.name = name;
+// 		this.salary = salary;
+// 	}
+
+// 	getSalary() {
+// 		return this.#addSign(this.salary);
+// 	}
+
+// 	#addSign(num) {
+// 		return num + '$';
+// 	}
+// };
+
+// let worker = new Employee('John', 1500);
+// console.log(worker.name);
+// console.log(worker.salary);
+// console.log(worker.getSalary());
+/*
+class Horses {
+  #weight;
+  #name;
+  #costs;
+  constructor(weight, name, costs) {
+    this.#weight = weight;
+    this.#name = name;
+    this.#costs = costs;
+  }
+  set Weight(weight) {
+    this.#weight = weight;
+  }
+  set Name(name) {
+    if (name.length > 3) {
+      this.#name = name;
+    } else {
+      console.log("Small name");
+    }
+    this.#name = name;
+  }
+  set Costs(costs) {
+    this.#costs = costs;
+  }
+  get Weight() {
+    return this.#weight;
+  }
+  get Name() {
+    return this.#name;
+  }
+  get Costs() {
+    return this.#costs;
+  }
+  addToStado() {
+    if (!stado.some((horse) => horse.name === this.#name)) {
+      stado.push({
+        name: this.#name,
+        weight: this.#weight,
+        costs: this.#costs,
+      });
+      console.log(`Added to stado ${this.#name}`);
+    } else {
+      console.log(`The kon whith name ${this.#name} is alredy in STADO`);
+    }
+  }
 };
-class Departments {
-  department;
-  constructor(department) {
-    this.department = department;
+
+let kon = new Horses(450, "Va", 4500);
+
+let stado = [];
+
+console.log(kon.Name);
+console.log(kon.addToStado());
+console.log(stado);
+kon.Name = 'Na';
+
+//  if (!stado.some(horse => horse.Name === this.#name)) {
+//   stado.push({ name: this.#name, weight: this.#weight, costs: this.#costs });
+//   console.log(`${this.#name} добавлена в стадо.`);
+// } else {
+//   console.log(`${this.#name} уже есть в стаде.`);
+// }
+*/
+
+// class User {
+// 	#name;
+// 	#surn;
+
+// 	setName(name) {
+// 		this.#name = name;
+// 		return this;
+// 	}
+// 	setSurn(surn) {
+// 		this.#surn = surn;
+// 		return this;
+// 	}
+
+// 	get Name() {
+// 		return this.#name;
+// 	}
+// 	get Surn() {
+// 		return this.#surn;
+
+// 	}
+// };
+
+// let user = new User;
+
+// user.Name = 'John';
+// user.Surn = 'Smith';
+
+// user.Name = ('Piter').Surn = ('Forest');
+// user.setName('John').setSurn('Smith');
+// console.log(user.Name);
+// console.log(user.Surn);
+
+// user.setName('Piter').setSurn('Forest');
+
+// console.log(user.Name);
+// console.log(user.Surn);
+
+// class User {
+
+// };
+// class Trust {
+
+// }
+// let trust = new Trust();
+
+// let user = new User();
+
+// console.log(user instanceof User);
+// console.log(trust instanceof User);
+
+// class Student1 {
+// 	constructor(name) {
+// 		this.name = name;
+// 	}
+// }
+// class Employee {
+// 	constructor(name) {
+// 		this.name = name;
+// 	}
+// }
+
+// let users = [
+// 	new Student1('user1'),
+// 	new Employee('user2'),
+// 	new Student1('user3'),
+// 	new Employee('user4'),
+// 	new Student1('user5'),
+// 	new Employee('user6'),
+// 	new Student1('user7'),
+// ];
+// let nameOfStudents = [];
+// let nameOfEmployee = [];
+
+// for(let elem of users) {
+//   if(elem instanceof Student1) {
+//     nameOfStudents.push(elem.name)
+//   } else{
+//     nameOfEmployee.push(elem.name)
+//   }
+
+// };
+
+// console.log(nameOfEmployee);
+// console.log(nameOfStudents);
+/*
+class arrayHelper {
+  array;
+  summ = 0;
+  middle = 0;
+  constructor(array) {
+    this.array = array;
+  }
+  summOfArray() {
+    this.summ = 0;
+    for (let elem of this.array) {
+      this.summ += elem;
+    }
+    return this.summ;
+  }
+  middleOfArray() {
+    return this.array.length > 0 ? this.summOfArray() / this.array.length : 0;
+  }
+}
+
+let myArray = [1, 2, 3, 4, 5, 6, 7];
+
+let arrayToCalc = new arrayHelper(myArray);
+
+console.log(arrayToCalc.summOfArray());
+console.log(arrayToCalc.middleOfArray());
+*/
+/*
+class String {
+  str;
+  constructor(str) {
+    this.str = str;
+    console.log(str)
+  }
+  strToCheck() {
+
+    let res = this.str.replace(/\s/g, '');
+
+    if (res === "") {
+      return "The string is empty";
+    } else {
+      return res;
+    }
+  }
+};
+let string  = '         Привет   привет П р и в е т.       ';
+
+let stringCheck = new String(string);
+
+console.log(stringCheck.strToCheck());
+
+let trimmed  = string.trim();
+console.log(trimmed);
+*/
+/*
+function isEmail(str) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(str);
+}
+
+// Пример использования:
+let email = "example@email.com";
+if (isEmail(email)) {
+  console.log("Верный формат email");
+} else {
+  console.log("Неверный формат email");
+}
+*/
+/*
+  class Checkmail {
+    mail;
+    constructor (mail) {
+      this.mail = mail;
+    }
+    isMail() {
+      if(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.mail)) {
+        console.log(`The mail is OK`);
+      }else {
+        console.log(`The mail is not OK`)
+      }
+    }
+  };
+
+
+let mail1 = 'jndjfn@google.com';
+
+let myMail = new Checkmail (mail1);
+
+console.log(myMail.isMail());
+*/
+class Domain {
+  domian;
+  constructor(domian) {
+    this.domian = domian;
   }
 
-};
-
-class Positions {
-  pos = 'manager';
-  constructor(pos) {
-    this.pos = pos;
+  checkDomian() {
+    if( /^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(this.domian)){
+      return this.domian;
+    }else{
+      return `Its not OK`;
+    }
+    
   }
 };
 
-let newPosition = new Positions('Cheaf');
-let newDepartment = new Departments('Logistic');
+let dom = 'google.com';
+let dom1 = 'sdlfjsldkfjs';
 
-let worker = new Employee('Bill', newPosition.pos, newDepartment.department);
-console.log(worker.name);
-console.log(worker.position);
-console.log(worker);
+let chkDom = new Domain(dom1);
+
+
+console.log(chkDom.checkDomian());

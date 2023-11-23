@@ -1,126 +1,101 @@
+
 /*
+Мережа фастфудів пропонує кілька видів гамбургерів:
 
-Вам потрібно зробити конструктор сутності "Студент".
+маленький (50 тугриків, 20 калорій);
+великий (100 тугриків, 40 калорій).
+Гамбургер може бути з одним із декількох видів начинок:
 
-Студент має ім'я, прізвище, рік народження — 
-це властивості. 
+сиром (+ 10 тугриків, + 20 калорій);
+салатом (+ 20 тугриків, + 5 калорій);
+картоплею (+ 15 тугриків, + 10 калорій).
+Можна додати добавки:
 
-Є масив з оцінками, це також властивість. 
-І є можливість отримати вік студента та його середній бал – це методи.
+посипати приправою (+15 тугриків, 0 калорій) - полити майонезом (+ 20 тугриків, +5 калорій).
+Напишіть програму, яка розраховує вартість та калорійність гамбургера. Використовуйте ООП підхід.
 
-Ще у всіх Студентів є по масиву однакової довжини, у ньому 25 елементів, 
-спочатку він не заповнений, але на 25 елементів. Це масив, в якому відзначається 
-відвідуваність, щоразу коли ми викликаємо метод .present() на чергове порожнє
- місце, в масив записується true, коли викликаємо .absent() - записується false.
- Передбачте будь-який захист від того, щоб у масиві відвідуваності не могло бути більше 25 записів.
-Масив – це властивість, present та absent – ​​методи.
+(підказка: потрібен клас Гамбургер, константи, методи для вибору опцій та розрахунку потрібних величин)
 
-Останній метод: .summary(), перевіряє середню оцінку і середнє 
-відвідування(кількістьВідвідин/кількістьЗанять), і якщо середня оцінка більше 90, 
-а середнє відвідування більше 0.9, то метод summary повертає рядок "Молодець!", 
-якщо одне з цих значень менше , то - "Добре, але можна краще ", 
-якщо обидва нижче - "Редиска!".
+Приклад роботи коду:
 
-Не забудьте після того, як напишите цей конструктор, створити 2-3 екземпляри 
-(конкретних студентів) і показати використання цих методів.
+// маленький гамбургер з начинкою з сиру
+var hamburger = new Hamburger(Hamburger .SIZE_SMALL, Hamburger.STUFFING_CHEESE);
+
+// добавка з майонезу
+hamburger.addTopping(Hamburger.TOPPING_MAYO);
+
+// запитаємо скільки там калорій
+console.log(“Calories: “ + hamburger.calculate ());
+
+// скільки коштує
+console.log("Price: “ + hamburger.calculatePrice());
+
+// я тут передумав і вирішив додати ще приправу
+hamburger.addTopping(Hamburger .TOPPING_SAUCE);
+
+// А скільки тепер коштує?
+console.log("Price with sauce: “ + hamburger.calculatePrice());
+
 
 */
 
-class Student {
-  constructor(firstName, lastName, birthYear) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.birthYear = birthYear;
-    this.grades = [];
-    this.attendance = new Array(25).fill(undefined); // Массив посещения занятий заполняем АНДЕФ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Клас Гамбургер
+class Hamburger {
+  constructor(size, stuffing) {
+    this.size = size;
+    this.stuffing = stuffing;
+    this.toppings = [];
   }
 
-  getAge() {
-    const currentYear = 2023;
-    return currentYear - this.birthYear;
+  static SIZE_SMALL = { price: 50, calories: 20 };
+  static SIZE_LARGE = { price: 100, calories: 40 };
+
+  static STUFFING_CHEESE = { price: 10, calories: 20 };
+  static STUFFING_SALAD = { price: 20, calories: 5 };
+  static STUFFING_POTATO = { price: 15, calories: 10 };
+
+  static TOPPING_SPICE = { price: 15, calories: 0 };
+  static TOPPING_MAYO = { price: 20, calories: 5 };
+
+  addTopping(topping) {
+    this.toppings.push(topping);
   }
 
-  getAverageGrade() {
-    if (this.grades.length === 0) {
-      return 0; // пустой массив возвратит 0 так как нет оценок
-    }
-    const sum = this.grades.reduce((total, grade) => total + grade, 0);
-    return sum / this.grades.length;
+  calculatePrice() {
+    const basePrice = this.size.price + this.stuffing.price;
+    const toppingsPrice = this.toppings.reduce((total, topping) => total + topping.price, 0);
+    return basePrice + toppingsPrice;
   }
 
-  present() {
-    this.updateAttendance(true);
-  }
-
-  absent() {
-    this.updateAttendance(false);
-  }
-
-  updateAttendance(status) {
-    if (this.attendance.filter(Boolean).length < 25) {
-      // Проверка доступного места в массиве
-      const emptyIndex = this.attendance.indexOf(undefined);
-      this.attendance[emptyIndex] = status;
-    } else {
-      console.log("Array of attendance is full");
-    }
-  }
-
-  summary() {
-    const averageGrade = this.getAverageGrade();
-    const attendanceRatio = this.attendance.filter(Boolean).length / 25;
-
-    if (averageGrade > 90 && attendanceRatio >= 0.9) {
-      return "Молодець!";
-    } else if (averageGrade > 90 || attendanceRatio >= 0.9) {
-      return "Добре, але можна краще";
-    } else {
-      return "Редиска!";
-    }
+  calculateCalories() {
+    const baseCalories = this.size.calories + this.stuffing.calories;
+    const toppingsCalories = this.toppings.reduce((total, topping) => total + topping.calories, 0);
+    return baseCalories + toppingsCalories;
   }
 }
 
-// Делаем студентов
-const student1 = new Student("John", "Doe", 1998);
-const student2 = new Student("Jane", "Smith", 1999);
-const student3 = new Student("Bob", "Johnson", 2000);
+// Приклад використання
+const hamburger = new Hamburger(Hamburger.SIZE_SMALL, Hamburger.STUFFING_CHEESE);
 
-// Оценки
-student1.grades = [100, 100, 100, 100, 100];
-student2.grades = [100, 80, 100, 100, 100];
-student3.grades = [9, 9, 9, 9, 9, 10];
+hamburger.addTopping(Hamburger.TOPPING_MAYO);
 
-console.log(student1.getAverageGrade());
-console.log(student2.getAverageGrade());
+console.log("Calories: " + hamburger.calculateCalories());
+console.log("Price: " + hamburger.calculatePrice());
 
-//Не знаю как не вызывать явно функцию 25 раз на каждое занятие
+hamburger.addTopping(Hamburger.TOPPING_SPICE);
 
-student1.present();
-student1.present();
-student1.present();
-student1.present();
-student1.present();
-student1.present();
-student1.present();
-student1.present();
-student1.present();
-student1.present();
-student1.present();
-student1.present();
-student1.present();
-student1.present();
-student1.present();
-student1.present();
-student1.present();
-student1.present();
-student1.present();
-student1.present();
-student1.present();
-student1.present();
-student1.present();
-student1.present();
-
-//
-console.log(`Student 1 ${student1.firstName}  summary:`, student1.summary());
-console.log(`Student 2 ${student2.firstName}  summary:`, student2.summary());
-console.log(`Student 3 ${student3.firstName}  summary:`, student3.summary());
+console.log("Price with spice: " + hamburger.calculatePrice());

@@ -71,7 +71,6 @@ class Flat {
     return this.peopleInFlat;
   }
 }
-
 class House {
   flats = [];
   maxFlats;
@@ -89,7 +88,7 @@ class House {
       throw new Error("The house is full, please make a new house");
     }
   }
-}
+};
 
 let person1 = new Person("Heinrich", "male");
 let person2 = new Person("Mikki", "female");

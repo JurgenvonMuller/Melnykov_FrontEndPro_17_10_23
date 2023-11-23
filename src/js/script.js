@@ -22,8 +22,10 @@
 масив квартир, який при створенні пустий;
 максимальна кількість квартир.
 Методи:
-конструктор, який приймає один параметр: максимальну кількість квартир;
-додати квартиру - метод повинен приймати екземпляр класу Квартира, перевіряти, 
+конструктор, який приймає один параметр:
+максимальну кількість квартир;
+додати квартиру - метод повинен приймати екземпляр
+класу Квартира, перевіряти, 
 чи не буде кількість перевищувати максимальну кількість 
 квартир, і якщо це так, додати квартиру, 
 в іншому випадку виводить у консоль відповідне повідомлення.
@@ -35,10 +37,26 @@
 екземпляр класу Будинок;
 додадити екземпляри класу Квартира до екземплярів класу Будинок.
 
+/*
++
+maxPeopleInFlat такого в умові нема - не треба додумувати :)
+
+maxFlats = 3; - те саме - не треба додумувати. Ця властивість 
+задається в конструкторі - тому ми можемо бути впевненими, що вона 
+створиться. 
+
+return null; як і return this - використовується досить рідко, 
+відношення до методів класу має бути як що звичайної фуцкнії - 
+і вертати вона має щось що притаманно їй - не обов"язково this або 
+взагалі
+будь-що :) В твому випадку якщо ми 
+виклечемо зайвий раз house1.addFlat().addPerson(person5) - буде помилка, 
+бо addFlat() поверне null. Ну і тут помилка в тому, 
+що addFlat() має приймати квартиру як аргумент, а не створювати її
 */
-class Persons {
-  name;
-  gender;
+
+
+class Person {
   constructor(name, gender) {
     this.name = name;
     this.gender = gender;
@@ -47,21 +65,16 @@ class Persons {
 
 class Flat {
   peopleInFlat = [];
-  maxPeopleInFlat = 2;
 
   addPerson(person) {
-    if (this.peopleInFlat.length < this.maxPeopleInFlat) {
-      this.peopleInFlat.push(person);
-    } else {
-      console.log(`Flat is full. Next person must go to the next flat.`);
-    }
-    return this;
+    this.peopleInFlat.push(person);
+    return this.peopleInFlat;
   }
 }
 
 class House {
   flats = [];
-  maxFlats = 3;
+  maxFlats;
 
   constructor(maxFlats) {
     this.maxFlats = maxFlats;
@@ -69,37 +82,46 @@ class House {
 
   addFlat() {
     if (this.flats.length < this.maxFlats) {
-      let newFlat = new Flat();
+      let newFlat = new Flat(); // Создаем новый экземпляр класса Flat
       this.flats.push(newFlat);
       return newFlat;
     } else {
-      console.log("The house is full");
-      return null;
+      throw new Error("The house is full, please make a new house");
     }
   }
 }
 
-let person1 = new Persons("Heinrich", "male");
-let person2 = new Persons("Mikki", "female");
-let person3 = new Persons("Billy", "male");
-let person4 = new Persons("Lily", "female");
-let person5 = new Persons("Bartek", "male");
-let person6 = new Persons("Iwona", "female");
+let person1 = new Person("Heinrich", "male");
+let person2 = new Person("Mikki", "female");
+let person3 = new Person("Billy", "male");
+let person4 = new Person("Lily", "female");
+let person5 = new Person("Bartek", "male");
+let person6 = new Person("Iwona", "female");
+let person7 = new Person("Iwan", "male");
+let person8 = new Person("Maria", "female");
 
 let house1 = new House(3);
 
-//  Расселяем по квартирам ))))
-house1.addFlat().addPerson(person1).addPerson(person2);
-house1.addFlat().addPerson(person3).addPerson(person4);
-house1.addFlat().addPerson(person5).addPerson(person6);
+try {
+  // Расселяем по квартирам
+  let flat1 = house1.addFlat();
+  flat1.addPerson(person1);
+  flat1.addPerson(person2);
 
-console.log(house1.flats);
-let house2 = new House(2);
+  let flat2 = house1.addFlat();
+  flat2.addPerson(person3);
+  flat2.addPerson(person4);
 
-//  Расселяем по квартирам  во втором доме тех же так как не стал городить огород))))
-house2.addFlat().addPerson(person1).addPerson(person2);
-house2.addFlat().addPerson(person3).addPerson(person4);
+  let flat3 = house1.addFlat();
+  flat3.addPerson(person5);
+  flat3.addPerson(person6);
+  /* При создании 4-й квартиры выдаст ошибку*/
 
+  // let flat4 = house1.addFlat();
+  // flat4.addPerson(person7);
+  // flat4.addPerson(person8);
 
-console.log(house2.flats);
-
+  console.log(house1.flats);
+} catch (error) {
+  console.error(error.message);
+};

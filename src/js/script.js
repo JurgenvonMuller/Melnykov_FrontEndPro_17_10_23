@@ -21,14 +21,23 @@
 більше 18, інакше виводити у консоль відповідне повідомлення
 
 
-метод, який виводить у консоль інформацію про автомобіль та викликає метод виводу інформації класу Людина для виведення інформації про власника
+метод, який виводить у консоль інформацію про 
+автомобіль та викликає метод виводу інформації 
+класу Людина для виведення інформації про власника
 В якості демонстраціїї створити:
 
 декілька екземплярів класу Людина;
 декілька екземплярів класу Автомобіль;
 присвоїти власників автомобілям.
 
+1 +
+
+2 перечитай умову уважно - що саме має бути в полі "власник"
+
+Інформація про власника має виводитися як виклик personInfo
+
 */
+
 class Person {
   name;
   age;
@@ -40,50 +49,72 @@ class Person {
 
   personInfo() {
     console.log(
-      `The name of person is "${this.name}" The Age of preson is ${this.age} years.`
+      `The name of person is "${this.name}". The Age of person is ${this.age} years.`
     );
   }
-}
+};
 
 class Car {
-  constructor(type, model, productYear, carNr) {
-    this.type = type;
+  constructor(carBrand, model, productYear, carNr) {
+    this.carBrand = carBrand;
     this.model = model;
     this.productYear = productYear;
     this.carNr = carNr;
     this.owners = [];
   }
+
   addOwnerOfCar(owner) {
     if (owner.age > 18) {
       this.owners.push(owner);
       return this.owners[this.owners.length - 1];
     } else {
-      console.log("You are very young");
+      throw new Error("You are very young");
     }
   }
+
   carInfo() {
-    console.log(
-      `Car Info - Type: ${this.type}, Model: ${this.model}, Product Year: ${this.productYear}, Car Number: ${this.carNr}`
-    );
-    console.log("Owners:");
-    this.owners.forEach((owner) => {
-      console.log(`Owner: ${owner.name}, Age: ${owner.age}`);
-    });
+    console.log(`Car Info - Brand: ${this.carBrand}, Model: ${
+      this.model
+    }, Product Year: ${this.productYear}, Car Number: ${this.carNr}
+    ${this.owners
+      .map((owner) => `Owner: ${owner.name}, Age: ${owner.age}`)
+      .join("\n")}`);
+  }
+};
+
+let person1 = new Person("Bill", 45);
+let person2 = new Person("Bob", 100);
+let person3 = new Person("Nike", 78);
+let person4 = new Person("Piter", 5);
+
+
+let car1 = new Car("Toyota", "Camry", 2022, "ABC123");
+let car2 = new Car("BMW", "M3", 2021, "BBC456");
+let car3 = new Car("KIA", "Kona", 2020, "CBC562");
+let car4 = new Car("KIA", "Sorento", 2020, "CBC562");
+
+// Присваиваем владельцев каждому автомобилю
+try {
+  car1.addOwnerOfCar(person1);
+  car2.addOwnerOfCar(person2);
+  car3.addOwnerOfCar(person3);
+  car4.addOwnerOfCar(person4);
+} catch (error) {
+  console.error(error.message);
+
+  // Дополнительный вывод для молодых владельцев
+  if (error.message === "You are very young") {
+    console.log(`Sorry, ${person4.name} is too young to own a car.`);
   }
 }
 
-let newPerson = new Person("Bill", 45);
-let newPerson1 = new Person("Bob", 10);
-let newPerson2 = new Person("Nike", 78);
+// И наоборот  - присваиваем машины владельцам
+person1.car = car1;
+person2.car = car2;
+person3.car = car3;
+person4.car = car4;
 
-let car = new Car("Sedan", "Toyota", 2022, "ABC123");
-let car1 = new Car("Sedan", "BMW", 2021, "BBC456");
-let car2 = new Car("Sedan", "KIA", 2020, "CBC562");
-
-let newOwner = car.addOwnerOfCar(newPerson);
-let newOwner1 = car1.addOwnerOfCar(newPerson1);
-let newOwner2 = car2.addOwnerOfCar(newPerson2);
-
-console.log(car.carInfo());
-console.log(car1.carInfo());
-console.log(car2.carInfo());
+car1.carInfo();
+car2.carInfo();
+car3.carInfo();
+car4.carInfo();

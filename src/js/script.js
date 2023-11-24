@@ -1206,26 +1206,99 @@ let myMail = new Checkmail (mail1);
 
 console.log(myMail.isMail());
 */
-class Domain {
-  domian;
-  constructor(domian) {
-    this.domian = domian;
-  }
+// class Domain {
+//   domian;
+//   constructor(domian) {
+//     this.domian = domian;
+//   }
 
-  checkDomian() {
-    if( /^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(this.domian)){
-      return this.domian;
-    }else{
-      return `Its not OK`;
-    }
+//   checkDomian() {
+//     if( /^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(this.domian)){
+//       return this.domian;
+//     }else{
+//       return `Its not OK`;
+//     }
     
+//   }
+// };
+
+// let dom = 'google.com';
+// let dom1 = 'sdlfjsldkfjs';
+
+// let chkDom = new Domain(dom1);
+
+
+// console.log(chkDom.checkDomian());
+
+/*
+const person = {
+  name : {
+    first: 'Bob',
+    last: 'Smith'
+  },
+  
+  age: 32,
+  gender: "male",
+  interests: ["music", "skiing"],
+  bio: function () {
+    alert(
+      this.name.first +
+        " " +
+        this.name.last +
+        " is " +
+        this.age +
+        " years old. He likes " +
+        this.interests[0] +
+        " and " +
+        this.interests[1] +
+        ".",
+    );
+  },
+  greeting: function () {
+    alert("Hi! I'm " + this.person.name.last + ".");
+  },
+};
+console.log (person.name.first);
+let myDataName = "height";
+let myDataValue = "1.75m";
+person[myDataName] = myDataValue;
+console.log(person.height);
+// console.log(person.bio());
+
+myData = "weight";
+myValue = '765 kg';
+person[myData] = myValue;
+console.log(person.weight);
+
+*/
+
+
+/*
+class CityName {
+  name;
+  constructor(name) {
+    this.name = name;
+  }
+};
+class Users {
+  userName;
+  userSur;
+  userAge;
+  city;
+
+  constructor(userName, userSur, userAge, city) {
+    this.userName = userName;
+    this.userSur = userSur;
+    this.userAge = userAge;
+    this.city = city;
   }
 };
 
-let dom = 'google.com';
-let dom1 = 'sdlfjsldkfjs';
+let city = new CityName ('London');
 
-let chkDom = new Domain(dom1);
+let user = new Users('Piter', 'Pan', 58, 'Kiev');
+console.log(user.userName);
 
+*/
 
-console.log(chkDom.checkDomian());
+console.log('food')

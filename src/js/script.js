@@ -1,101 +1,109 @@
-
 /*
-Мережа фастфудів пропонує кілька видів гамбургерів:
+Створити клас SuperMath.
 
-маленький (50 тугриків, 20 калорій);
-великий (100 тугриків, 40 калорій).
-Гамбургер може бути з одним із декількох видів начинок:
+Додати до екземпляра метод - 
+check(obj), параметр obj 
+якого має властивості X, Y, znak. 
 
-сиром (+ 10 тугриків, + 20 калорій);
-салатом (+ 20 тугриків, + 5 калорій);
-картоплею (+ 15 тугриків, + 10 калорій).
-Можна додати добавки:
+Метод повинен підтвердити у користувача, 
+чи хоче він зробити дію znak c Х і У. 
+Якщо хоче, зробити математичну 
+дію znak (яка описана в прототипі), 
+інакше - запитати введення нових даних 
+через метод input() класу SuperMath. 
 
-посипати приправою (+15 тугриків, 0 калорій) - полити майонезом (+ 20 тугриків, +5 калорій).
-Напишіть програму, яка розраховує вартість та калорійність гамбургера. Використовуйте ООП підхід.
+Приклад об'єкта: `obj = {X:12, Y:3, znak: “/”}`, можливі варіанти znak  `+' '-'  '/' '*'  '%'.
 
-(підказка: потрібен клас Гамбургер, константи, методи для вибору опцій та розрахунку потрібних величин)
+При введенні znak потрібно перевірити коректність введення на можливі математичні дії.
 
-Приклад роботи коду:
-
-// маленький гамбургер з начинкою з сиру
-var hamburger = new Hamburger(Hamburger .SIZE_SMALL, Hamburger.STUFFING_CHEESE);
-
-// добавка з майонезу
-hamburger.addTopping(Hamburger.TOPPING_MAYO);
-
-// запитаємо скільки там калорій
-console.log(“Calories: “ + hamburger.calculate ());
-
-// скільки коштує
-console.log("Price: “ + hamburger.calculatePrice());
-
-// я тут передумав і вирішив додати ще приправу
-hamburger.addTopping(Hamburger .TOPPING_SAUCE);
-
-// А скільки тепер коштує?
-console.log("Price with sauce: “ + hamburger.calculatePrice());
+p = new SuperMath();
+p.check(obj); // --> no p.input() -> 3 prompt -> рахує
+// */
 
 
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Клас Гамбургер
-class Hamburger {
-  constructor(size, stuffing) {
-    this.size = size;
-    this.stuffing = stuffing;
-    this.toppings = [];
+class SuperMath {
+  constructor() {
+    this.myObject = { X: null, Y: null, znak: null };
   }
 
-  static SIZE_SMALL = { price: 50, calories: 20 };
-  static SIZE_LARGE = { price: 100, calories: 40 };
+  check(obj) {
+    const userDecision = confirm(`Хочете виконати математичну операцію зі своїми змінними X і Y?`);
 
-  static STUFFING_CHEESE = { price: 10, calories: 20 };
-  static STUFFING_SALAD = { price: 20, calories: 5 };
-  static STUFFING_POTATO = { price: 15, calories: 10 };
-
-  static TOPPING_SPICE = { price: 15, calories: 0 };
-  static TOPPING_MAYO = { price: 20, calories: 5 };
-
-  addTopping(topping) {
-    this.toppings.push(topping);
+    if (userDecision) {
+      if (this.isValidOperation(obj)) {
+        this.calculate(obj);
+      } else {
+        alert('Некоректні дані для виконання операції.');
+        this.input();
+      }
+    } else {
+      console.log('Ви відмовились від виконання операції.');
+    }
   }
 
-  calculatePrice() {
-    const basePrice = this.size.price + this.stuffing.price;
-    const toppingsPrice = this.toppings.reduce((total, topping) => total + topping.price, 0);
-    return basePrice + toppingsPrice;
+  isValidOperation(obj) {
+    const { X, Y, znak } = obj;
+    if (isNaN(X) || isNaN(Y)) {
+      return false;
+    }
+    const supportedOperators = ['+', '-', '*', '/', '%'];
+    return supportedOperators.includes(znak);
   }
 
-  calculateCalories() {
-    const baseCalories = this.size.calories + this.stuffing.calories;
-    const toppingsCalories = this.toppings.reduce((total, topping) => total + topping.calories, 0);
-    return baseCalories + toppingsCalories;
+  calculate(obj) {
+    const { X, Y, znak } = obj;
+    let result;
+
+    switch (znak) {
+      case '+':
+        result = X + Y;
+        break;
+      case '-':
+        result = X - Y;
+        break;
+      case '*':
+        result = X * Y;
+        break;
+      case '/':
+        if (Y !== 0) {
+          result = X / Y;
+        } else {
+          alert('Ділення на нуль неможливе.');
+          return;
+        }
+        break;
+      case '%':
+        result = X % Y;
+        break;
+      default:
+        alert('Непідтримувана операція');
+        return;
+    }
+
+    console.log(`Результат: ${result}`);
+  }
+
+  input() {
+    for (let key in this.myObject) {
+      if (this.myObject.hasOwnProperty(key)) {
+        let userInput = prompt(`Введіть числове значення для ключа ${key}:`);
+
+        if (userInput !== null && userInput !== '') {
+          this.myObject[key] = parseFloat(userInput);
+        } else {
+          alert('Будь ласка, введіть числове значення.');
+          this.input(); // Повторний ввід
+          return;
+        }
+      }
+    }
+
+    this.check(this.myObject); // Перевірити після введення даних
   }
 }
 
 // Приклад використання
-const hamburger = new Hamburger(Hamburger.SIZE_SMALL, Hamburger.STUFFING_CHEESE);
-
-hamburger.addTopping(Hamburger.TOPPING_MAYO);
-
-console.log("Calories: " + hamburger.calculateCalories());
-console.log("Price: " + hamburger.calculatePrice());
-
-hamburger.addTopping(Hamburger.TOPPING_SPICE);
-
-console.log("Price with spice: " + hamburger.calculatePrice());
+const p = new SuperMath();
+const obj = { X: 12, Y: 3, znak: '/' };
+p.check(obj);
+console.log(p.myObject);

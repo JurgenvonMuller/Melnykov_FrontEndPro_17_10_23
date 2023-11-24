@@ -20,9 +20,6 @@ p = new SuperMath();
 p.check(obj); // --> no p.input() -> 3 prompt -> рахує
 // */
 
-
-
-
 class SuperMath {
   constructor() {
     this.myObject = { X: null, Y: null, znak: null };
@@ -32,24 +29,26 @@ class SuperMath {
     const userDecision = confirm(`Выполнить мат операцию X і Y?`);
 
     if (userDecision) {
-      const userDecisionOkObj = confirm(`Выполнить мат операцию существующим объектом X і Y?`);
-      
+      const userDecisionOkObj = confirm(
+        `Выполнить мат операцию существующим объектом X і Y?`
+      );
+
       if (userDecisionOkObj) {
         if (this.isValidOperation(obj)) {
           this.calculate(obj);
         } else {
-          console.log('Не корректные данные ');
+          console.log("Не корректные данные ");
         }
       } else {
         this.input();
         if (this.isValidOperation(this.myObject)) {
           this.calculate(this.myObject);
         } else {
-          console.log('Не корректные данные');
+          console.log("Не корректные данные");
         }
       }
     } else {
-      console.log('Вы отказались');
+      console.log("Вы отказались");
     }
   }
 
@@ -60,7 +59,7 @@ class SuperMath {
       return false;
     }
 
-    const supportedOperators = ['+', '-', '*', '/', '%'];
+    const supportedOperators = ["+", "-", "*", "/", "%"];
     return supportedOperators.includes(znak);
   }
 
@@ -69,25 +68,25 @@ class SuperMath {
     let result;
 
     switch (znak) {
-      case '+':
+      case "+":
         result = X + Y;
         break;
-      case '-':
+      case "-":
         result = X - Y;
         break;
-      case '*':
+      case "*":
         result = X * Y;
         break;
-      case '/':
+      case "/":
         if (Y !== 0) {
           result = X / Y;
         } else {
-          alert('Деление на НОЛЬ????');
+          alert("Деление на НОЛЬ????");
           return;
         }
         break;
       default:
-        alert('Что - то пошло не так ');
+        alert("Что - то пошло не так ");
         return;
     }
 
@@ -98,37 +97,39 @@ class SuperMath {
     for (let key in this.myObject) {
       if (this.myObject.hasOwnProperty(key)) {
         let userInput;
-  
-        if (key === 'znak') {
-          userInput = prompt(`Введите одну из математических операций (+, -, *, /, %) для ${key}:`);
+
+        if (key === "znak") {
+          userInput = prompt(
+            `Введите одну из математических операций (+, -, *, /, %) для ${key}:`
+          );
         } else {
           userInput = prompt(`Введите числовое значение для ${key}:`);
         }
-  
-        if (userInput !== null && userInput !== '') {
-          if (key === 'znak' && !['+', '-', '*', '/', '%'].includes(userInput)) {
-            alert('Некорректная операция. Введите одну из математических операций: +, -, *, /, %');
+
+        if (userInput !== null && userInput !== "") {
+          if (
+            key === "znak" &&
+            !["+", "-", "*", "/", "%"].includes(userInput)
+          ) {
+            alert(
+              "Некорректная операция. Введите одну из математических операций: +, -, *, /, %"
+            );
             this.input(); // Повторный ввод
             return;
           } else {
             this.myObject[key] = userInput;
           }
         } else {
-          alert('Необходимо ввести значение.');
+          alert("Необходимо ввести значение.");
           this.input(); // Повторный ввод
           return;
         }
       }
     }
   }
-  
 }
 
 // Приклад використання
 const p = new SuperMath();
-const obj = { X: 36, Y: 6, znak: '+' };
+const obj = { X: 36, Y: 6, znak: "+" };
 p.check(obj);
-
-
-
-

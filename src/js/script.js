@@ -1,24 +1,27 @@
 class A {
+  variableA;
+
   read() {
-    console.log('Method read from class A');
+    console.log(`I am a method READ in obj A`);
   }
 }
 
 class B extends A {
+  variableB;
+
   close() {
-    console.log('Method close from class B');
+    console.log(`I am a method CLOSE in obj B`);
   }
 }
 
-const instanceB = new B();
+let instanceB = new B();
 
-// Перевірка наявності методів read/close в instanceB через оператор in
-console.log('read' in instanceB);  // true
-console.log('close' in instanceB); // true
+console.log("read" in instanceB);
+console.log("close" in instanceB);
 
-// Перевірка наявності методів read/close в instanceB через метод hasOwnProperty
-console.log(instanceB.hasOwnProperty('read'));  // true
-console.log(instanceB.hasOwnProperty('close')); // true
+console.log(instanceB.hasOwnProperty("read"));
+console.log(instanceB.hasOwnProperty("close"));
 
-// Перевірка всіх ключів instanceB (Object.keys)
-console.log(Object.keys(instanceB)); // ['close']
+const keys = Object.keys(instanceB);
+
+console.log(keys);

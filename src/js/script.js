@@ -1,101 +1,63 @@
 
 /*
-Мережа фастфудів пропонує кілька видів гамбургерів:
-
-маленький (50 тугриків, 20 калорій);
-великий (100 тугриків, 40 калорій).
-Гамбургер може бути з одним із декількох видів начинок:
-
-сиром (+ 10 тугриків, + 20 калорій);
-салатом (+ 20 тугриків, + 5 калорій);
-картоплею (+ 15 тугриків, + 10 калорій).
-Можна додати добавки:
-
-посипати приправою (+15 тугриків, 0 калорій) - полити майонезом (+ 20 тугриків, +5 калорій).
-Напишіть програму, яка розраховує вартість та калорійність гамбургера. Використовуйте ООП підхід.
-
-(підказка: потрібен клас Гамбургер, константи, методи для вибору опцій та розрахунку потрібних величин)
-
-Приклад роботи коду:
-
-// маленький гамбургер з начинкою з сиру
-var hamburger = new Hamburger(Hamburger .SIZE_SMALL, Hamburger.STUFFING_CHEESE);
-
-// добавка з майонезу
-hamburger.addTopping(Hamburger.TOPPING_MAYO);
-
-// запитаємо скільки там калорій
-console.log(“Calories: “ + hamburger.calculate ());
-
-// скільки коштує
-console.log("Price: “ + hamburger.calculatePrice());
-
-// я тут передумав і вирішив додати ще приправу
-hamburger.addTopping(Hamburger .TOPPING_SAUCE);
-
-// А скільки тепер коштує?
-console.log("Price with sauce: “ + hamburger.calculatePrice());
-
-
+У вас є
+масив із 10 кольорів
+const colors = ['color-1', 'color-2', ..., 'color-10'];
+масив юзерів (об"єкт із властивостями name та color)
+const users = [
+	{name: 'Slava', color: 'color-4'},
+	{name: 'Lena', color: 'color-7'},
+];
+Вам треба реалізувати функцію addUser, яка буде приймати ім"я 
+як аргумент та записувати нового юзера в масив
+Єдина умова - колір кожного юзера має бути вибраним із 
+масиву кольорів та має бути унікальним в межах користувачів масиву
+Наприклад color-4 та color-7 вже зайняті і новим користувачам 
+не можуть бути додані
 */
 
+const colors = ['color-1', 'color-2', 'color-3', 'color-4', 'color-5', 'color-6', 'color-7', 'color-8', 'color-9', 'color-10'];
 
+const users = [
+  { name: 'Slava', color: 'color-4' },
+  { name: 'Lena', color: 'color-7' },
+];
 
-
-
-
-
-
-
-
-
-
-
-
-
-// Клас Гамбургер
-class Hamburger {
-  constructor(size, stuffing) {
-    this.size = size;
-    this.stuffing = stuffing;
-    this.toppings = [];
+function addUser(name) {
+  // Перевіряємо, чи ім'я користувача не порожнє
+  if (!name.trim()) {
+    console.log('Ім\'я користувача не може бути порожнім.');
+    return;
   }
 
-  static SIZE_SMALL = { price: 50, calories: 20 };
-  static SIZE_LARGE = { price: 100, calories: 40 };
+  // Вибираємо доступні кольори (кольори, які не зайняті іншими користувачами)
+  const availableColors = colors.filter((color) => !users.some((user) => user.color === color));
 
-  static STUFFING_CHEESE = { price: 10, calories: 20 };
-  static STUFFING_SALAD = { price: 20, calories: 5 };
-  static STUFFING_POTATO = { price: 15, calories: 10 };
-
-  static TOPPING_SPICE = { price: 15, calories: 0 };
-  static TOPPING_MAYO = { price: 20, calories: 5 };
-
-  addTopping(topping) {
-    this.toppings.push(topping);
+  // Перевіряємо, чи є доступні кольори для нового користувача
+  if (availableColors.length === 0) {
+    console.log('Немає доступних кольорів для нового користувача.');
+    return;
   }
 
-  calculatePrice() {
-    const basePrice = this.size.price + this.stuffing.price;
-    const toppingsPrice = this.toppings.reduce((total, topping) => total + topping.price, 0);
-    return basePrice + toppingsPrice;
-  }
+  // Вибираємо перший доступний колір для нового користувача
+  const selectedColor = availableColors[0];
 
-  calculateCalories() {
-    const baseCalories = this.size.calories + this.stuffing.calories;
-    const toppingsCalories = this.toppings.reduce((total, topping) => total + topping.calories, 0);
-    return baseCalories + toppingsCalories;
-  }
+  // Додаємо нового користувача до масиву users
+  users.push({ name, color: selectedColor });
+
+  console.log(`Користувач ${name} успішно доданий з коліром ${selectedColor}.`);
 }
 
-// Приклад використання
-const hamburger = new Hamburger(Hamburger.SIZE_SMALL, Hamburger.STUFFING_CHEESE);
+// Приклад виклику функції
+addUser('John');
+console.log(users);
 
-hamburger.addTopping(Hamburger.TOPPING_MAYO);
+addUser('Mary');
+console.log(users);
 
-console.log("Calories: " + hamburger.calculateCalories());
-console.log("Price: " + hamburger.calculatePrice());
+addUser('Bob');
+console.log(users);
 
-hamburger.addTopping(Hamburger.TOPPING_SPICE);
+addUser('Mike');
+console.log(users);
 
-console.log("Price with spice: " + hamburger.calculatePrice());

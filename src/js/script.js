@@ -1218,7 +1218,7 @@ console.log(myMail.isMail());
 //     }else{
 //       return `Its not OK`;
 //     }
-    
+
 //   }
 // };
 
@@ -1226,7 +1226,6 @@ console.log(myMail.isMail());
 // let dom1 = 'sdlfjsldkfjs';
 
 // let chkDom = new Domain(dom1);
-
 
 // console.log(chkDom.checkDomian());
 
@@ -1272,33 +1271,852 @@ console.log(person.weight);
 
 */
 
+// class CityName {
+//   name;
+//   constructor(name) {
+//     this.name = name;
+//   }
+// };
+// class Users {
+//   userName;
+//   userSur;
+//   userAge;
+//   city;
 
+//   constructor(userName, userSur, userAge, city1) {
+//     this.userName = userName;
+//     this.userSur = userSur;
+//     this.userAge = userAge;
+//     this.city1 = city1;
+//   }
+// };
+
+// let city = new CityName ('London');
+
+// let user = new Users('Piter', 'Pan', 58, city);
+// console.log(user.userName);
+// console.log(user.city1.name);
+
+// class City {
+// 	constructor(name) {
+// 		this.name = name;
+// 	}
+// }
+
+// class User {
+// 	constructor(name, surn, city1) {
+// 		this.name = name;
+// 		this.surn = surn;
+// 		this.city1 = city1;
+// 	}
+// }
+
+// let city = new City('luis');
+// let user = new User('john', 'smit', city);
+
+// console.log(user.name);
+
+// console.log(user.city1.name);
 /*
-class CityName {
+class Employee {
+  constructor(name, position, department) {
+    this.name = name;
+    this.position = position;
+    this.department = department;
+  }
+}
+class workPosition {
+  constructor(pos) {
+    this.pos = pos;
+  }
+};
+class Department {
+  constructor(dep) {
+    this.dep = dep;
+  }
+}
+let posNew = new workPosition('cheaf');
+let depNew = new Department('logistic');
+let newWorker = new Employee('newMann', posNew, depNew);
+
+// console.log(newWorker.name);
+// console.log(newWorker.position.pos,);
+// console.log(newWorker.department.dep);
+*/
+/*
+class Worker {
+  constructor( name, posada, department,) {
+    this.name = name; 
+    this.posada = posada;
+    this.department = department;
+  }
+};
+
+let workerNew = new Worker(newWorker, posNew, depNew);
+console.log(workerNew.name.name);
+console.log(workerNew.posada.pos);
+console.log(workerNew.department.dep);
+*/
+/*
+class Psarnia {
   name;
+  waga;
+ 
+  constructor(name, waga) {
+    this.name = name;
+    this.waga = waga;
+  }
+  getName() {
+    return this.name;
+  }
+  getWaga() {
+    return this.waga;
+  }
+};
+
+let psy = [
+  new Psarnia('gru', 15),
+  new Psarnia('fnu', 18),
+  new Psarnia('resp', 20)
+];
+let psyNames = [];
+let psyWaga = [];
+for(let item of psy) {
+    psyNames.push(item.getName());
+    psyWaga.push(item.getWaga());
+  };
+  console.log(psyNames);
+  console.log(psyWaga);
+*/
+
+// class User {
+//   name;
+
+//   constructor(name) {
+//     this.name = name;
+//   }
+
+//   getName() {
+//     return this.name;
+//   }
+// }
+
+// class UsersCollection {
+//   constructor() {
+//     this.users = [];
+//   }
+
+//   add(user) {
+//     this.users.push(user);
+//   }
+
+//   showUsers() {
+//     for (let item of this.users) {
+//       console.log(item.getName());
+//     }
+//   }
+// }
+
+// let uc = new UsersCollection();
+// uc.add(new User('Bob'));
+// uc.add(new User('Bill'));
+// uc.add(new User('Iwona'));
+// console.log(uc);
+
+// uc.showUsers();
+/*
+
+class Worker {
   constructor(name) {
     this.name = name;
   }
-};
-class Users {
-  userName;
-  userSur;
-  userAge;
-  city;
-
-  constructor(userName, userSur, userAge, city) {
-    this.userName = userName;
-    this.userSur = userSur;
-    this.userAge = userAge;
-    this.city = city;
+  get Name() {
+    return this.name;
   }
 };
 
-let city = new CityName ('London');
 
-let user = new Users('Piter', 'Pan', 58, 'Kiev');
-console.log(user.userName);
+class WorkerCollection {
+  workers;
+  constructor() {
+    this.workers = [];
+  }
+  addWorker(worker) {
+    this.workers.push(worker);
+  }
+
+  showName() {
+    for (let worker of this.workers) {
+    console.log(worker.Name);
+    }
+  }
+  // showPosition() {
+  //   for (let human of this.workersPosition) {
+  //   console.log(human.get.Name);
+  //   }
+  
+};
+
+
+let workerCollection = new WorkerCollection();
+
+let workers = [
+workerCollection.addWorker(new Worker('Billy')),
+workerCollection.addWorker(new Worker('Mike')),
+workerCollection.addWorker(new Worker('Billy')),
+];
+
+
+workerCollection.showName();
+*/
+// console.log('sdsdfsdfsdf');
+
+// class MyObject() {
+//   // Конструктор объекта
+// }
+
+// // Добавление метода через прототип
+// MyObject.prototype.myMethod = function() {
+//   console.log("This is my method");
+// };
+
+// let myInstance = new MyObject();
+// myInstance.myMethod();
+/*
+class MathOperation {
+a;
+b;
+constructor() {
+
+}
+};
+
+MathOperation.prototype.add = function(a,b) {
+  let c = a + b;
+  return c;
+};
+
+MathOperation.prototype.subs= function (a,b) {
+  return a - b;
+};
+debugger;
+let calculator1 = new MathOperation();
+console.log(calculator1.add(3,5));
+let calculator2 = new MathOperation();
+console.log(calculator2.subs(50, 59));
+window.print()
 
 */
 
-console.log('food')
+// var str = "я учусь и мне нравится учиться";
+
+// // console.log(str.endsWith("учиться")); // true
+// // console.log(Number(str.endsWith("Я", 1))); // false
+// // console.log(str.endsWith("Бы", 3)); // true
+
+// // console.log(str.includes('Я'));
+// // console.log(str.includes('мне'));
+// let a = str.at(15);
+// let b = str.at(2);
+
+// console.log(`${a}`);// возвратит "Яу"
+
+// let index = 3;
+// console.log(str.charAt(index)); // 'ч'
+
+// let substr = 'нравится';
+
+// console.log(str.includes(substr)); //  true;
+// console.log(Number(str.includes(substr))); //  1
+
+// let indexOf = 'р';
+// console.log(str.length - 1);
+
+// console.log(str.indexOf(indexOf)); // 15
+
+// console.log(str.at(15) == str.indexOf(indexOf)); // p !=== 15 false
+
+// console.log(str.lastIndexOf('я')); // 29
+
+// // "абв".repeat(-1); // RangeError
+// // "абв".repeat(0); // ''
+// // "абв".repeat(1); // 'абв'
+// // "абв".repeat(2); // 'абвабв'
+// // "абв".repeat(3.5); // 'абвабвабв' (количество будет преобразовано в целое число)
+// // "абв".repeat(1 / 0); // RangeError
+
+// let re = /учиться|учусь/gi; //
+// let newstr = str.replace(re, 'изучать' );
+// console.log(newstr);
+
+// const paragraph = "I think Ruth's dog is cuter than your dog!";
+
+// console.log(paragraph.replaceAll('dog', 'monkey'));
+// // Expected output: "I think Ruth's monkey is cuter than your monkey!"
+
+// // Global flag required when calling replaceAll with regex
+// const regex = /Dog/gi;
+// console.log(paragraph.replaceAll(regex, 'ferret'));
+// // Expected output: "I think Ruth's ferret is cuter than your ferret!"
+
+// var testString = "hey JuDe";
+// var reg = 'J';
+
+// let g = testString.search(reg,);
+// console.log(g);
+
+// ; // выведет: hey Jude содержит /[A-Z]/g
+
+// class User {
+//   name;
+//   surn;
+//   constructor(name, surn) {
+//     this.name = name;
+//     this.surn = surn;
+//   }
+//   setName(name) {
+//     this.name = name;
+//   }
+//   getName() {
+//     return this.name;
+//   }
+//   setSurn(surn) {
+//     this.surn = surn;
+//   }
+//   getSurn() {
+//     return this.surn;
+//   }
+
+// };
+
+// class Employee extends User {
+//   constructor (name, surn, age) {
+//     super(name, surn);
+//     this.age = age;
+//   }
+//   setAge(age) {
+//     this.age = age;
+//   }
+//   getAge() {
+//     return this.age;
+//   }
+//   setName(name) {
+//     if(name.length > 0) {
+//       super.setName(name);
+//     } else{
+//       throw new Error ("the name is short");
+//     }
+//   }
+//   setAge(age) {
+//     if(age > 18 && age< 65) {
+//       this.age = age;
+//     } else {
+//       throw new Error("you are too young");
+//     }
+//   }
+// };
+// let worker = new Employee('Billy', 'Douell', 58);
+
+// console.log(worker.getName());
+// console.log(worker.getSurn());
+// console.log(worker.getAge());
+
+// // , getSurn(), getAge());
+
+// class User {
+//   age;
+
+//   constructor(age) {
+//     this.age = age;
+//   }
+
+//   setAge(age) {
+//     if (age >= 0) {
+//       this.age = age;
+//     } else {
+//       throw new Error('need age more 0');
+//     }
+//   }
+
+//   getAge() {
+//     return this.age;
+//   }
+// }
+
+// class Employee extends User {
+//   constructor(age) {
+//     super(age);
+//   }
+
+//   setAge(age) {
+//     if (age > 0) {
+//       if (age <= 120) {
+//         super.setAge(age);
+//       } else {
+//         throw new Error('need age less 120');
+//       }
+//     } else {
+//       throw new Error('need age more 0');
+//     }
+//   }
+// }
+
+// let worker = new Employee(25);
+
+// try {
+//   worker.setAge(100);
+//   console.log(worker.getAge());
+// } catch (error) {
+//   console.error(error.message);
+// }
+// class User {
+//   name;
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   setName(name) {
+//     this.name = name;
+//   }
+//   getName() {
+//     return this.name;
+//   }
+//   capeFirst(str) {
+//     return str[0].toUpperCase() + str.slice(1);
+//   }
+// };
+
+// class Employee extends User {
+//   surn;
+//   age;
+//   constructor(surn, age, name) {
+//     super(name);
+//     this.surn = surn;
+//     this.age = age;
+//   }
+//   setSurn(surn) {
+//     this.surn = surn;
+//   }
+
+//   getSurn(){
+//     return this.surn;
+//   }
+//   getSurn1() {
+//     return this.capeFirst(this.surn);
+//   }
+// };
+
+// let worker = new Employee();
+// worker.setSurn('douell');
+// console.log(worker.getSurn());
+// console.log(worker.getSurn1());
+/*
+class User {
+	#name;
+	#surn;
+	
+	setName(name) {
+		this.#name = name;
+	}
+	getName() {
+		return this.#name;
+	}
+	
+	setSurn(surn) {
+		this.#surn = surn;
+	}
+	getSurn() {
+		return this.#surn;
+	}
+};
+
+class Boy extends User {
+  constructor(#name, #surn) {
+    super(#name,#surn);
+  }
+  getFull() {
+    return this.#name + ' ' + this.#surn;
+  }
+
+};
+let worker = new Boy();
+worker.setName('Mike');
+console.log(worker.getName())
+*/
+// class User {
+//   #name;
+//   #surn;
+
+//   setName(name) {
+//     this.#name = name;
+//   }
+
+//   getName() {
+//     return this.#name;
+//   }
+
+//   setSurn(surn) {
+//     this.#surn = surn;
+//   }
+
+//   getSurn() {
+//     return this.#surn;
+//   }
+// }
+
+// class Boy extends User {
+//   constructor(name, surn) {
+//     super();
+//     this.setName(name);
+//     this.setSurn(surn);
+//   }
+
+//   getFull() {
+//     return this.getName() + ' ' + this.getSurn();
+//   }
+// }
+
+// let worker = new Boy();
+// worker.setName('Mike');
+// worker.setSurn('Doe');
+// console.log(worker.getFull()); // Output: Mike Doe
+
+// class User {
+//   #name;
+//   constructor(name) {
+//     this.#name = name;
+//   }
+//   setName(name) {
+//     this.#name = name;
+//   }
+//   getName() {
+//     return this.#name;
+//   }
+// };
+// class worker extends User {
+//   constructor(name) {
+//     super(name);
+
+//   }
+//   getFull() {
+//     return this.getName();
+//   }
+// };
+
+// let boy = new worker();
+// boy.setName('Mike');
+// console.log(boy.getFull());
+
+// class User {
+//   #name;
+
+//   constructor(name) {
+//     this.#name = name;
+//   }
+
+//   setName(name) {
+//     this.#name = name;
+//   }
+
+//   getName() {
+//     return this.#name;
+//   }
+// }
+
+// class Worker extends User {
+//   constructor(name) {
+//     super(name);
+//   }
+
+//   getFull() {
+//     return this.getName();
+//   }
+// }
+
+// let boy = new Worker('Mike');
+// console.log(boy.getFull());
+/*
+class User {
+  #age;
+  setAge(age) {
+    this.#age = age;
+  }
+  getAge() {
+    return this.#age;
+  }
+};
+
+class User1 extends User {
+
+  addAge() {
+    this.setAge(this.getAge() + 1);
+  }
+};
+
+let newMann = new User1();
+newMann.setAge(58);
+console.log(newMann.getAge());
+newMann.addAge();
+console.log(newMann.getAge());
+*/
+/*
+class User {
+	#name;
+	
+	setName(name) {
+		this.#name = name;
+	}
+	getName() {
+		return this.#name;
+	}
+}
+
+class Employee extends User {
+	setName(name) {
+		if (name.length > 0) {
+			this.super.setName(name) 
+		}
+	}
+}
+*/
+/*
+class User {
+	setName(name) {
+		if (this.notEmpty(name)) {
+			this.name = name;
+		}
+	}
+	getName() {
+		return this.name;
+	}
+	
+	_notEmpty(str) {
+		return str.length > 0;
+	}
+}
+class Employee extends User {
+	setSurn(surn) {
+		if (this._notEmpty(surn)) {
+			this.surn = surn;
+		}
+	}
+	getSurn() {
+		return this.surn;
+	}
+}
+*/
+/*
+class User {
+	_name;
+	
+	setName(name) {
+		this._name = name;
+	}
+	getName() {
+		return this._name;
+	}
+}
+
+class Employee extends User {
+	setName(name) {
+		if (_name.length > 0) {
+			this._name = name;
+		}
+	}
+}
+*/
+
+// class User {
+// 	setName(name) {
+// 		this._name = name;
+// 	}
+// 	getName() {
+// 		return this._name;
+// 	}
+// };
+// class Student1 extends User {
+// 	setYear(year) {
+// 		this._year = year;
+// 	}
+// 	getYear() {
+// 		return this._year;
+// 	}
+// };
+
+// class StudentProgrammer extends Student1 {
+// 	setSkill(skill) {
+// 		this._skill = skill;
+// 	}
+// 	getSkill() {
+// 		return this._skill;
+// 	}
+// };
+
+// let boy = new StudentProgrammer();
+// boy.setSkill(12);
+// console.log(boy.getSkill());
+
+// boy.setName('Mike');
+// console.log(boy.getName());
+
+// boy.setYear(34);
+// console.log(boy.getYear());
+/*
+class User {
+  name;
+  setName(name) {
+    this.name = name;
+  }
+  getName() {
+    return this.name;
+  }
+  CorStr(str) {
+    return str[0].toUpperCase() + str.slice(1);
+  }
+}
+class Employee extends User {
+  salary;
+  setSalary(salary) {
+    this.salary = salary;
+  }
+  getSalary() {
+    return this.salary;
+  }
+  addSalary(salary, adds = 100) {
+    let newSalary = salary + adds;
+    return newSalary
+  }
+}
+
+class Programmer extends Employee {
+  position;
+  setPos(position) {
+    this.position = position;
+  }
+  getPos() {
+    return this.position;
+  }
+}
+
+class Designer extends Programmer {
+  skill;
+  setSkill(skill) {
+    this.skill = skill;
+  }
+  getSkill() {
+    return this.skill;
+  }
+
+};
+
+
+
+
+
+let user = new Designer();
+user.setSkill(4);
+console.log(user.getSkill());
+user.setPos('junior');
+user.setSalary(2000);
+user.setName('Mike');
+
+console.log(user.getSkill(), user.getPos(), user.getSalary(), user.getName());
+console.log(user.addSalary(user.getSalary()));
+console.log(user.CorStr(user.getPos()));
+*/
+
+// let elem = document.querySelector('p');
+
+// console.dir(elem);
+
+// let elem = document.querySelector('div');
+// console.dir(elem);
+
+class User {
+  #name;
+
+  constructor(name) {
+    this.#name = name;
+  }
+  getName() {
+    return this.#name;
+  }
+}
+// Создадим объект этого класса:
+
+let user = new User("john");
+// Запишем код метода в переменную:
+
+let func = user.getName;
+// В момент записи метода в переменную контекст и потерялся. Теперь this внутри кода метода не будет указывать на объект класса. Проверим, вызовем нашу функцию:
+
+// console.log(func()); // ошибка
+// Для решения проблемы можно привязать контекст к функции, например, через bind:
+
+// func = func.bind(user);
+// console.log(func()); // работает
+/*
+function sayHello() {
+  console.log(`Hello, ${this.sur}!`);
+}
+
+const person = {
+  name: 'John',
+  sur: "Douell"
+};
+
+console.log(sayHello.call(person)); // Выведет "Hello, John!"
+
+
+function sayGoodbye() {
+  console.log (`Goodbye ${this.mom} `);
+};
+
+let personen = {
+  name: 'Lily',
+  name2: 'Mikki',
+  mom: 'Pippi'
+};
+sayGoodbye.call(personen);
+
+*/
+/*
+Створіть клас A з методом read
+Створіть клас B, який наслідується (extends) від A, та має метод close
+Створіть instanceB класу B
+Перевірити:
+наявніcть методів read/close в instanceB через оператор in
+наявніcть методів read/close в instanceB через метод hasOwnProperty
+всі ключі instanceB (Object.keys)
+
+*/
+
+class A {
+  variableA;
+
+  read() {
+    console.log(`I am a method READ in obj A`);
+  }
+}
+
+class B extends A {
+  variableB;
+
+  close() {
+    console.log(`I am a method CLOSE in obj B`);
+  }
+}
+
+let instanceB = new B();
+
+// console.log('variableA' in instanceB); // true
+// console.log('read' in A.prototype); //true
+
+// console.log('read' in instanceB);   //true
+// console.log('close' in instanceB); // true
+
+console.log(instanceB.hasOwnProperty('read')); // false becauce it is prop of prototype
+console.log(instanceB.hasOwnProperty('close')); // false becauce it is prop of prototype
+
+const keys = Object.keys(instanceB);
+
+console.log(keys);

@@ -1,9 +1,7 @@
-// webpack.config.js
 const path = require('path');
-const _ = require('lodash');
 
 module.exports = {
-  mode: 'development',
+  mode: 'none',
   entry: './src/js/script.js',
   output: {
     filename: 'bundle.js',
@@ -14,12 +12,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-          },
-        },
+        use: ['babel-loader'],
       },
     ],
   },

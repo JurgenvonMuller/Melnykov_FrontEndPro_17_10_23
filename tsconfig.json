@@ -1,0 +1,83 @@
+// {
+//   "compilerOptions": {
+//     "target": "es5",
+//     "module": "commonjs",
+//     "outDir": "./dist/js",
+//     "rootDir": "./src",
+//     "strict": true
+//   },
+//   "include": ["src/**/*.ts"],
+//   "exclude": ["node_modules"]
+// }
+
+// {
+//   "compilerOptions": {
+//     "target": "es5",
+//     "module": "commonjs",
+//     "strict": true
+//   }
+// }
+
+// {
+//   "compilerOptions": {
+//     "target": "es5",
+//     "module": "commonjs",
+//     "outDir": "./dist",
+//     "rootDir": "./src",
+//     // ... другие настройки ...
+//   },
+ 
+//   "include": [
+//     "./src/ts/**/*.ts"
+//     // "./src/ts/typescript.ts"
+//   ],
+//   "exclude": [
+//     "node_modules"
+//   ]
+// }
+
+
+// {
+//   "compilerOptions": {
+//     "target": "es5",
+//     "module": "commonjs",
+//     "outDir": "./dist/js",  // Обновлено
+//     "rootDir": "./src/ts",
+//     // ... другие настройки ...
+//   },
+//   "include": [
+//     "./src/ts/**/*.ts"
+//   ],
+//   "exclude": [
+//     "node_modules"
+//   ]
+// }
+
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "outDir": "./dist/js",
+    "rootDir": "./src/ts",
+    "strict": true, // Включает строгий режим
+    "esModuleInterop": true, // Улучшает совместимость с CommonJS
+    "forceConsistentCasingInFileNames": true, // Предотвращает проблемы с регистром в именах файлов
+    "skipLibCheck": true, // Пропускает проверку объявлений библиотек
+    "lib": ["es2015", "dom"], // Указывает на используемые библиотеки
+    "noUnusedLocals": true, // Предотвращает неиспользуемые локальные переменные
+    "noUnusedParameters": true, // Предотвращает неиспользуемые параметры функций
+    "removeComments": true, // Удаляет комментарии из компилированного кода
+    "sourceMap": true, // Генерирует карты исходного кода для отладки
+    "inlineSources": true, // Встраивает исходный код в карты исходного кода
+    "declaration": true, // Генерирует файлы объявлений (.d.ts)
+    "emitDecoratorMetadata": true, // Требуется для некоторых фреймворков, поддерживающих декораторы
+    "downlevelIteration": true, // Преобразует итераторы ES6 в ES5
+    "experimentalDecorators": true // Включает поддержку экспериментальных декораторов
+  },
+  "include": [
+    "./src/ts/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

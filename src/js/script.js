@@ -2044,7 +2044,6 @@ console.log(func2([1, [2, 7, 8], [3, 4, [5, [6, 7]]]]));
 li удалялась по клику на нее. Речь идет как о тех li, которые уже есть в списке, так о новых, созданных после нажатия на кнопку.
 */
 
-
 // document.addEventListener('DOMContentLoaded', function(){
 
 //   let ul = document.querySelector('#parent');
@@ -2065,9 +2064,104 @@ li удалялась по клику на нее. Речь идет как о �
 //     })
 //   })
 
-//   });
+// document.addEventListener('DOMContentLoaded', function(){
+// let parent = document.querySelectorAll('#parent p');
+
+// for(let elem of parent) {
+// let remove = document.createElement('a');
+// remove.href = '#';
+// remove.textContent = 'remove';
+// elem.appendChild(remove);
+
+// remove.addEventListener('click', function(event){
+//   elem.remove();
+//   event.preventDefault();
+
+// });
+// };
+// });
+
+// let parent = document.querySelectorAll('#parent p');
+
+// for (let elem of parent) {
+//   let remove = document.createElement('a');
+//   remove.href = '#'; // Установите корректное значение href
+//   remove.textContent = 'remove';
+//   elem.appendChild(remove);
+
+//   remove.addEventListener('click', function(event) {
+//     elem.remove();
+//     event.preventDefault();
+// //   });
+// // };
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   let parent = document.querySelectorAll("#parent p");
+
+//   for (let elem of parent) {
+//     let remove = document.createElement("a");
+//     remove.href = "#";
+//     remove.textContent = "remove";
+//     elem.appendChild(remove);
+//     remove.addEventListener("click", function (event) {
+//       elem.remove();
+//       event.preventDefault();
+//     });
+//   }
+// });
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   let ul = this.querySelectorAll("#ul li");
+//   console.log(ul);
+
+//   for (let item of ul) {
+//     let usun = document.createElement("a");
+//     usun.href = "#";
+//     usun.textContent = "delete";
+//     item.appendChild(usun);
+//     usun.addEventListener("click", function (event) {
+//       item.remove();
+//       event.preventDefault();
+//     });
+//   }
+// });
 
 
 
+// document.addEventListener('DOMContentLoaded', function(){
 
+//   let rows = document.querySelectorAll('#tb tr');
+//   console.log(rows);
 
+//   for (let row of rows) {
+//     let cells = row.querySelectorAll('td');
+//     console.log(cells);
+//     for (let cell of cells) {
+//       console.log(cell);
+//       let del = document.createElement('a');
+//       del.href = '#';
+//       del.textContent = 'delete';
+//       cell.appendChild(del);
+//       del.addEventListener('click', function(event){
+//         let parentCell = event.target.parentNode;
+//         parentCell.remove();
+//         event.preventDefault();
+//       });
+
+//     };
+
+//   };
+
+// });
+
+document.addEventListener('DOMContentLoaded', function(){
+let parent = document.querySelector('#parent');
+let par = document.querySelector('#elem');
+let input = document.querySelector('#input');
+input.value = par.textContent;
+
+input.addEventListener('blur', function(){
+  par.textContent = this.value;
+})
+
+});

@@ -9,31 +9,54 @@
 </head>
 
 <body>
+  <!-- <div id="parent">
+    <p>text1</p>
+    <p>text2</p>
+    <p>text3</p>
+  </div> -->
 
-  <h1>TypeScript in Browser</h1>
-
-  <!-- Include the compiled JavaScript file -->
-  <script src="./dist/ts/typescript.js"></script>
-
-  <!-- Display console output in the browser -->
-  <script>
-      // Redirect console.log to display output in the browser
-      const originalLog = console.log;
-      console.log = function(...args) {
-          originalLog.apply(console, args);
-          document.body.innerHTML += `<div>${args.join(' ')}</div>`;
-      };
-  </script>
-
-
-
-
-
-  <div class="footer">
-
+  <!-- <ul id="ul">
+    <li>TEXT 1 </li>
+    <li>TEXT 2 </li>
+    <li>TEXT 3 </li>
+    <li>TEXT 4 </li>
+  </ul> -->
+  
+  <div id="parent">
+    <p id="elem">text</p>
+    <input id="input">
   </div>
-  <script src="dist/js/bundle.js"></script>
-  <script src="dist/js/script.js"></script>
+  
+  
+  <!-- <table id="tb" border="1">
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+</table> -->
+
+
+<div class="footer">
+  
+</div>
+<script src="./dist/js/typescript.js"></script>
+<script src="dist/js/bundle.js"></script>
+<script src="src/js/script.js"></script>
+
 </body>
 
 

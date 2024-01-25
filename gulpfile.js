@@ -188,22 +188,22 @@ gulp.task('compileSass', function() {
     .pipe(browserSync.stream());
 });
 
-// Compile TypeScript using gulp-typescript
-// gulp.task('compileTypeScript', function() {
-//   const tsProject = ts.createProject('tsconfig.json');
-//   return tsProject.src()
-//     .pipe(tsProject())
-//     .js.pipe(gulp.dest('./dist/ts'))
-//     .pipe(browserSync.stream());
-// });
-
 gulp.task('compileTypeScript', function() {
   const tsProject = ts.createProject('tsconfig.json');
   return tsProject.src()
     .pipe(tsProject())
-    .js.pipe(gulp.dest('./dist/js'))  // Обновлено
+    .js.pipe(gulp.dest('./dist/js'))
     .pipe(browserSync.stream());
 });
+
+// Compile JS using Webpack-stream
+gulp.task('compileJS', function() {
+  return gulp.src('./src/js/script.js')
+    .pipe(webpack(require('./webpack.config.js')))
+    .pipe(gulp.dest('./dist/js'))
+    .pipe(browserSync.stream());
+});
+
 
 
 // Watch Sass, TypeScript, and serve
@@ -219,6 +219,7 @@ gulp.task('watch', function() {
   gulp.watch('./src/ts/**/*.ts', gulp.series('compileTypeScript')); // Добавлено
   gulp.watch('./*.html').on('change', browserSync.reload);
   gulp.watch('./dist/js/*.js').on('change', browserSync.reload);
+  
 });
 
 // Default task

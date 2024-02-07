@@ -2154,14 +2154,19 @@ li удалялась по клику на нее. Речь идет как о �
 
 // });
 
-document.addEventListener('DOMContentLoaded', function(){
-let parent = document.querySelector('#parent');
-let par = document.querySelector('#elem');
-let input = document.querySelector('#input');
-input.value = par.textContent;
+// document.addEventListener('DOMContentLoaded', function(){
+// let parent = document.querySelector('#parent');
+// let par = document.querySelector('#elem');
+// let input = document.querySelector('#input');
+// input.value = par.textContent;
 
-input.addEventListener('blur', function(){
-  par.textContent = this.value;
-})
+// input.addEventListener('blur', function(){
+//   par.textContent = this.value;
+// })
 
-});
+// });
+
+let i = 0;
+for(; i < 5;) {
+  console.log(++i);
+}

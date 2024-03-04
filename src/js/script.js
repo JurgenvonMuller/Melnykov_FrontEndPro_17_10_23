@@ -1,101 +1,53 @@
-
-/*
-Мережа фастфудів пропонує кілька видів гамбургерів:
-
-маленький (50 тугриків, 20 калорій);
-великий (100 тугриків, 40 калорій).
-Гамбургер може бути з одним із декількох видів начинок:
-
-сиром (+ 10 тугриків, + 20 калорій);
-салатом (+ 20 тугриків, + 5 калорій);
-картоплею (+ 15 тугриків, + 10 калорій).
-Можна додати добавки:
-
-посипати приправою (+15 тугриків, 0 калорій) - полити майонезом (+ 20 тугриків, +5 калорій).
-Напишіть програму, яка розраховує вартість та калорійність гамбургера. Використовуйте ООП підхід.
-
-(підказка: потрібен клас Гамбургер, константи, методи для вибору опцій та розрахунку потрібних величин)
-
-Приклад роботи коду:
-
-// маленький гамбургер з начинкою з сиру
-var hamburger = new Hamburger(Hamburger .SIZE_SMALL, Hamburger.STUFFING_CHEESE);
-
-// добавка з майонезу
-hamburger.addTopping(Hamburger.TOPPING_MAYO);
-
-// запитаємо скільки там калорій
-console.log(“Calories: “ + hamburger.calculate ());
-
-// скільки коштує
-console.log("Price: “ + hamburger.calculatePrice());
-
-// я тут передумав і вирішив додати ще приправу
-hamburger.addTopping(Hamburger .TOPPING_SAUCE);
-
-// А скільки тепер коштує?
-console.log("Price with sauce: “ + hamburger.calculatePrice());
-
-
+/*Вивести таблицю 10 × 10, заповнену числами від 1 до 100 
+(таблиця створюється динамічно)
 */
 
+// Получаем ссылку на контейнер, в котором будет наша таблица
+let tableContainer = document.getElementById("table-container");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Клас Гамбургер
-class Hamburger {
-  constructor(size, stuffing) {
-    this.size = size;
-    this.stuffing = stuffing;
-    this.toppings = [];
+// Создаем элемент таблицы и заполняем ее
+let tableHTML = "<table>";
+for (let i = 1; i <= 10; i++) {
+  tableHTML += "<tr>";
+  for (let j = 1; j <= 10; j++) {
+    let cellValue = (i - 1) * 10 + j;
+    tableHTML += "<td>" + cellValue + "</td>";
   }
-
-  static SIZE_SMALL = { price: 50, calories: 20 };
-  static SIZE_LARGE = { price: 100, calories: 40 };
-
-  static STUFFING_CHEESE = { price: 10, calories: 20 };
-  static STUFFING_SALAD = { price: 20, calories: 5 };
-  static STUFFING_POTATO = { price: 15, calories: 10 };
-
-  static TOPPING_SPICE = { price: 15, calories: 0 };
-  static TOPPING_MAYO = { price: 20, calories: 5 };
-
-  addTopping(topping) {
-    this.toppings.push(topping);
-  }
-
-  calculatePrice() {
-    const basePrice = this.size.price + this.stuffing.price;
-    const toppingsPrice = this.toppings.reduce((total, topping) => total + topping.price, 0);
-    return basePrice + toppingsPrice;
-  }
-
-  calculateCalories() {
-    const baseCalories = this.size.calories + this.stuffing.calories;
-    const toppingsCalories = this.toppings.reduce((total, topping) => total + topping.calories, 0);
-    return baseCalories + toppingsCalories;
-  }
+  tableHTML += "</tr>";
 }
+tableHTML += "</table>";
 
-// Приклад використання
-const hamburger = new Hamburger(Hamburger.SIZE_SMALL, Hamburger.STUFFING_CHEESE);
+tableContainer.innerHTML = tableHTML;
 
-hamburger.addTopping(Hamburger.TOPPING_MAYO);
+// // Получаем ссылку на контейнер, в котором будет наша таблица
+// let tableContainer = document.getElementById("table-container");
 
-console.log("Calories: " + hamburger.calculateCalories());
-console.log("Price: " + hamburger.calculatePrice());
+// // Создаем элемент таблицы
+// let table = document.createElement("table");
 
-hamburger.addTopping(Hamburger.TOPPING_SPICE);
+// // Заполняем таблицу
+// for (let i = 1; i <= 10; i++) {
+//   // Создаем строку таблицы
+//   let row = document.createElement("tr");
 
-console.log("Price with spice: " + hamburger.calculatePrice());
+//   for (let j = 1; j <= 10; j++) {
+//     // Создаем ячейку таблицы
+//     let cell = document.createElement("td");
+
+//     // Вычисляем значение ячейки
+//     let cellValue = (i - 1) * 10 + j;
+
+//     // Создаем текстовый узел с числом и добавляем его в ячейку
+//     let cellText = document.createTextNode(cellValue);
+//     cell.appendChild(cellText);
+
+//     // Добавляем ячейку в строку
+//     row.appendChild(cell);
+//   }
+
+//   // Добавляем строку в таблицу
+//   table.appendChild(row);
+// }
+
+// // Добавляем таблицу в контейнер
+// tableContainer.appendChild(table);

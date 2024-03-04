@@ -1,0 +1,13 @@
+.container {
+  position: relative;
+  width: 200px;
+}
+
+.side-div {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  display: none;
+  size: 60 px;
+  color: red;
+}

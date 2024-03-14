@@ -45,7 +45,6 @@ function prevImage() {
   // Перелистываем на предыдущее изображение
   showImage(currentImageIndex - 1);
 }
-
 // Добавляем обработчики событий click на кнопки Next и Prev
 nextButton.addEventListener('click', nextImage);
 prevButton.addEventListener('click', prevImage);
